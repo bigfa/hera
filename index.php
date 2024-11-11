@@ -6,14 +6,17 @@
             <h1>bigfa</h1>
             <p>computer loser</p>
         </div>
+        <p>Made in <img alt="Japan" aria-label="Japan" src="<?php echo get_template_directory_uri(); ?>/build/images/Macao.svg" class="footer--logo"></span></p>
     </div>
     <div class="content">
-        <?php if (have_posts()) :
-            while (have_posts()) : the_post();
-                get_template_part('template-parts/content', get_post_format());
-            endwhile;
-        // get_template_part('template-parts/pagination');
-        endif; ?>
+        <div class="post--list">
+            <?php if (have_posts()) :
+                while (have_posts()) : the_post();
+                    get_template_part('template-parts/content', get_post_format());
+                endwhile;
+            // get_template_part('template-parts/pagination');
+            endif; ?>
+        </div>
     </div>
 </main>
 <?php get_footer(); ?>

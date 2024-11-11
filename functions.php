@@ -30,3 +30,5 @@ function panther_image_zoom($content)
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
+
+get_template_part('modules/article');

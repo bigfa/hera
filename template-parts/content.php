@@ -1,11 +1,19 @@
-<article>
-    <h2><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
-    <div class="meta">
-        <p>Published by <?php the_author(); ?> on <?php the_time('F j, Y'); ?> <svg aria-label="已编辑" role="img" viewBox="0 0 20.1325 21.186" class="x1lliihq xffa9am x2lah0s x1jwls1v x1n2onr6 x17fnjtu x1gaogpn" style="--fill: currentColor; --height: 16px; --width: 16px;" width=16 height=16>
-                <title>已编辑</title>
-                <path d="M3.77951 16.9553C6.48459 19.6604 10.0002 20.471 11.7287 20.637C12.2365 20.6956 12.5197 20.3831 12.5588 20.0608C12.5979 19.719 12.383 19.3479 11.8947 19.2795C10.3322 19.0647 7.10959 18.3616 4.75607 15.9885C0.92795 12.1506 0.205293 6.34986 3.33029 3.22486C5.86936 0.695562 10.0979 1.01783 13.2131 2.69751L14.2287 1.71119C10.4397-0.564204 5.34201-0.749751 2.35373 2.2483C-1.20096 5.81275-0.732207 12.4436 3.77951 16.9553ZM7.3342 14.0354C10.5276 17.2288 15.6643 18.4885 18.5354 15.6272C20.8791 13.2737 20.5764 9.094 18.0666 5.50025L17.0705 6.49634C19.0627 9.44556 19.4533 12.7561 17.5588 14.6506C15.2541 16.9553 11.4455 15.8616 8.82834 13.3909ZM8.6135 12.5803L17.383 3.82056L15.9279 2.37525L7.16818 11.1252L6.3674 12.9905C6.27951 13.1956 6.48459 13.4104 6.69943 13.3323ZM18.0959 3.11744L18.8772 2.33619C19.2483 1.96509 19.2678 1.41822 18.8869 1.06666L18.633 0.83228C18.301 0.51978 17.7737 0.51978 17.4221 0.871343L16.6506 1.66236Z"></path>
-            </svg></p>
-        <p>Categories: <?php the_category(' '); ?></p>
-        <p><?php the_tags('Tags: ', ', '); ?></p>
+<article class="block--item">
+    <h2 class="block--title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
+    <div class="addon">
+        <div class="meta">
+            <div class="block--snippet" itemprop="about">
+                <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, aladdin_is_has_image($post->ID) ? 120 : 240, "...");
+                echo $sippnet;
+                ?>
+            </div>
+            <p>Published by <?php the_author(); ?> on <?php the_time('F j, Y'); ?> <svg aria-label="已编辑" role="img" viewBox="0 0 20.1325 21.186" class="x1lliihq xffa9am x2lah0s x1jwls1v x1n2onr6 x17fnjtu x1gaogpn" style="--fill: currentColor; --height: 16px; --width: 16px;" width=16 height=16>
+                    <title>已编辑</title>
+                    <path d="M3.77951 16.9553C6.48459 19.6604 10.0002 20.471 11.7287 20.637C12.2365 20.6956 12.5197 20.3831 12.5588 20.0608C12.5979 19.719 12.383 19.3479 11.8947 19.2795C10.3322 19.0647 7.10959 18.3616 4.75607 15.9885C0.92795 12.1506 0.205293 6.34986 3.33029 3.22486C5.86936 0.695562 10.0979 1.01783 13.2131 2.69751L14.2287 1.71119C10.4397-0.564204 5.34201-0.749751 2.35373 2.2483C-1.20096 5.81275-0.732207 12.4436 3.77951 16.9553ZM7.3342 14.0354C10.5276 17.2288 15.6643 18.4885 18.5354 15.6272C20.8791 13.2737 20.5764 9.094 18.0666 5.50025L17.0705 6.49634C19.0627 9.44556 19.4533 12.7561 17.5588 14.6506C15.2541 16.9553 11.4455 15.8616 8.82834 13.3909ZM8.6135 12.5803L17.383 3.82056L15.9279 2.37525L7.16818 11.1252L6.3674 12.9905C6.27951 13.1956 6.48459 13.4104 6.69943 13.3323ZM18.0959 3.11744L18.8772 2.33619C19.2483 1.96509 19.2678 1.41822 18.8869 1.06666L18.633 0.83228C18.301 0.51978 17.7737 0.51978 17.4221 0.871343L16.6506 1.66236Z"></path>
+                </svg></p>
+            <p>Categories: <?php the_category(' '); ?></p>
+            <p><?php the_tags('Tags: ', ', '); ?></p>
+        </div>
+        <img src="<?php echo aladdin_get_background_image(get_the_ID(), 84, 84); ?>" class="cover" />
     </div>
 </article>

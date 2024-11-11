@@ -1,7 +1,20 @@
 .navbar {
-    width: 180px;
+    width: 30%;
     padding-top: 80px;
-    margin-right: 50px;
     position: relative;
     flex: 0 0 auto;
+    box-shadow: -1px 0 1px -2px rgba(0, 0, 0, 0.9);
+    background-color: #fafafa;
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+@media (max-width: 720px) {
+    .navbar {
+        width: 100%;
+        align-items: center;
+    }
 }
