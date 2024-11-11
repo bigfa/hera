@@ -20,14 +20,34 @@
     }
     .meta {
         flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
         p {
             margin: 0;
-            font-size: 14px;
+            margin-top: auto;
+
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.5);
         }
     }
-    align-items: center;
+    // align-items: center;
 }
 
 .block--item {
     padding: 25px 0;
+}
+
+.block--snippet {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.block--title {
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-size: 20px;
+    &:hover {
+        color: var(--main-hover-color);
+    }
 }

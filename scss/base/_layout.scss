@@ -21,12 +21,14 @@
     }
 }
 
-.block--snippet {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.block--title {
-    margin: 0 0 10px;
+.nav--footer {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    img {
+        margin-left: 5px;
+        width: 24px;
+    }
+    color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
 }

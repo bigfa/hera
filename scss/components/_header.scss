@@ -1,5 +1,5 @@
 .navbar {
-    width: 30%;
+    width: 25%;
     padding-top: 80px;
     position: relative;
     flex: 0 0 auto;
@@ -10,6 +10,17 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    text-align: right;
+    .avatar {
+        border-radius: 5px;
+    }
+    h1 {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+    p {
+        margin: 0;
+    }
 }
 
 @media (max-width: 720px) {
