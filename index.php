@@ -1,0 +1,19 @@
+<?php get_header(); ?>
+<main class="layout">
+    <div class="navbar">
+        <div class="js-contentFixed">
+            <img src="http://2.gravatar.com/avatar/2fd7e2e17a671f8e3fade0706e0a667e?s=100&d=mm&r=g" alt="bigfa">
+            <h1>bigfa</h1>
+            <p>computer loser</p>
+        </div>
+    </div>
+    <div class="content">
+        <?php if (have_posts()) :
+            while (have_posts()) : the_post();
+                get_template_part('template-parts/content', get_post_format());
+            endwhile;
+        // get_template_part('template-parts/pagination');
+        endif; ?>
+    </div>
+</main>
+<?php get_footer(); ?>

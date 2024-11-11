@@ -1,0 +1,11 @@
+.layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    // align-items: flex-start;
+}
+
+.content {
+    padding-top: 50px;
+    flex: 1 1 auto;
+}
