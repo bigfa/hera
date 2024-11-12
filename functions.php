@@ -32,3 +32,4 @@ function panther_image_zoom($content)
 }
 
 get_template_part('modules/article');
+get_template_part('modules/base');
