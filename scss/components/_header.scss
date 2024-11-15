@@ -1,6 +1,5 @@
 .navbar {
     width: 25%;
-    padding-top: 80px;
     position: relative;
     flex: 0 0 auto;
     box-shadow: -1px 0 1px -2px rgba(0, 0, 0, 0.9);
@@ -13,6 +12,9 @@
     text-align: right;
     .avatar {
         border-radius: 5px;
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
     }
     h1 {
         margin: 10px 0;
@@ -21,6 +23,7 @@
     p {
         margin: 0;
     }
+    padding-top: 120px;
 }
 
 @media (max-width: 720px) {
@@ -28,4 +31,13 @@
         width: 100%;
         align-items: center;
     }
+}
+
+.widget--link {
+    padding: 5px 0;
+    color: rgba(0, 0, 0, 0.68);
+}
+
+.widget--links {
+    margin-top: 20px;
 }

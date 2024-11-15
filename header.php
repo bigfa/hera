@@ -11,10 +11,18 @@
     <main class="layout">
         <div class="navbar">
             <div class="js-contentFixed">
-                <img src="http://2.gravatar.com/avatar/2fd7e2e17a671f8e3fade0706e0a667e?s=100&d=mm&r=g" alt="bigfa" class="avatar">
+                <a href="/"><img src="https://c.wpista.com/avatar/5ba655c9abcbd5f81a3ce0d1a88dc568?s=200&d=mm&r=x" alt="bigfa" class="avatar"></a>
                 <h1>bigfa</h1>
                 <p>computer loser</p>
+                <div class="widget--links ">
+                    <div class="widget--link"><a href="/" title="My Work">My Work</a></div>
+                    <div class="widget--link"><a href="/" title="My Work">Contace Me</a></div>
+                    <div class="widget--link"><a href="/" title="My Work">Archive</a></div>
+                    <div class="widget--link"><a href="/" title="My Work">Lens</a></div>
+                    <div class="widget--link"><a href="/" title="My Work">Travel Footprint</a></div>
+                </div>
+                <div class="nav--footer">Made in <img alt="Japan" aria-label="Japan" src="<?php echo get_template_directory_uri(); ?>/build/images/Macao.svg" class="footer--logo"></span></div>
             </div>
-            <div class="nav--footer">Made in <img alt="Japan" aria-label="Japan" src="<?php echo get_template_directory_uri(); ?>/build/images/Macao.svg" class="footer--logo"></span></div>
+
         </div>
         <div class="content">

@@ -16,7 +16,13 @@
                     <?php the_content(); ?>
                 </div>
             </article>
-
+            <div class="post--ingle__comments">
+                <?php
+                if (comments_open() || get_comments_number()) :
+                    comments_template();
+                endif;
+                ?>
+            </div>
     <?php endwhile;
     // get_template_part('template-parts/pagination');
     endif; ?>
