@@ -3,6 +3,9 @@
     margin: 0 auto;
     display: flex;
     // align-items: flex-start;
+    .is-singleColumn & {
+        flex-direction: column;
+    }
 }
 
 .content {

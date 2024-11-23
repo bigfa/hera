@@ -5,16 +5,17 @@
             <article class="post">
                 <header>
                     <h2 class="post--headline"><?php the_title(); ?></h2>
+                    <div class="post--subline">华为遥遥领先</div>
                     <div class="meta">
-                        <span>作者：<?php the_author(); ?></span>
-                        <span>时间：<?php the_time('Y-m-d'); ?></span>
-                        <span>分类：<?php the_category(','); ?></span>
-                        <span>标签：<?php the_tags('', ','); ?></span>
+                        <span><?php the_time('Y-m-d'); ?></span>
+                        ·
+                        <span><?php the_category(','); ?></span>
                     </div>
                 </header>
                 <div class="grap">
                     <?php the_content(); ?>
                 </div>
+                <div>标签：<?php the_tags('', ','); ?></div>
             </article>
             <div class="post--ingle__comments">
                 <?php

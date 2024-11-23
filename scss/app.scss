@@ -1,24 +1,25 @@
+@use 'components/footer';
+
+@use 'base/normalize';
+@use 'base/basic';
+
+@use 'base/layout';
+@use 'templates/article';
+
+@use 'components/header';
+@use 'components/zoom';
+
+@use 'base/grap';
+@use 'templates/map';
+
+@use 'components/comment';
 :root {
     --main-color: #1b578c;
     --main-hover-color: #1b578c;
 }
-@import 'base/normalize';
-@import 'base/basic';
-
-@import 'base/layout';
 
 .js-contentFixed {
     position: sticky;
     top: 20px;
+    padding: 50px;
 }
-
-@import 'templates/article';
-
-@import 'components/footer';
-@import 'components/header';
-@import 'components/zoom';
-
-@import 'base/grap';
-@import 'templates/map';
-
-@import 'components/comment';

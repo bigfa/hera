@@ -17,7 +17,13 @@ function css() {
     return gulp
         .src('./scss/app.scss')
         .pipe(plumber())
-        .pipe(sass({ outputStyle: 'compressed', allowEmpty: true }))
+        .pipe(
+            sass({
+                outputStyle: 'compressed',
+                allowEmpty: true,
+                silenceDeprecations: ['legacy-js-api'],
+            })
+        )
         .pipe(rename('misc.css'))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(gulp.dest('./build/css/'));
@@ -34,7 +40,13 @@ function fonts() {
 function setting() {
     return gulp
         .src('./scss/setting.scss')
-        .pipe(sass({ outputStyle: 'compressed', allowEmpty: true }))
+        .pipe(
+            sass({
+                outputStyle: 'compressed',
+                allowEmpty: true,
+                silenceDeprecations: ['legacy-js-api'],
+            })
+        )
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(gulp.dest('./build/css/'));
 }

@@ -7,3 +7,14 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+body {
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Open Sans, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+        WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: 'liga' on;
+}
