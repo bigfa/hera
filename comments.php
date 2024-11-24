@@ -18,7 +18,7 @@ if (post_password_required()) {
             wp_list_comments(array('style' => 'ol', 'avatar_size' => 48, 'callback' => 'farallon_comment'));
         } else { ?>
             <li class="no--comment">
-                <?php ?>
+                <?php _e('no comments', 'Hero'); ?>
             </li>
         <?php } ?>
     </ol>

@@ -1,6 +1,14 @@
 <?php
 define('KODIAK_VERSION', wp_get_theme()->get('Version'));
 
+function farallon_setup()
+{
+    load_theme_textdomain('Hera', get_template_directory() . '/languages');
+}
+
+
+add_action('after_setup_theme', 'farallon_setup');
+
 add_theme_support('html5', array(
     'search-form',
     'comment-form',
