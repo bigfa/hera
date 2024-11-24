@@ -1,7 +1,15 @@
 <?php
 define('KODIAK_VERSION', wp_get_theme()->get('Version'));
 
-
+add_theme_support('html5', array(
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption'
+));
+add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
 
 function enqueue_styles()
 {

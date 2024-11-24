@@ -1,5 +1,5 @@
 .footer--map {
-    height: 400px;
+    height: 500px;
 }
 
 .mapboxgl-ctrl-attrib-inner {
@@ -8,4 +8,10 @@
 
 .mapboxgl-ctrl-bottom-left {
     display: none;
+}
+
+.map--container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }

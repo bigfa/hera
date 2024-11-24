@@ -3,13 +3,14 @@
     margin: 0 auto;
     display: flex;
     // align-items: flex-start;
-    .is-singleColumn & {
+    .is-singleColumn &,
+    .page-template-template-map & {
         flex-direction: column;
     }
 }
 
 .content {
-    padding: 50px 80px 50px 50px;
+    padding: 50px 0 0 0;
     flex: 1 1 auto;
 }
 

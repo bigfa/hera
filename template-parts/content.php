@@ -9,6 +9,6 @@
             </div>
             <p><?php the_time('Y-m-d'); ?> · <?php the_category(' '); ?></p>
         </div>
-        <img src="<?php echo aladdin_get_background_image(get_the_ID(), 84, 84); ?>" class="cover" />
+        <img src="<?php echo aladdin_get_background_image(get_the_ID(), 184, 184); ?>" class="cover" />
     </div>
 </article>
