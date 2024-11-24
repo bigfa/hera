@@ -3,4 +3,19 @@
     font-size: 14px;
     color: rgba($color: #000000, $alpha: 0.6);
     padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav--footer {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    img {
+        margin-left: 5px;
+        width: 24px;
+    }
+    color: rgba(0, 0, 0, 0.5);
 }

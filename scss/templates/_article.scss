@@ -32,8 +32,12 @@
         flex: 0 0 auto;
         margin-left: 15px;
         width: 96px;
-        height: 96px;
-        border-radius: 4px;
+        img {
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
     }
     .meta {
         flex: 1 1 auto;
@@ -52,6 +56,17 @@
 
 .block--item {
     padding: 25px 0;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        right: 30%;
+        // height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
 
 .block--snippet {
@@ -67,5 +82,18 @@
     font-weight: 900;
     &:hover {
         color: var(--main-hover-color);
+    }
+}
+
+.nav-links {
+    padding: 20px 0;
+    .page-numbers {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-right: 5px;
+        &.current,
+        &:hover {
+            color: var(--main-hover-color);
+        }
     }
 }

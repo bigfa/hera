@@ -9,6 +9,8 @@
             </div>
             <p><?php the_time('Y-m-d'); ?> · <?php the_category(' '); ?></p>
         </div>
-        <img src="<?php echo aladdin_get_background_image(get_the_ID(), 184, 184); ?>" class="cover" />
+        <?php if (aladdin_is_has_image(get_the_ID())) : ?>
+            <a href="<?php the_permalink(); ?>" class="cover"> <img src="<?php echo aladdin_get_background_image(get_the_ID(), 184, 184); ?>" /></a>
+        <?php endif; ?>
     </div>
 </article>

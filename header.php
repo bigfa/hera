@@ -16,7 +16,7 @@
                 <p>computer loser</p>
                 <div class="widget--links ">
                     <div class="widget--link"><a href="/" title="My Work">My Work</a></div>
-                    <div class="widget--link"><a href="/" title="My Work">Contace Me</a></div>
+                    <div class="widget--link"><a href="/categories" title="My Work">Categories</a></div>
                     <div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
                     <div class="widget--link"><a href="/" title="My Work">Lens</a></div>
                     <div class="widget--link"><a href="/map" title="My Work">Travel Footprint</a></div>

@@ -11,7 +11,7 @@
 
 @use 'base/grap';
 @use 'templates/map';
-
+@use 'templates/term';
 @use 'components/comment';
 :root {
     --main-color: #1b578c;
@@ -22,4 +22,16 @@
     position: sticky;
     top: 20px;
     padding: 50px;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
