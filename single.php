@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="post--list">
+<div class="articleContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
             <article class="post">
@@ -15,7 +15,7 @@
                 <div class="grap">
                     <?php the_content(); ?>
                 </div>
-                <div>标签：<?php the_tags('', ','); ?></div>
+                <div class="article--tags"><?php the_tags('', ','); ?></div>
             </article>
             <div class="post--ingle__comments">
                 <?php

@@ -15,11 +15,11 @@
                 <h1>bigfa</h1>
                 <p>computer loser</p>
                 <div class="widget--links ">
-                    <div class="widget--link"><a href="/" title="My Work">My Work</a></div>
-                    <div class="widget--link"><a href="/categories" title="My Work">Categories</a></div>
+                    <div class="widget--link"><a href="/" title="My Work">关于</a></div>
+                    <div class="widget--link"><a href="/categories" title="My Work">分类</a></div>
                     <div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
                     <div class="widget--link"><a href="/" title="My Work">Lens</a></div>
-                    <div class="widget--link"><a href="/map" title="My Work">Travel Footprint</a></div>
+                    <div class="widget--link"><a href="/map" title="My Work">旅行地图</a></div>
                 </div>
             </div>
         </div>
