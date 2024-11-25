@@ -50,7 +50,7 @@ get_header();
         foreach ($year_post as $month => $month_post) {
             $output .=  '<ul class="archive--list" data-year="' . $year . ' - ' . $month  . '">';
             foreach ($month_post as $value) {
-                $output .= '<li class="archive--item"><div class="archive--title"><a href="' . $value['link'] . '">' . $value['title'] . '</a></div><div class="archive--meta">' . $value['date'] . '</div></li>';
+                $output .= '<li class="archive--item"><div class="archive--title"><a href="' . $value['link'] . '">' . $value['title'] . '</a></div><div class="archive--meta">' . $value['date'] . '</div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="w-full my-4 text-center text-itinerary-blue-200" viewBox="0 0 100 1" fill="currentColor" aria-hidden="true"><line x1="0" y1="0.5" x2="100" y2="0.5" stroke="currentColor" stroke-width="1" stroke-dasharray="8 8" vector-effect="non-scaling-stroke"></line></svg></li>';
             }
             $output .= '</ul>';
         }

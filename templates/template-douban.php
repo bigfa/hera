@@ -1,5 +1,11 @@
-<?php get_header(); ?>
-<div class="articleContainer">
+<?php
+/*
+Template Name: Douban
+Template Post Type: page
+*/
+get_header(); ?>
+
+<div class="doubanContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
             <article class="post">
@@ -15,4 +21,5 @@
     // get_template_part('template-parts/pagination');
     endif; ?>
 </div>
+
 <?php get_footer(); ?>

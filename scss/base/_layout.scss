@@ -35,3 +35,9 @@
     max-width: 820px;
     margin: 0 auto;
 }
+
+.doubanContainer {
+    --container-width: 850px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
