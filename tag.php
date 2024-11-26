@@ -4,7 +4,7 @@
         while (have_posts()) : the_post();
             get_template_part('template-parts/content', get_post_format());
         endwhile;
-    // get_template_part('template-parts/pagination');
+        get_template_part('template-parts/pagination');
     endif; ?>
 </div>
 <?php get_footer(); ?>

@@ -17,12 +17,16 @@
     --main-color: #1b578c;
     --main-hover-color: #1b578c;
     --farallon-background-gray: #f5f5f5;
+    --farallon-text-color: rgba(0, 0, 0, 0.87);
 }
 
 .js-contentFixed {
     position: sticky;
     top: 20px;
     padding: 50px;
+    .page-template-template-map & {
+        padding: 15px 0;
+    }
 }
 
 .screen-reader-text {

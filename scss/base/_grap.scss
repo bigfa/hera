@@ -260,9 +260,9 @@
 .grap--figure,
 .colonel--figure,
 .wp-caption {
-    margin: 0 -50px 25px;
+    margin: 0 0px 25px;
     position: relative;
-    max-width: calc(100% + 100px);
+    max-width: 100%;
     img {
         border-radius: 4px;
     }
@@ -272,11 +272,11 @@
         text-align: center;
         position: absolute;
         bottom: 12px;
-        left: 12px;
+        right: 12px;
         color: #fff;
         background-color: rgba(18, 18, 18, 0.8);
-        border-radius: 5px;
-        padding: 8px 10px;
+        border-radius: 999rem;
+        padding: 8px 15px;
     }
     line-height: 1;
 }

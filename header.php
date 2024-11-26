@@ -15,7 +15,7 @@
                 <h1>bigfa</h1>
                 <p>computer loser</p>
                 <div class="widget--links ">
-                    <div class="widget--link"><a href="/" title="My Work">关于</a></div>
+                    <div class="widget--link"><a href="/about" title="My Work">关于</a></div>
                     <div class="widget--link"><a href="/categories" title="My Work">分类</a></div>
                     <div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
                     <div class="widget--link"><a href="/" title="My Work">Lens</a></div>
