@@ -5,8 +5,11 @@
             <article class="post">
                 <header>
                     <h2 class="post--headline"><?php the_title(); ?></h2>
-                    <div class="post--subline">华为遥遥领先</div>
                     <div class="meta">
+                        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
+                            <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>" class="avatar">
+                            <span><?php the_author(); ?></span>
+                        </a>
                         <span><?php the_time('Y-m-d'); ?></span>
                         ·
                         <span><?php the_category(','); ?></span>
