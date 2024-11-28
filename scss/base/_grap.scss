@@ -12,6 +12,7 @@
 .grap {
     color: var(--farallon-text-color);
     word-break: break-all;
+    padding-top: 5px;
 
     table {
         border: 1px solid var(--farallon-border-color);
@@ -127,8 +128,9 @@
 
     a {
         text-decoration: none;
-        box-shadow: inset 0 -3px 0 var(--farallon-main-color);
+        // box-shadow: inset 0 -3px 0 var(--main-color);
         transition: 0.2s;
+        color: var(--main-color);
         &[href*='jpeg'],
         &[href*='JPEG'],
         &[href*='jpg'],
@@ -142,8 +144,8 @@
             }
         }
         &:hover {
-            //color: var(--main-hover-color);
-            box-shadow: inset 0 -5px 0 var(--farallon-hover-color);
+            color: var(--main-hover-color);
+            text-decoration: underline;
         }
     }
 

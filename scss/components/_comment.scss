@@ -140,11 +140,14 @@
         border-radius: 3px;
     }
     .comment-reply-link {
-        margin-left: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 8px;
         svg {
             fill: var(--farallon-text-gray);
-            width: 15px;
-            height: 15px;
+            width: 14px;
+            height: 14px;
         }
         &:hover {
             svg {
@@ -169,6 +172,7 @@
 
 .comment--time {
     color: var(--farallon-text-light);
+    margin-left: auto;
 }
 
 .comment-meta {
