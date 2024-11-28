@@ -1,5 +1,61 @@
 <?php
 
+class heraBass
+{
+    public function __construct()
+    {
+        add_action('edit_category_form_fields', array($this, 'add_category_cover_form_item'));
+        add_action('edited_terms', array($this, 'update_my_category_fields'));
+    }
+
+    function update_my_category_fields($term_id)
+    {
+        if (isset($_POST['taxonomy']) && $_POST['taxonomy'] == 'category') :
+            if ($_POST['_category_cover']) {
+                update_term_meta($term_id, '_thumb', $_POST['_category_cover']);
+            } else {
+                delete_term_meta($term_id, '_thumb');
+            }
+
+            if ($_POST['_category_card']) {
+                update_term_meta($term_id, '_card', 1);
+            } else {
+                delete_term_meta($term_id, '_card');
+            }
+
+        endif;
+    }
+
+    //Adds the custom title box to the category editor
+    function add_category_cover_form_item($category)
+    {
+        $cover  = get_term_meta($category->term_id, '_thumb', true);
+        $card  = get_term_meta($category->term_id, '_card', true); ?>
+        <table class="form-table">
+            <tr class="form-field">
+                <th scope="row" valign="top"><label for="_category_cover"><?php _e('Cover', 'Farallon'); ?></label></th>
+                <td><input name="_category_cover" id="_category_cover" type="text" size="40" aria-required="false" value="<?php echo $cover; ?>" class="regular-text ltr" />
+                    <p class="description"><button id="upload-categoryCover" class="button"><?php _e('Upload', 'Farallon'); ?></button></p>
+                    <p class="description"><?php _e('Category cover url.', 'Farallon'); ?></p>
+                </td>
+            </tr>
+            <tr class="form-field">
+                <th scope="row"><?php _e('Card Template', 'Farallon'); ?></th>
+                <td>
+                    <fieldset>
+                        <legend class="screen-reader-text"><span>
+                                <?php _e('Card Template', 'Farallon'); ?></span></legend><label for="_category_card">
+                            <input name="_category_card" type="checkbox" id="_category_card" value="1" <?php if ($card) echo 'checked' ?>>
+                            <?php _e('Use Card Template', 'Farallon'); ?></label>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+<?php }
+}
+
+new heraBass();
+
 function panther_theme_setup()
 {
     register_nav_menu('single', 'single菜单');

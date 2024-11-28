@@ -16,7 +16,7 @@
 }
 
 .post--list {
-    max-width: 720px;
+    max-width: var(--hera-column-width);
     margin: 0 auto;
 }
 
@@ -27,17 +27,17 @@
 }
 
 .layoutContainer {
-    max-width: 720px;
+    max-width: var(--hera-column-width);
     margin: 0 auto;
 }
 
 .articleContainer {
-    max-width: 820px;
+    max-width: var(--hera-article-width);
     margin: 0 auto;
 }
 
 .doubanContainer {
-    --container-width: 850px;
-    max-width: var(--container-width);
+    --hera-article-width: 850px;
+    max-width: var(--hera-article-width);
     margin: 0 auto;
 }

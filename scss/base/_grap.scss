@@ -138,13 +138,16 @@
         &[href*='PNG'],
         &[href*='JPG'],
         &[href*='gif'] {
+            &::after {
+                content: '.';
+            }
             box-shadow: none;
             &:hover {
                 box-shadow: none;
             }
         }
         &:hover {
-            color: var(--main-hover-color);
+            color: var(--hera-hover-color);
             text-decoration: underline;
         }
     }
@@ -169,7 +172,7 @@
             left: -10px;
             width: 3.4em;
             z-index: -1;
-            background: var(--farallon-hover-color);
+            background: var(--hera-hover-color);
             opacity: 0.3;
             transform: skew(-35deg);
             transition: opacity 0.2s ease;
@@ -180,7 +183,7 @@
             // border-radius: 11px;
             // animation: fadeOut-headings 0.4s;
             // animation-fill-mode: forwards;
-            color: var(--farallon-hover-color);
+            color: var(--hera-hover-color);
         }
     }
 
@@ -228,7 +231,7 @@
                 display: inline-block;
                 text-align: right;
                 width: 32px;
-                color: var(--farallon-hover-color);
+                color: var(--hera-hover-color);
             }
         }
     }
@@ -245,7 +248,7 @@
             border: 0 solid #999;
             border-radius: 9999px;
             box-sizing: border-box;
-            color: var(--farallon-hover-color);
+            color: var(--hera-hover-color);
             display: inline-flex;
             height: 19px;
             justify-content: center;

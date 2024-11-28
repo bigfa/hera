@@ -31,7 +31,8 @@
                 endif;
                 ?>
             </div>
-    <?php endwhile;
+    <?php get_template_part('template-parts/single', 'related');
+        endwhile;
     // get_template_part('template-parts/pagination');
     endif; ?>
     <div class="back">

@@ -22,8 +22,9 @@
                     <div class="widget--link"><a href="/about" title="My Work">关于</a></div>
                     <div class="widget--link"><a href="/categories" title="My Work">分类</a></div>
                     <div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
-                    <div class="widget--link"><a href="/" title="My Work">Lens</a></div>
+                    <div class="widget--link"><a href="/links" title="My Work">Lens</a></div>
                     <div class="widget--link"><a href="/map" title="My Work">旅行地图</a></div>
+                    <div class="widget--link"><a href="/db" title="My Work">书影音</a></div>
                 </div>
             </div>
         </div>

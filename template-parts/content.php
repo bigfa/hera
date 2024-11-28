@@ -7,7 +7,7 @@
                 echo $sippnet;
                 ?>
             </div>
-            <p><?php the_time('Y-m-d'); ?><span class="sep"></span><?php the_category(' '); ?></p>
+            <p><time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time><span class="sep"></span><?php the_category(' '); ?></p>
         </div>
         <?php if (aladdin_is_has_image(get_the_ID())) : ?>
             <a href="<?php the_permalink(); ?>" class="cover"> <img src="<?php echo aladdin_get_background_image(get_the_ID(), 184, 184); ?>" /></a>

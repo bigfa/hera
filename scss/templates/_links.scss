@@ -1,0 +1,42 @@
+.link-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    list-style: none;
+    padding-top: 15px;
+}
+
+.link-item {
+    border-radius: 10px;
+    padding: 15px;
+    .sitename {
+        font-size: 12px;
+        color: var(--farallon-text-gray);
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5;
+        strong {
+            font-size: 16px;
+            color: var(--farallon-text-color);
+            margin-bottom: 10px;
+        }
+    }
+    background-color: #fafafa;
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.link-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 30px;
+}
+
+.link-description {
+    font-size: 14px;
+    color: var(--farallon-text-gray);
+    text-align: center;
+}
