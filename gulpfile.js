@@ -37,7 +37,7 @@ function fonts() {
     return gulp.src('./fonts/*').pipe(gulp.dest('./build/fonts/'));
 }
 
-function setting() {
+function settingCSS() {
     return gulp
         .src('./scss/setting.scss')
         .pipe(
@@ -77,22 +77,43 @@ function typescripts() {
     );
 }
 
+function setting() {
+    return gulp
+        .src(['./ts/extensions/*', './ts/setting.ts'])
+        .pipe(plumber())
+        .pipe(
+            ts({
+                noImplicitAny: true,
+                outFile: 'setting.js',
+                target: 'es5',
+            })
+        )
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('./build/js/'));
+}
+
 // Watch files
 function watchFiles() {
     gulp.watch(
         ['./scss/app.scss', './scss/components/*', './scss/base/*', './scss/templates/*'],
         gulp.series(css)
     );
-    gulp.watch(['./scss/setting.scss'], gulp.series(setting));
+    gulp.watch(['./scss/setting.scss'], gulp.series(settingCSS));
     gulp.watch(['./ts/app.ts', './ts/modules/*'], gulp.series(typescripts));
+    gulp.watch(['./ts/setting.ts'], gulp.series(setting));
 }
 
 // define complex tasks
 const watch = gulp.parallel(watchFiles);
-const build = gulp.parallel(watch, gulp.parallel(css, setting, images, fonts, typescripts));
+const build = gulp.parallel(
+    watch,
+    gulp.parallel(css, setting, images, fonts, typescripts, settingCSS)
+);
 
 exports.setting = setting;
 exports.css = css;
+exports.settingCSS = settingCSS;
 exports.typescripts = typescripts;
 exports.build = build;
 exports.watch = watch;

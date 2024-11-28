@@ -1,5 +1,6 @@
 <?php
 define('KODIAK_VERSION', wp_get_theme()->get('Version'));
+define('FARALLO_SETTING_KEY', 'hera_setting');
 
 function farallon_setup()
 {
@@ -18,6 +19,30 @@ add_theme_support('html5', array(
 ));
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
+
+function admin_enquenue_scripts()
+{
+    // check if is category edit page and enquenue wp media
+    if (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category') {
+        wp_enqueue_media();
+        wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], KODIAK_VERSION, true);
+        wp_localize_script(
+            'farallon-setting',
+            'obvInit',
+            [
+                'is_single' => is_singular(),
+                'post_id' => get_the_ID(),
+                'restfulBase' => esc_url_raw(rest_url()),
+                'nonce' => wp_create_nonce('wp_rest'),
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'success_message' => __('Setting saved success!', 'Hera'),
+                'upload_title' => __('Upload Image', 'Hera'),
+                'upload_button' => __('Set Category Image', 'Hera'),
+            ]
+        );
+    }
+}
+add_action('admin_enqueue_scripts', 'admin_enquenue_scripts');
 
 function enqueue_styles()
 {
@@ -89,3 +114,5 @@ function farallon_comment($comment, $args, $depth)
             break;
     endswitch;
 }
+
+get_template_part('modules/setting');
