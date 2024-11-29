@@ -62,9 +62,9 @@ function typescripts() {
                 // './ts/modules/map.ts',
                 './ts/modules/zoom.ts',
                 // './ts/modules/photos.ts',
-                // './ts/modules/goods.ts',
-                // './ts/modules/scroll.ts',
-                // './ts/modules/collector.ts',
+                './ts/modules/comment.ts',
+                './ts/modules/scroll.ts',
+                './ts/modules/date.ts',
             ])
             .pipe(
                 ts({

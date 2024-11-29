@@ -50,6 +50,37 @@ function enqueue_styles()
     wp_dequeue_style('global-styles');
     wp_enqueue_style('farallon-style', get_template_directory_uri() . '/build/css/misc.css', array(), KODIAK_VERSION, 'all');
     wp_enqueue_script('farallon-script', get_template_directory_uri() . '/build/js/ts.js', array(), KODIAK_VERSION, true);
+    wp_localize_script(
+        'farallon-script',
+        'obvInit',
+        [
+            'is_single' => is_singular(),
+            'post_id' => get_the_ID(),
+            'restfulBase' => esc_url_raw(rest_url()),
+            'nonce' => wp_create_nonce('wp_rest'),
+            // 'darkmode' => !!$farallonSetting->get_setting('darkmode'),
+            // 'version' => HERA_VERSION,
+            'is_archive' => is_archive(),
+            'archive_id' => get_queried_object_id(),
+            // 'hide_home_cover' => !!$farallonSetting->get_setting('hide_home_cover'),
+            'timeFormat' => [
+                'second' => __('second ago', 'Farallon'),
+                'seconds' => __('seconds ago', 'Farallon'),
+                'minute' => __('minute ago', 'Farallon'),
+                'minutes' => __('minutes ago', 'Farallon'),
+                'hour' => __('hour ago', 'Farallon'),
+                'hours' => __('hours ago', 'Farallon'),
+                'day' => __('day ago', 'Farallon'),
+                'days' => __('days ago', 'Farallon'),
+                'week' => __('week ago', 'Farallon'),
+                'weeks' => __('weeks ago', 'Farallon'),
+                'month' => __('month ago', 'Farallon'),
+                'months' => __('months ago', 'Farallon'),
+                'year' => __('year ago', 'Farallon'),
+                'years' => __('years ago', 'Farallon'),
+            ]
+        ]
+    );
     // if ($farallonSetting->get_setting('css')) {
     //     wp_add_inline_style('farallon-style', $farallonSetting->get_setting('css'));
     // }
