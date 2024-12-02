@@ -3,7 +3,7 @@
     position: relative;
     flex: 0 0 auto;
     box-shadow: -1px 0 1px -2px rgba(0, 0, 0, 0.9);
-    background-color: #fafafa;
+    background-color: var(--hera-background-gray-lightest);
     box-sizing: border-box;
     transition: 0.5s width;
     display: flex;
@@ -18,7 +18,6 @@
     .page-template-template-map &,
     .page-template-template-wide & {
         width: 100%;
-
         z-index: 100;
         box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
         background-color: #fff;
@@ -88,7 +87,7 @@
     }
     p {
         margin: 0;
-        color: rgba(0, 0, 0, 0.68);
+        color: var(--hera-text-light);
     }
     padding-top: 120px;
 }
@@ -121,7 +120,7 @@
 
 .widget--link {
     padding: 5px 0;
-    color: rgba(0, 0, 0, 0.68);
+    color: var(--hera-text-light);
 }
 
 .widget--links {

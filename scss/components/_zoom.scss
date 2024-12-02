@@ -70,7 +70,7 @@
     border-radius: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     border: 0;
-    color: var(--text-gray-light);
+    color: var(--hera-text-light);
     svg {
         transform: rotate(180deg);
     }
@@ -82,7 +82,7 @@
 
 .mfp-arrow-right {
     border: 0;
-    color: var(--text-gray-light);
+    color: var(--hera-text-light);
     position: absolute;
     opacity: 0.65;
     right: 10px;
@@ -115,7 +115,7 @@
     pointer-events: none;
     font-size: 100px;
     max-height: 80vh;
-    color: var(--text-gray-light);
+    color: var(--hera-text-light);
     font-style: italic;
 }
 

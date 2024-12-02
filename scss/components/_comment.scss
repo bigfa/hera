@@ -308,7 +308,7 @@
 .no--comment {
     text-align: center;
     padding: 50px 0;
-    color: var(--hero-text-light);
+    color: var(--hera-text-light);
 }
 
 .comments--title {
@@ -324,7 +324,7 @@
         margin-right: 5px;
         position: relative;
         transform: translate3d(0, 1px, 0);
-        fill: var(--hero-text-color);
+        fill: var(--hera-text-color);
     }
 }
 
@@ -338,7 +338,7 @@
     }
     label {
         font-size: 14px;
-        color: var(--hero-text-gray);
+        color: var(--hera-text-gray);
         display: flex;
         align-items: center;
         position: relative;
@@ -356,7 +356,7 @@
     }
     input:checked + label {
         &::after {
-            background-color: var(--hero-hover-color);
+            background-color: var(--hera-hover-color);
             border-radius: 100%;
             content: '';
             position: absolute;
@@ -373,7 +373,7 @@
     svg {
         height: 16px;
         width: 16px;
-        fill: var(--hero-text-gray);
+        fill: var(--hera-text-gray);
         margin-right: 4px;
         flex: 0 0 auto;
     }
@@ -386,11 +386,11 @@
     justify-content: center;
     padding: 35px 0 15px;
     font-size: 14px;
-    color: var(--hero-text-gray);
+    color: var(--hera-text-gray);
     line-height: 1.2;
     .link {
         margin-left: 5px;
-        border-bottom: 1px dotted var(--hero-hover-color);
+        border-bottom: 1px dotted var(--hera-hover-color);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -399,10 +399,10 @@
 
 .comment--parent__link {
     margin-right: 5px;
-    color: var(--hero-main-color);
+    color: var(--hera-main-color);
     text-decoration: none !important;
     &:hover {
-        color: var(--hero-hover-color);
+        color: var(--hera-hover-color);
         text-decoration: underline;
     }
     display: flex;
@@ -418,7 +418,7 @@
 
 .pingback {
     padding: 25px 0;
-    border-bottom: 1px solid var(--hero-border-color-light);
+    border-bottom: 1px solid var(--hera-border-color-light);
     &:last-child {
         border-bottom: 0;
     }
@@ -430,10 +430,10 @@
             margin-right: 6px;
         }
         font-size: 14px;
-        color: var(--hero-text-light);
+        color: var(--hera-text-light);
         a {
             &:hover {
-                color: var(--hero-hover-color);
+                color: var(--hera-hover-color);
                 text-decoration: underline;
             }
         }

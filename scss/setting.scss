@@ -16,12 +16,8 @@ a:focus {
 
 .pure-help-title {
     font-size: 24px;
-    font-family: Microsoft Yahei;
     font-weight: 300;
     color: #626773;
-}
-.pure-wrap:after {
-    clear: both;
 }
 
 #pure-form {
@@ -170,8 +166,6 @@ textarea.code {
 }
 
 .pure-setting-switch i {
-    -webkit-animation: loader-spinner 400ms linear 1;
-    -moz-animation: loader-spinner 400ms linear 1;
     animation: loader-spinner 400ms linear 1;
 }
 
