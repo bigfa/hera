@@ -32,12 +32,12 @@
     .svgIcon {
         width: 17px;
         height: 17px;
-        fill: var(--farallon-main-color);
+        fill: var(--hera-main-color);
         animation: toTop 1s ease-in infinite alternate;
     }
     &:hover {
         .svgIcon {
-            fill: var(--farallon-hover-color);
+            fill: var(--hera-hover-color);
             animation-play-state: paused;
         }
     }
@@ -48,7 +48,7 @@
     &.is-active {
         right: 25px;
     }
-    background-color: var(--border-color);
+    background-color: var(--hera-border-color);
     z-index: 10;
     transition: all 0.3s ease;
 }
@@ -62,7 +62,7 @@
     }
 
     .widget-card-description {
-        color: var(--farallon-text-gray);
+        color: var(--hera-text-gray);
         // margin-bottom: 15px;
         font-size: 18px;
     }
@@ -95,5 +95,88 @@
         font-size: 14px;
         border-radius: var(--hera-border-radius);
         line-height: 1.4;
+    }
+}
+
+.site--footer {
+    font-size: 14px;
+    padding: 20px 80px;
+    border-top: 1px dotted var(--hera-border-color);
+    color: var(--hera-text-light);
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+    &__info {
+        display: none;
+        text-align: center;
+        color: var(--hera-text-light);
+        a {
+            text-decoration: underline;
+            &:hover {
+                color: var(--hera-hover-color);
+            }
+        }
+        &.active {
+            display: block;
+        }
+    }
+    .copyright {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        svg {
+            fill: var(--hera-text-light);
+            margin-left: 8px;
+            cursor: pointer;
+            &:hover {
+                fill: var(--hera-hover-color);
+            }
+        }
+        // &::after {
+        //     content: 'a bigfa theme';
+        //     margin-left: 3px;
+        // }
+    }
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                margin-right: 10px;
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    &__sns {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 10px;
+        a {
+            margin: 0 0 0 12px;
+            display: flex;
+        }
+        svg {
+            fill: var(--hera-text-color);
+            &:hover {
+                fill: var(--hera-hover-color);
+            }
+            width: 24px;
+            height: 24px;
+            &.sns {
+                fill: none;
+                stroke: var(--hera-text-color);
+                &:hover {
+                    stroke: var(--hera-hover-color);
+                    fill: none;
+                }
+            }
+        }
     }
 }
