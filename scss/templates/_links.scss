@@ -11,13 +11,13 @@
     padding: 15px;
     .sitename {
         font-size: 12px;
-        color: var(--farallon-text-gray);
+        color: var(--hera-text-gray);
         display: flex;
         flex-direction: column;
         line-height: 1.5;
         strong {
             font-size: 16px;
-            color: var(--farallon-text-color);
+            color: var(--hera-text-color);
             margin-bottom: 10px;
         }
     }
@@ -37,6 +37,6 @@
 
 .link-description {
     font-size: 14px;
-    color: var(--farallon-text-gray);
+    color: var(--hera-text-gray);
     text-align: center;
 }

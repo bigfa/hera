@@ -15,18 +15,22 @@
     }
 
     .is-singleColumn &,
-    .page-template-template-map & {
+    .page-template-template-map &,
+    .page-template-template-wide & {
         width: 100%;
 
         z-index: 100;
         box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
         background-color: #fff;
-        padding: 20px;
+        padding: 0px;
         align-items: center;
         text-align: center;
+        .avatar--wrapper {
+            margin-right: auto;
+        }
+
         .avatar {
-            width: 72px;
-            height: 72px;
+            transform: translateX(0);
         }
         h1 {
             font-size: 20px;

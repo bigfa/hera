@@ -4,7 +4,8 @@
     display: flex;
     // align-items: flex-start;
     .is-singleColumn &,
-    .page-template-template-map & {
+    .page-template-template-map &,
+    .page-template-template-wide & {
         flex-direction: column;
     }
 }
