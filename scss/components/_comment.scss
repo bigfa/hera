@@ -1,4 +1,5 @@
 .comment-form {
+    padding-bottom: 30px;
     label {
         display: block;
         margin-bottom: 0.5rem;
@@ -26,7 +27,7 @@
         font-size: 14px;
         cursor: pointer;
         padding: 8px 30px;
-        border-radius: 5px;
+        border-radius: var(--hera-border-radius);
         width: auto;
         &:hover {
             background-color: var(--hero-hover-color);
