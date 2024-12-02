@@ -19,11 +19,15 @@
 .post--list {
     max-width: var(--hera-column-width);
     margin: 0 auto;
+    width: 92%;
 }
 
 @media (max-width: 720px) {
     .layout {
         flex-direction: column;
+    }
+    .content {
+        padding-top: 0;
     }
 }
 
@@ -35,10 +39,12 @@
 .articleContainer {
     max-width: var(--hera-article-width);
     margin: 0 auto;
+    width: 92%;
 }
 
 .doubanContainer {
     --hera-article-width: 850px;
     max-width: var(--hera-article-width);
     margin: 0 auto;
+    width: 92%;
 }

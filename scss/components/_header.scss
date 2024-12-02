@@ -103,6 +103,19 @@
     .navbar {
         width: 100%;
         align-items: center;
+        padding-top: 15px;
+        text-align: center;
+        .avatar {
+            transform: translateX(0);
+        }
+        .avatar--wrapper {
+            margin-left: 0;
+        }
+        .js-contentFixed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
@@ -113,6 +126,21 @@
 
 .widget--links {
     margin-top: 20px;
+}
+
+@media (max-width: 720px) {
+    .widget--links {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 0;
+        padding-bottom: 15px;
+    }
+    .js-contentFixed {
+        padding: 0;
+    }
+    .widget--link {
+        padding: 5px 10px;
+    }
 }
 
 .noticer {
