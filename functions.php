@@ -1,6 +1,10 @@
 <?php
 define('KODIAK_VERSION', wp_get_theme()->get('Version'));
 define('FARALLO_SETTING_KEY', 'hera_setting');
+define('HERA_ARCHIVE_VIEW_KEY', 'hera_post_view');
+define('HERA_POST_VIEW_KEY', 'hera_post_view');
+define('HERA_POST_LIKE_KEY', 'hera_comment_view');
+
 
 function farallon_setup()
 {
@@ -106,7 +110,7 @@ function panther_image_zoom($content)
 
 get_template_part('modules/article');
 get_template_part('modules/base');
-
+get_template_part('modules/comment');
 
 function farallon_comment($comment, $args, $depth)
 {

@@ -7,6 +7,16 @@ get_header();
 ?>
 
 <main class="page--archive layoutContainer">
+    <?php if (have_posts()) :
+        while (have_posts()) : the_post(); ?>
+            <article class="post">
+                <header>
+                    <h2 class="post--headline"><?php the_title(); ?></h2>
+                </header>
+            </article>
+    <?php endwhile;
+    // get_template_part('template-parts/pagination');
+    endif; ?>
     <?php
     $args = [
         'posts_per_page' => -1,

@@ -158,10 +158,19 @@
         align-items: center;
         justify-content: flex-end;
         margin-top: 10px;
+        .is-singleColumn &,
+        .page-template-template-map &,
+        .page-template-template-wide & {
+            justify-content: center;
+        }
         a {
             margin: 0 0 0 12px;
             display: flex;
+            &:first-child {
+                margin-left: 0;
+            }
         }
+
         svg {
             fill: var(--hera-text-color);
             &:hover {

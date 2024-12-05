@@ -21,7 +21,7 @@
                 <div class="grap">
                     <?php the_content(); ?>
                 </div>
-                <div class="article--tags"><?php the_tags('', ','); ?></div>
+                <div class="article--tags"><?php the_tags('', ''); ?></div>
             </article>
             <?php get_template_part('template-parts/author', 'card'); ?>
             <div class="post--ingle__comments">
