@@ -107,6 +107,7 @@ function panther_image_zoom($content)
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
+add_theme_support('post-formats', array('status'));
 
 get_template_part('modules/article');
 get_template_part('modules/base');

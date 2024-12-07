@@ -49,3 +49,6 @@
             </div>
         </div>
         <div class="content">
+            <div class="search--area">
+                <?php get_search_form(); ?>
+            </div>
