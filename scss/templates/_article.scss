@@ -123,6 +123,8 @@
         background-color: #f8f8f8;
         border-radius: 10px;
         padding: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
 
@@ -464,4 +466,14 @@
 
 .posts {
     padding-top: 25px;
+}
+
+.search--title {
+    text-align: center;
+    font-size: 14px;
+    color: var(--hera-text-light);
+    padding-top: 25px;
+    & + .posts {
+        padding-top: 0;
+    }
 }

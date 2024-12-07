@@ -4,9 +4,16 @@
 
 本主题禁止各种修改作者链接打包重新发布的行为。
 
-最新版本 : `0.0.3`
+最新版本 : `0.0.4`
 
 ## 更新日志
+
+### 0.0.4
+
+- add status post format
+- add search template
+- add search form
+- add sticky post icon
 
 ### 0.0.3
 

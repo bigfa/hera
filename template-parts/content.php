@@ -1,5 +1,7 @@
 <article class="block--item">
-    <h2 class="block--title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
+    <h2 class="block--title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?><?php if (is_sticky()) : ?>
+            <span class="sticky--post"><?php _e('Sticky', 'Farallon'); ?></span>
+        <?php endif; ?></a></h2>
     <div class="addon">
         <div class="meta">
             <div class="block--snippet" itemprop="about">

@@ -160,7 +160,7 @@ get_template_part('modules/setting');
 /**
  * Get link items by categroy id
  *
- * @since Farallon 0.1.0
+ * @since Hera 0.0.1
  *
  * @param term id
  * @return link item list
@@ -185,7 +185,7 @@ function get_the_link_items($id = null)
 /**
  * Get link items
  *
- * @since Farallon 0.1.0
+ * @since Hera 0.0.1
  *
  * @return link iterms
  */
