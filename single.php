@@ -14,9 +14,7 @@
                             <span><?php the_author(); ?></span>
                         </a>
                         <span><?php the_time('Y-m-d'); ?></span>
-                        <span class="sep"><svg width="6" height="24" viewBox="0 0 6 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4.16754" y="0.00866699" width="2" height="24" rx="1" transform="rotate(10 4.16754 0.00866699)" fill="currentColor" fill-opacity="0.1"></rect>
-                            </svg></span>
+                        <span class="sep"></span>
                         <span><?php the_category(','); ?></span>
                     </div>
                 </header>

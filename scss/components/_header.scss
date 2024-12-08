@@ -121,6 +121,9 @@
 .widget--link {
     padding: 5px 0;
     color: var(--hera-text-light);
+    &:hover {
+        color: var(--hera-text-color);
+    }
 }
 
 .widget--links {

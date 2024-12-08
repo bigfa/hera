@@ -88,16 +88,25 @@
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
-        p {
+        p,
+        .block--meta {
             margin: 0;
             margin-top: 5px;
-
+            display: flex;
             font-size: 13px;
             color: var(--hera-text-gray-lightest);
             a {
                 &:hover {
                     text-decoration: underline;
                     color: var(--hera-text-color);
+                }
+            }
+            .status--link {
+                margin-left: auto;
+                &:hover {
+                    svg {
+                        fill: var(--hera-hover-color);
+                    }
                 }
             }
         }
@@ -480,4 +489,16 @@
 
 .page--single {
     padding-top: 30px;
+}
+
+.sticky--post {
+    display: flex;
+    align-items: center;
+    color: var(--hera-text-gray-lightest);
+    font-size: 13px;
+    user-select: none;
+    margin-bottom: 3px;
+    svg {
+        margin-right: 8px;
+    }
 }
