@@ -173,7 +173,9 @@ function get_the_link_items($id = null)
     if (!empty($bookmarks)) {
         $output .= '<ul class="link-items">';
         foreach ($bookmarks as $bookmark) {
-            $output .=  '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" ><span class="sitename"><strong>' . $bookmark->link_name . '</strong>' . $bookmark->link_description . '</span></a></li>';
+            $output .=  '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" ><span class="sitename">
+            <img src="https://c.wpista.com/avatar/5ba655c9abcbd5f81a3ce0d1a88dc568?s=200&d=mm&r=x" alt="' . $bookmark->link_name . '" class="avatar">
+            <strong>' . $bookmark->link_name . '</strong>' . $bookmark->link_description . '<i class="btn">visit</i></span></a></li>';
         }
         $output .= '</ul>';
     } else {
