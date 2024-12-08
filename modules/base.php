@@ -154,7 +154,7 @@ function comment_add_at_parent($comment_text)
 
 function panther_head_output()
 {
-    global $wp, $s, $post, $wp_query;
+    global $wp, $s, $post, $wp_query, $heraSetting;
     $current_url = home_url(add_query_arg(array(), $wp->request));
     if (is_page_template(['tpl/template-movies.php', 'tpl/template-books.php'])) {
         echo '<meta name="referrer" content="never">';
@@ -233,7 +233,7 @@ function panther_head_output()
     } else {
         $image = '';
         if (is_home()) {
-            // $description = pure_get_setting('description');
+            $description = $heraSetting->get_setting('description');
             $image = '//static.fatesinger.com/2018/05/q3wyes7va2ehq59y.JPG';
         } elseif (is_category()) {
             $description = single_cat_title('', false) . " - " . trim(strip_tags(category_description()));

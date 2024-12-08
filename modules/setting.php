@@ -193,8 +193,8 @@ class farallonSetting
         </tr>
 <?php }
 }
-global $farallonSetting;
-$farallonSetting = new farallonSetting(
+global $heraSetting;
+$heraSetting = new farallonSetting(
     [
         "header" => [
             [

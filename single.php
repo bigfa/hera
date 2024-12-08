@@ -10,7 +10,7 @@
                     <h2 class="post--headline"><?php the_title(); ?></h2>
                     <div class="meta">
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
-                            <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>" class="avatar">
+                            <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>的头像" class="avatar">
                             <span><?php the_author(); ?></span>
                         </a>
                         <span><?php the_time('Y-m-d'); ?></span>
