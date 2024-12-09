@@ -1,5 +1,3 @@
-<?php
-global $farallonSetting; ?>
 <div class="author--card">
     <?php echo get_avatar(get_the_author_meta('ID'), 64, '', get_the_author()); ?>
     <div>

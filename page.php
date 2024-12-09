@@ -18,7 +18,6 @@
                 ?>
             </div>
     <?php endwhile;
-    // get_template_part('template-parts/pagination');
     endif; ?>
 </div>
 <?php get_footer(); ?>

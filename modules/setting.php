@@ -20,7 +20,7 @@ class farallonSetting
 
     function setting_callback()
     {
-        $data = $_POST[FARALLO_SETTING_KEY];
+        $data = $_POST[HERA_SETTING_KEY];
         array_walk_recursive($data,  array($this, 'clean_options'));
         $this->update_setting($data);
         return wp_send_json([
@@ -33,8 +33,8 @@ class farallonSetting
     function setting_scripts()
     {
         if (isset($_GET['page']) && $_GET['page'] == 'farallon') {
-            wp_enqueue_style('farallon-setting', get_template_directory_uri() . '/build/css/setting.css', array(), KODIAK_VERSION, 'all');
-            wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], KODIAK_VERSION, true);
+            wp_enqueue_style('farallon-setting', get_template_directory_uri() . '/build/css/setting.css', array(), HERA_VERSION, 'all');
+            wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
             wp_localize_script(
                 'farallon-setting',
                 'obvInit',
@@ -118,7 +118,7 @@ class farallonSetting
 
     function get_setting($key = null)
     {
-        $setting = get_option(FARALLO_SETTING_KEY);
+        $setting = get_option(HERA_SETTING_KEY);
 
         if (!$setting) {
             return false;
@@ -137,12 +137,12 @@ class farallonSetting
 
     function update_setting($setting)
     {
-        update_option(FARALLO_SETTING_KEY, $setting);
+        update_option(HERA_SETTING_KEY, $setting);
     }
 
     function empty_setting()
     {
-        delete_option(FARALLO_SETTING_KEY);
+        delete_option(HERA_SETTING_KEY);
     }
 
     function setting_input($params)
@@ -154,7 +154,7 @@ class farallonSetting
                 <label for="pure-setting-<?php echo $params['name']; ?>"><?php echo __($params['label'], 'Hera'); ?></label>
             </th>
             <td>
-                <input type="text" id="pure-setting-<?php echo $params['name']; ?>" name="<?php printf('%s[%s]', FARALLO_SETTING_KEY, $params['name']); ?>" value="<?php echo $default; ?>" class="regular-text">
+                <input type="text" id="pure-setting-<?php echo $params['name']; ?>" name="<?php printf('%s[%s]', HERA_SETTING_KEY, $params['name']); ?>" value="<?php echo $default; ?>" class="regular-text">
                 <?php printf('<br /><br />%s', __($params['description'], 'Hera')); ?>
             </td>
         </tr>
@@ -167,7 +167,7 @@ class farallonSetting
                 <label for="pure-setting-<?php echo $params['name']; ?>"><?php echo __($params['label'], 'Hera'); ?></label>
             </th>
             <td>
-                <textarea name="<?php printf('%s[%s]', FARALLO_SETTING_KEY, $params['name']); ?>" id="pure-setting-<?php echo $params['name']; ?>" class="large-text code" rows="5" cols="50"><?php echo $this->get_setting($params['name']); ?></textarea>
+                <textarea name="<?php printf('%s[%s]', HERA_SETTING_KEY, $params['name']); ?>" id="pure-setting-<?php echo $params['name']; ?>" class="large-text code" rows="5" cols="50"><?php echo $this->get_setting($params['name']); ?></textarea>
                 <?php printf('<br />%s', __($params['description'], 'Hera')); ?>
             </td>
         </tr>
@@ -187,7 +187,7 @@ class farallonSetting
                     <i></i>
                 </a>
                 <br />
-                <input type="hidden" id="pure-setting-<?php echo $params['name']; ?>" name="<?php printf('%s[%s]', FARALLO_SETTING_KEY, $params['name']); ?>" value="<?php echo $val; ?>" class="regular-text">
+                <input type="hidden" id="pure-setting-<?php echo $params['name']; ?>" name="<?php printf('%s[%s]', HERA_SETTING_KEY, $params['name']); ?>" value="<?php echo $val; ?>" class="regular-text">
                 <?php printf('<br />%s', __($params['description'], 'Hera')); ?>
             </td>
         </tr>

@@ -1,6 +1,6 @@
 <?php
-define('KODIAK_VERSION', wp_get_theme()->get('Version'));
-define('FARALLO_SETTING_KEY', 'hera_setting');
+define('HERA_VERSION', wp_get_theme()->get('Version'));
+define('HERA_SETTING_KEY', 'hera_setting');
 define('HERA_ARCHIVE_VIEW_KEY', 'hera_post_view');
 define('HERA_POST_VIEW_KEY', 'hera_post_view');
 define('HERA_POST_LIKE_KEY', 'hera_comment_view');
@@ -30,7 +30,7 @@ function admin_enquenue_scripts()
     // check if is category edit page and enquenue wp media
     if (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category') {
         wp_enqueue_media();
-        wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], KODIAK_VERSION, true);
+        wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
         wp_localize_script(
             'farallon-setting',
             'obvInit',
@@ -53,8 +53,8 @@ function enqueue_styles()
 {
     // global $farallonSetting;
     wp_dequeue_style('global-styles');
-    wp_enqueue_style('farallon-style', get_template_directory_uri() . '/build/css/misc.css', array(), KODIAK_VERSION, 'all');
-    wp_enqueue_script('farallon-script', get_template_directory_uri() . '/build/js/ts.js', array(), KODIAK_VERSION, true);
+    wp_enqueue_style('farallon-style', get_template_directory_uri() . '/build/css/misc.css', array(), HERA_VERSION, 'all');
+    wp_enqueue_script('farallon-script', get_template_directory_uri() . '/build/js/ts.js', array(), HERA_VERSION, true);
     wp_localize_script(
         'farallon-script',
         'obvInit',

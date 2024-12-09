@@ -76,10 +76,10 @@
     .cover {
         flex: 0 0 auto;
         margin-left: 15px;
-        width: 96px;
+        width: var(--hera-thumbnail-width);
         img {
-            width: 96px;
-            height: 96px;
+            width: var(--hera-thumbnail-width);
+            height: var(--hera-thumbnail-height);
             border-radius: 4px;
             object-fit: cover;
         }
@@ -88,12 +88,11 @@
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
-        p,
         .block--meta {
             margin: 0;
             margin-top: 5px;
             display: flex;
-            font-size: 13px;
+            font-size: var(--hera-font-size-smallest);
             color: var(--hera-text-gray-lightest);
             a {
                 &:hover {
@@ -117,16 +116,6 @@
 .block--item {
     padding: 25px 0;
     position: relative;
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 30%;
-        right: 30%;
-        // height: 1px;
-        background-color: rgba(0, 0, 0, 0.1);
-    }
 
     &__status {
         background-color: #f8f8f8;
@@ -140,7 +129,7 @@
 .block--snippet {
     font-size: 15px;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--hera-text-gray);
 }
 
 .block--title {
@@ -157,7 +146,7 @@
     padding: 20px 0;
     .page-numbers {
         font-size: 18px;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--hera-text-gray);
         margin-right: 5px;
         &.current,
         &:hover {
@@ -170,7 +159,7 @@
     padding: 20px 0;
     a {
         font-size: 14px;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--hera-text-gray);
         margin-right: 5px;
         background-color: #f2f2f2;
         padding: 3px 20px;
@@ -500,5 +489,20 @@
     margin-bottom: 3px;
     svg {
         margin-right: 8px;
+    }
+}
+
+.post--header {
+    padding-top: 25px;
+}
+
+.status--icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    svg {
+        fill: var(--hera-main-color);
+        height: 28px;
+        width: 28px;
     }
 }

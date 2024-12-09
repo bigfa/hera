@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <div class="post--list">
-
     <?php if (have_posts()) : the_post(); ?>
         <?php if (get_the_author_meta('description')) : ?>
             <header class="archive-header">
@@ -15,13 +14,14 @@
         <?php endif; ?>
     <?php
     endif; ?>
-
     <?php rewind_posts(); ?>
-    <?php if (have_posts()) :
-        while (have_posts()) : the_post();
-            get_template_part('template-parts/content', get_post_format());
-        endwhile;
-        get_template_part('template-parts/pagination');
+    <?php if (have_posts()) : ?>
+        <div class="posts">
+            <?php while (have_posts()) : the_post();
+                get_template_part('template-parts/content', get_post_format());
+            endwhile;  ?>
+        </div>
+    <?php get_template_part('template-parts/pagination');
     endif; ?>
 </div>
 <?php get_footer(); ?>
