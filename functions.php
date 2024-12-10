@@ -24,7 +24,7 @@ add_theme_support('html5', array(
 ));
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
-
+register_nav_menu('hera', 'hera');
 function admin_enquenue_scripts()
 {
     // check if is category edit page and enquenue wp media

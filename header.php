@@ -20,14 +20,7 @@
                 </a>
                 <h1><?php bloginfo('name'); ?></h1>
                 <p><?php bloginfo('description'); ?></p>
-                <div class="widget--links ">
-                    <div class="widget--link"><a href="/about" title="My Work">关于</a></div>
-                    <div class="widget--link"><a href="/categories" title="My Work">分类</a></div>
-                    <div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
-                    <div class="widget--link"><a href="/links" title="My Work">Lens</a></div>
-                    <div class="widget--link"><a href="/map" title="My Work">旅行地图</a></div>
-                    <div class="widget--link"><a href="/db" title="My Work">书影音</a></div>
-                </div>
+                <?php wp_nav_menu(array('theme_location' => 'hera', 'menu_class' => 'widget--links', 'container' => 'ul', 'fallback_cb' => 'link_to_menu_editor')); ?>
                 <div class="site--footer__sns">
                     <a href="https://hera.wpista.com/feed" target="_blank" title="rss feed">
                         <svg class="sns" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
