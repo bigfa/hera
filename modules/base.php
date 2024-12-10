@@ -164,7 +164,6 @@ function panther_head_output()
         echo '<link rel="canonical" href="' . home_url() . '">';
     }
 
-    echo '<link type="image/vnd.microsoft.icon" href="/favicon.png" rel="shortcut icon">';
     $ogmeta = '<meta property="og:title" content="' . wp_get_document_title() . '">';
     $ogmeta .= '<meta property="og:url" content="' . $current_url . '">';
     $description = '';
