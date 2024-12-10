@@ -18,7 +18,7 @@ class farallonComment extends farallonBase {
                 formData.forEach((value, key: any) => (formDataObj[key] = value));
                 this.loading = true;
                 // @ts-ignore
-                fetch(obvInit.restfulBase + 'farallon/v1/comment', {
+                fetch(obvInit.restfulBase + 'hera/v1/comment', {
                     method: 'POST',
                     body: JSON.stringify(formDataObj),
                     headers: {

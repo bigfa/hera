@@ -27,7 +27,7 @@
                     <div class="widget--link"><a href="/db" title="My Work">书影音</a></div>
                 </div>
                 <div class="site--footer__sns">
-                    <a href="https://farallon.wpista.com/feed" target="_blank" title="rss feed">
+                    <a href="https://hera.wpista.com/feed" target="_blank" title="rss feed">
                         <svg class="sns" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 17C12 14 10 12 7 12" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"></path>
                             <path d="M17 17C17 11 13 7 7 7" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -49,6 +49,3 @@
             </div>
         </div>
         <div class="content">
-            <div class="search--area">
-                <?php get_search_form(); ?>
-            </div>

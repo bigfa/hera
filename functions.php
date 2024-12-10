@@ -30,9 +30,9 @@ function admin_enquenue_scripts()
     // check if is category edit page and enquenue wp media
     if (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category') {
         wp_enqueue_media();
-        wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
+        wp_enqueue_script('hera-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
         wp_localize_script(
-            'farallon-setting',
+            'hera-setting',
             'obvInit',
             [
                 'is_single' => is_singular(),
@@ -51,49 +51,49 @@ add_action('admin_enqueue_scripts', 'admin_enquenue_scripts');
 
 function enqueue_styles()
 {
-    // global $farallonSetting;
+    global $heraSetting;
     wp_dequeue_style('global-styles');
-    wp_enqueue_style('farallon-style', get_template_directory_uri() . '/build/css/misc.css', array(), HERA_VERSION, 'all');
-    wp_enqueue_script('farallon-script', get_template_directory_uri() . '/build/js/ts.js', array(), HERA_VERSION, true);
+    wp_enqueue_style('hera-style', get_template_directory_uri() . '/build/css/misc.css', array(), HERA_VERSION, 'all');
+    wp_enqueue_script('hera-script', get_template_directory_uri() . '/build/js/ts.js', array(), HERA_VERSION, true);
     wp_localize_script(
-        'farallon-script',
+        'hera-script',
         'obvInit',
         [
             'is_single' => is_singular(),
             'post_id' => get_the_ID(),
             'restfulBase' => esc_url_raw(rest_url()),
             'nonce' => wp_create_nonce('wp_rest'),
-            // 'darkmode' => !!$farallonSetting->get_setting('darkmode'),
-            // 'version' => HERA_VERSION,
+            'darkmode' => !!$heraSetting->get_setting('darkmode'),
+            'version' => HERA_VERSION,
             'is_archive' => is_archive(),
             'archive_id' => get_queried_object_id(),
-            // 'hide_home_cover' => !!$farallonSetting->get_setting('hide_home_cover'),
+            'hide_home_cover' => !!$heraSetting->get_setting('hide_home_cover'),
             'timeFormat' => [
-                'second' => __('second ago', 'Farallon'),
-                'seconds' => __('seconds ago', 'Farallon'),
-                'minute' => __('minute ago', 'Farallon'),
-                'minutes' => __('minutes ago', 'Farallon'),
-                'hour' => __('hour ago', 'Farallon'),
-                'hours' => __('hours ago', 'Farallon'),
-                'day' => __('day ago', 'Farallon'),
-                'days' => __('days ago', 'Farallon'),
-                'week' => __('week ago', 'Farallon'),
-                'weeks' => __('weeks ago', 'Farallon'),
-                'month' => __('month ago', 'Farallon'),
-                'months' => __('months ago', 'Farallon'),
-                'year' => __('year ago', 'Farallon'),
-                'years' => __('years ago', 'Farallon'),
+                'second' => __('second ago', 'Hera'),
+                'seconds' => __('seconds ago', 'Hera'),
+                'minute' => __('minute ago', 'Hera'),
+                'minutes' => __('minutes ago', 'Hera'),
+                'hour' => __('hour ago', 'Hera'),
+                'hours' => __('hours ago', 'Hera'),
+                'day' => __('day ago', 'Hera'),
+                'days' => __('days ago', 'Hera'),
+                'week' => __('week ago', 'Hera'),
+                'weeks' => __('weeks ago', 'Hera'),
+                'month' => __('month ago', 'Hera'),
+                'months' => __('months ago', 'Hera'),
+                'year' => __('year ago', 'Hera'),
+                'years' => __('years ago', 'Hera'),
             ]
         ]
     );
-    // if ($farallonSetting->get_setting('css')) {
-    //     wp_add_inline_style('farallon-style', $farallonSetting->get_setting('css'));
-    // }
-    // if ($farallonSetting->get_setting('disable_block_css')) {
-    //     wp_dequeue_style('wp-block-library');
-    //     wp_dequeue_style('wp-block-library-theme');
-    //     wp_dequeue_style('wc-blocks-style');
-    // }
+    if ($heraSetting->get_setting('css')) {
+        wp_add_inline_style('hera-style', $heraSetting->get_setting('css'));
+    }
+    if ($heraSetting->get_setting('disable_block_css')) {
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('wp-block-library-theme');
+        wp_dequeue_style('wc-blocks-style');
+    }
     if (is_singular()) wp_enqueue_script("comment-reply");
 }
 

@@ -32,11 +32,11 @@ class farallonSetting
 
     function setting_scripts()
     {
-        if (isset($_GET['page']) && $_GET['page'] == 'farallon') {
-            wp_enqueue_style('farallon-setting', get_template_directory_uri() . '/build/css/setting.css', array(), HERA_VERSION, 'all');
-            wp_enqueue_script('farallon-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
+        if (isset($_GET['page']) && $_GET['page'] == 'hera') {
+            wp_enqueue_style('hera-setting', get_template_directory_uri() . '/build/css/setting.css', array(), HERA_VERSION, 'all');
+            wp_enqueue_script('hera-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
             wp_localize_script(
-                'farallon-setting',
+                'hera-setting',
                 'obvInit',
                 [
                     'is_single' => is_singular(),
@@ -53,7 +53,7 @@ class farallonSetting
 
     function setting_menu()
     {
-        add_menu_page(__('Theme Setting', 'Hera'), __('Theme Setting', 'Hera'), 'manage_options', 'farallon', [$this, 'setting_page'], '', 59);
+        add_menu_page(__('Theme Setting', 'Hera'), __('Theme Setting', 'Hera'), 'manage_options', 'Hera', [$this, 'setting_page'], '', 59);
     }
 
     function setting_page()

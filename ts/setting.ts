@@ -54,7 +54,7 @@ document.querySelector('#pure-save')?.addEventListener('click', (event) => {
         type: 'POST',
         success: function () {
             //@ts-ignore
-            const html = `<div id="farallon-settings_updated" class="notice notice-success settings-error is-dismissible"><p><strong>${obvInit.success_message}</strong></p><button type="button" class="notice-dismiss"></button></div>`;
+            const html = `<div id="hera-settings_updated" class="notice notice-success settings-error is-dismissible"><p><strong>${obvInit.success_message}</strong></p><button type="button" class="notice-dismiss"></button></div>`;
             //@ts-ignore
             jQuery('.pure-wrap').before(html);
             window.scrollTo(0, 0);
@@ -62,8 +62,8 @@ document.querySelector('#pure-save')?.addEventListener('click', (event) => {
     });
 });
 +(function ($) {
-    $(document).on('click', '#farallon-settings_updated .notice-dismiss', function () {
-        $('#farallon-settings_updated').remove();
+    $(document).on('click', '#hera-settings_updated .notice-dismiss', function () {
+        $('#hera-settings_updated').remove();
     });
     let $switch = $('.pure-setting-switch');
     $switch.click(function () {

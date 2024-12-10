@@ -12,6 +12,10 @@ $next_post = get_next_post();
                         <?php echo get_the_title($previou_post) ?>
                     </span>
                 </a>
+                <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>" class="cover--link">
+                    <img src="<?php echo aladdin_get_background_image($previou_post->ID, 400, 120); ?>" class="cover" alt="<?php the_title(); ?>" />
+                    <?php do_action('marker_pro_post_meta'); ?>
+                </a>
             </div>
         <?php endif ?>
         <?php if ($next_post) : ?>
@@ -21,6 +25,10 @@ $next_post = get_next_post();
                     <span class="post-title">
                         <?php echo get_the_title($next_post) ?>
                     </span>
+                </a>
+                <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>" class="cover--link">
+                    <img src="<?php echo aladdin_get_background_image($next_post->ID, 400, 120); ?>" class="cover" alt="<?php the_title(); ?>" />
+                    <?php do_action('marker_pro_post_meta'); ?>
                 </a>
             </div>
         <?php endif ?>

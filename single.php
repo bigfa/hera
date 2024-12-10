@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/search-bar'); ?>
 <div class="articleContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
@@ -23,7 +24,9 @@
                 </div>
                 <div class="article--tags"><?php the_tags('', ''); ?></div>
             </article>
-            <?php get_template_part('template-parts/author', 'card'); ?>
+            <?php get_template_part('template-parts/author', 'card');
+            get_template_part('template-parts/post', 'navigation');
+            ?>
             <div class="post--ingle__comments">
                 <?php
                 if (comments_open() || get_comments_number()) :
@@ -33,10 +36,10 @@
             </div>
     <?php get_template_part('template-parts/single', 'related');
         endwhile;
-    // get_template_part('template-parts/pagination');
+
     endif; ?>
     <div class="back">
-        <a href="<?php echo home_url(); ?>">返回首页</a>
+        <a href="<?php echo home_url(); ?>"><?php _e('Back to homepage', 'Hera'); ?></a>
     </div>
 </div>
 <?php get_footer(); ?>

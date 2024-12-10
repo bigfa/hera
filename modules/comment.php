@@ -47,31 +47,31 @@ class farallonComment
 
     function register_routes()
     {
-        register_rest_route('farallon/v1', '/comment', array(
+        register_rest_route('hera/v1', '/comment', array(
             'methods' => 'POST',
             'callback' => array($this, 'handle_coment_post'),
             'permission_callback' => '__return_true',
         ));
 
-        register_rest_route('farallon/v1', '/view', array(
+        register_rest_route('hera/v1', '/view', array(
             'methods' => 'get',
             'callback' => array($this, 'handle_post_view'),
             'permission_callback' => '__return_true',
         ));
 
-        register_rest_route('farallon/v1', '/like', array(
+        register_rest_route('hera/v1', '/like', array(
             'methods' => 'POST',
             'callback' => array($this, 'handle_post_like'),
             'permission_callback' => '__return_true',
         ));
 
-        register_rest_route('farallon/v1', '/archive/(?P<id>\d+)', array(
+        register_rest_route('hera/v1', '/archive/(?P<id>\d+)', array(
             'methods' => 'POST',
             'callback' => array($this, 'handle_archive_view'),
             'permission_callback' => '__return_true',
         ));
 
-        register_rest_route('farallon/v1', '/posts', array(
+        register_rest_route('hera/v1', '/posts', array(
             'methods' => 'get',
             'callback' => array($this, 'handle_posts_request'),
             'permission_callback' => '__return_true',
