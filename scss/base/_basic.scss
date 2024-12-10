@@ -42,6 +42,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     letter-spacing: 0;
     font: {

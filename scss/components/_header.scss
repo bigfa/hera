@@ -21,7 +21,7 @@
         z-index: 100;
         box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
         background-color: #fff;
-        padding: 0px;
+        padding: 30px 0;
         align-items: center;
         text-align: center;
         .avatar--wrapper {
@@ -88,6 +88,7 @@
     p {
         margin: 0;
         color: var(--hera-text-light);
+        text-transform: capitalize;
     }
     padding-top: 50px;
 }

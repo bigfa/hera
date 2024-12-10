@@ -527,12 +527,12 @@
         display: flex;
         justify-content: space-between;
         transition: 0.5s;
-        & > div {
-            &:only-child {
-                text-align: center !important;
-                width: 100%;
-            }
-        }
+        // & > div {
+        //     // &:only-child {
+        //     //     text-align: center !important;
+        //     //     width: 100%;
+        //     // }
+        // }
     }
     .nav-previous,
     .nav-next {
@@ -588,4 +588,19 @@
             color: var(--hera-hover-color);
         }
     }
+}
+
+.link2comment {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--hera-text-gray);
+    svg {
+        fill: var(--hera-text-gray);
+        margin-right: 5px;
+    }
+    &:hover {
+        color: var(--hera-hover-color);
+    }
+    margin-left: auto;
 }
