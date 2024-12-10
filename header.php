@@ -18,8 +18,16 @@
                     <!-- <span class="status--img"> <img src="https://github.githubassets.com/images/icons/emoji/octocat.png" height="14" width="14">
                     </span> -->
                 </a>
-                <h1><?php bloginfo('name'); ?></h1>
-                <p><?php bloginfo('description'); ?></p>
+                <h1><?php if ($heraSetting->get_setting('sitename')) {
+                        echo $heraSetting->get_setting('sitename');
+                    } else {
+                        bloginfo('name');
+                    }  ?></h1>
+                <p><?php if ($heraSetting->get_setting('sitedescription')) {
+                        echo $heraSetting->get_setting('sitedescription');
+                    } else {
+                        bloginfo('description');
+                    }  ?><?php  ?></p>
                 <?php wp_nav_menu(array('theme_location' => 'hera', 'menu_class' => 'widget--links', 'container' => 'ul', 'fallback_cb' => 'link_to_menu_editor')); ?>
                 <div class="site--footer__sns">
                     <a href="https://hera.wpista.com/feed" target="_blank" title="rss feed">

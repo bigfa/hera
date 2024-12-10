@@ -32,7 +32,7 @@ class farallonSetting
 
     function setting_scripts()
     {
-        if (isset($_GET['page']) && $_GET['page'] == 'hera') {
+        if (isset($_GET['page']) && $_GET['page'] == 'Hera') {
             wp_enqueue_style('hera-setting', get_template_directory_uri() . '/build/css/setting.css', array(), HERA_VERSION, 'all');
             wp_enqueue_script('hera-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
             wp_localize_script(
@@ -245,6 +245,18 @@ $heraSetting = new farallonSetting(
                         'name' => 'logo',
                         'label' => __('Logo', 'Hera'),
                         'description' => __('Logo address, preferably in a square shape.', 'Hera'),
+                    ],
+                    [
+                        'type' => 'input',
+                        'name' => 'sitename',
+                        'label' => __('Site Name', 'Hera'),
+                        'description' => __('sitename, replace default value.', 'Hera'),
+                    ],
+                    [
+                        'type' => 'input',
+                        'name' => 'sitedescription',
+                        'label' => __('Site Description', 'Hera'),
+                        'description' => __('Description, replace default value.', 'Hera'),
                     ],
                     [
                         'type' => 'input',
