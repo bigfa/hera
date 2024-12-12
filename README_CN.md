@@ -4,9 +4,15 @@
 
 本主题禁止各种修改作者链接打包重新发布的行为。
 
-最新版本 : `0.0.5`
+最新版本 : `0.0.6`
 
 ## 更新日志
+
+### 0.0.6
+
+- change header line-height
+- remove useless template
+- add menu support
 
 ### 0.0.5
 

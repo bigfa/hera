@@ -8,7 +8,7 @@ get_header(); ?>
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
             <article class="post">
-                <header>
+                <header class="post--header">
                     <h2 class="post--headline"><?php the_title(); ?></h2>
                     <div class="meta">
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
