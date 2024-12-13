@@ -123,6 +123,7 @@
         margin-left: auto;
         font-weight: normal;
         font-size: 14px;
+        color: var(--hera-warning-color);
     }
 }
 .commentlist {
@@ -135,7 +136,7 @@
     .comment-respond {
         margin-top: 20px;
         padding: 20px;
-        background-color: var(--hera-background-gray);
+        background-color: var(--hera-background-gray-lightest);
         border-radius: 5px;
     }
 }
@@ -238,11 +239,12 @@
     flex: 1 1 auto;
     .author--icon {
         --fill: rgb(0, 149, 246);
-        --height: 12px;
-        --width: 12px;
+        --height: 14px;
+        --width: 14px;
         fill: var(--fill);
         height: var(--height);
         width: var(--width);
+        margin-left: 4px;
     }
 }
 
@@ -261,6 +263,7 @@
 }
 
 .comment-content {
+    padding-left: 10px;
     a {
         text-decoration: underline;
         &:hover {

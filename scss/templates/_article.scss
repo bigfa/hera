@@ -387,15 +387,9 @@
             font-size: 14px;
             background-color: var(--hera-background-gray);
             border-radius: 5px;
-            padding: 10px;
-            border: 1px solid var(--hera-border-color-light);
+            padding: 12px;
             &:hover {
                 background-color: #fafafa;
-                background: linear-gradient(
-                    89.99999999999999deg,
-                    rgba(255, 233, 244, 0.3) 0%,
-                    rgba(234, 243, 255, 0.5) 100%
-                );
             }
             a {
                 color: var(--hera-text-gray);
@@ -565,6 +559,20 @@
         background-clip: padding-box, border-box;
         border: 1px solid transparent;
         //box-shadow: 0 -3px 5px -1px #ebebeb;
+        .cover--link {
+            position: relative;
+            .marker--tips {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                background-color: #f8f8f8;
+                border-radius: 5px;
+                padding: 5px;
+                font-size: 12px;
+                color: var(--hera-text-gray);
+                line-height: 1;
+            }
+        }
     }
 
     .nav-previous {
