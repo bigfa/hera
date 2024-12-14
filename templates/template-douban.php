@@ -9,7 +9,7 @@ get_header(); ?>
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
             <article class="post">
-                <header>
+                <header class="post--header">
                     <h2 class="post--headline"><?php the_title(); ?></h2>
                 </header>
                 <div class="grap">
