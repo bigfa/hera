@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/search-bar'); ?>
+
 <div class="post--list">
     <?php if (have_posts()) : the_post(); ?>
         <?php if (get_the_author_meta('description')) : ?>

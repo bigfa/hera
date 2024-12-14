@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/search-bar'); ?>
+
 <div class="articleContainer">
     <header class="archive-header">
         <?php if (get_term_meta(get_queried_object_id(), '_thumb', true)) : ?>

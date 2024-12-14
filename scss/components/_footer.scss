@@ -13,21 +13,24 @@
     font-size: 12px;
     display: flex;
     align-items: center;
+    color: var(--hera-text-gray-lightest);
+
     img {
         margin-left: 5px;
         width: 24px;
     }
-    color: var(--hera-text-gray-lightest);
 }
 
 @keyframes toTop {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(-50%);
     }
 }
+
 .backToTop {
     .svgIcon {
         width: 17px;
@@ -35,25 +38,30 @@
         fill: var(--hera-main-color);
         animation: toTop 1s ease-in infinite alternate;
     }
+
     &:hover {
         .svgIcon {
             fill: var(--hera-hover-color);
             animation-play-state: paused;
         }
     }
+
+    z-index: 10;
+    transition: all 0.3s ease;
     position: fixed;
     bottom: 25px;
     right: -25px;
     cursor: pointer;
+
     &.is-active {
         right: 25px;
     }
-    z-index: 10;
-    transition: all 0.3s ease;
 }
 
 .footer--bar {
     padding: 0 40px;
+    padding-top: 30px;
+
     .widget-card-content {
         font-size: 24px;
         font-weight: bold;
@@ -62,16 +70,14 @@
 
     .widget-card-description {
         color: var(--hera-text-gray);
-        // margin-bottom: 15px;
         font-size: 18px;
     }
-
-    padding-top: 30px;
 }
 
 @media (max-width: 414px) {
     .footer--bar {
         padding: 0 0px;
+
         .widget-card-content {
             font-size: 18px;
         }
@@ -87,6 +93,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px 0 50px;
+
     a {
         background-color: #000;
         color: var(--hera-color-white);
@@ -100,26 +107,31 @@
 .site--footer {
     font-size: 14px;
     padding: 20px 80px;
-    border-top: 1px dotted var(--hera-border-color);
     color: var(--hera-text-light);
+
     &__content {
         display: flex;
         align-items: center;
     }
+
     &__info {
         display: none;
         text-align: center;
         color: var(--hera-text-light);
+
         a {
             text-decoration: underline;
+
             &:hover {
                 color: var(--hera-hover-color);
             }
         }
+
         &.active {
             display: block;
         }
     }
+
     .copyright {
         margin-left: auto;
         display: flex;
@@ -132,17 +144,16 @@
                 fill: var(--hera-hover-color);
             }
         }
-        // &::after {
-        //     content: 'a bigfa theme';
-        //     margin-left: 3px;
-        // }
     }
+
     nav {
         ul {
             display: flex;
             align-items: center;
+
             li {
                 margin-right: 10px;
+
                 a {
                     &:hover {
                         text-decoration: underline;
@@ -157,14 +168,17 @@
         align-items: center;
         justify-content: flex-end;
         margin-top: 10px;
+
         .is-singleColumn &,
         .page-template-template-map &,
         .page-template-template-wide & {
             justify-content: center;
         }
+
         a {
             margin: 0 0 0 12px;
             display: flex;
+
             &:first-child {
                 margin-left: 0;
             }
@@ -172,14 +186,17 @@
 
         svg {
             fill: var(--hera-text-color);
+            width: 24px;
+            height: 24px;
+
             &:hover {
                 fill: var(--hera-hover-color);
             }
-            width: 24px;
-            height: 24px;
+
             &.sns {
                 fill: none;
                 stroke: var(--hera-text-color);
+
                 &:hover {
                     stroke: var(--hera-hover-color);
                     fill: none;

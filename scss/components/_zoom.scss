@@ -9,12 +9,14 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
+
     &-img-wrap {
         position: relative;
         opacity: 0;
         transition: opacity 0.5s;
         display: flex;
         align-items: center;
+
         &.is-finieshed {
             opacity: 1;
         }
@@ -36,10 +38,12 @@
     right: 10px;
     top: 10px;
     cursor: pointer;
+
     svg {
         transition: 0.5s transform;
         fill: rgb(153, 153, 153);
     }
+
     &:hover {
         svg {
             transform: rotate(90deg);
@@ -62,7 +66,6 @@
     padding: 0;
     height: 44px;
     background-color: rgb(245, 245, 245);
-
     width: 44px;
     display: flex;
     align-items: center;
@@ -71,9 +74,11 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     border: 0;
     color: var(--hera-text-light);
+
     svg {
         transform: rotate(180deg);
     }
+
     &.disabled {
         opacity: 0.4;
         cursor: not-allowed;
@@ -87,7 +92,6 @@
     opacity: 0.65;
     right: 10px;
     background-color: rgb(245, 245, 245);
-
     margin: 0;
     top: 50%;
     margin-top: -55px;
@@ -99,6 +103,7 @@
     justify-content: center;
     border-radius: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
     &.disabled {
         opacity: 0.4;
         cursor: not-allowed;
@@ -132,6 +137,7 @@
         flex-direction: row;
         justify-content: center;
         margin-top: 30px;
+
         img {
             width: 64px;
         }

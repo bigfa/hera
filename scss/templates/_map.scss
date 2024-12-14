@@ -30,20 +30,7 @@
 
     &--post {
         box-shadow: none;
-        &::before {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0.65));
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 5px;
-        }
         transition: 1s background-position;
-        &:hover {
-            background-position: bottom;
-        }
         background-color: #f2f4f6;
         background-image: var(--background);
         color: #fff;
@@ -60,6 +47,21 @@
         background-repeat: no-repeat;
         text-decoration: none !important;
         padding-top: 80px;
+
+        &::before {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0.65));
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 5px;
+        }
+
+        &:hover {
+            background-position: bottom;
+        }
     }
 
     &--title {
@@ -101,13 +103,11 @@
         top: 10px;
         right: 10px;
         padding: 2px 8px;
-        // color: var(--text-gray-light);
     }
 
     &--addonTitle {
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
-        // font-family: onestregular;
     }
 }

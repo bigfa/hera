@@ -1,8 +1,7 @@
 .layout {
-    // max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    // align-items: flex-start;
+
     .is-singleColumn &,
     .page-template-template-map &,
     .page-template-template-wide & {
@@ -27,6 +26,7 @@
     .layout {
         flex-direction: column;
     }
+
     .content {
         padding-top: 0;
     }

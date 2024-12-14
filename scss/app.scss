@@ -1,19 +1,15 @@
 @use 'base/var';
-
-@use 'components/footer';
-
+@use 'base/grap';
 @use 'base/normalize';
 @use 'base/basic';
-
 @use 'base/layout';
-@use 'templates/article';
 
 @use 'components/header';
 @use 'components/zoom';
+@use 'components/comment';
+@use 'components/footer';
 
-@use 'base/grap';
 @use 'templates/map';
 @use 'templates/term';
-@use 'components/comment';
-
 @use 'templates/links';
+@use 'templates/article';

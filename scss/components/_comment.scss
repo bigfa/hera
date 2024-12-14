@@ -17,6 +17,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
+
     &:hover {
         &::after {
             position: absolute;
@@ -28,6 +29,7 @@
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
             z-index: 1;
         }
+
         &::before {
             /* grid doesn't work for stacking when a stacked item is text node */
             position: absolute;
@@ -65,16 +67,19 @@
 
 .comment-form {
     padding-bottom: 30px;
+
     label {
         display: block;
         margin-bottom: 0.5rem;
         font-size: 14px;
         cursor: pointer;
         line-height: 1.4;
+
         .required {
             color: var(--hera-warning-color);
         }
     }
+
     input,
     textarea {
         width: 100%;
@@ -85,10 +90,12 @@
         padding: 8px 15px;
         font-size: 14px;
         transition: border-color 0.3s;
+
         &:focus {
             border-color: var(--hera-main-color);
         }
     }
+
     .submit {
         background-color: #000;
         color: #fff;
@@ -102,27 +109,32 @@
         place-content: center;
         color: var(--hera-color-white);
         text-align: center;
+
         &:hover {
             background-color: var(--hera-hover-color);
         }
     }
+
     p {
         margin-bottom: 15px;
         &:last-of-type {
             margin-bottom: 0;
         }
     }
+
     .comment-notes,
     .logged-in-as {
         font-size: 12px;
         color: var(--hera-text-gray);
     }
 }
+
 .comment-reply-title {
     font-weight: bold;
     font-size: 18px;
     display: flex;
     align-items: center;
+
     small {
         margin-left: auto;
         font-weight: normal;
@@ -130,13 +142,16 @@
         color: var(--hera-warning-color);
     }
 }
+
 .commentlist {
     border-top: 1px solid var(--hera-border-color-light);
     list-style: none;
     padding-top: 10px;
+
     .comment {
         padding: 0px 0;
     }
+
     .comment-respond {
         margin-top: 20px;
         padding: 20px;
@@ -149,6 +164,7 @@
     0% {
         background-color: #fff;
     }
+
     100% {
         background-color: rgba(255, 254, 224, 1);
     }
@@ -160,8 +176,10 @@
             border-bottom: 0;
         }
     }
+
     &.parent {
         border-bottom: 1px solid var(--hera-border-color-light);
+
         &:last-child {
             border-bottom: 0;
         }
@@ -170,13 +188,16 @@
 
 .comment-body {
     padding: 25px 0;
+
     &__fresh {
         animation: comment--fresh 1.5s ease-in-out infinite alternate;
         border-radius: 5px;
     }
+
     .avatar {
         transition: 0.5s box-shadow;
     }
+
     &:hover {
         .avatar {
             box-shadow: 0 0 3px 0px var(--hera-hover-color);
@@ -194,15 +215,18 @@
     flex: 1 1 auto;
     display: flex;
     align-items: center;
+
     .url {
         display: flex;
         align-items: center;
     }
+
     .friend--icon {
         margin-left: 5px;
         width: 16px;
         height: 16px;
     }
+
     &__tip {
         margin-left: 5px;
         font-size: 12px;
@@ -212,24 +236,29 @@
         padding: 2px 5px;
         border-radius: 3px;
     }
+
     .comment-reply-link {
         display: flex;
         align-items: center;
         cursor: pointer;
         margin-left: 8px;
+
         svg {
             fill: var(--hera-text-gray);
             width: 14px;
             height: 14px;
         }
+
         &:hover {
             svg {
                 fill: var(--hera-hover-color);
             }
         }
     }
+
     a {
         color: var(--hera-main-color);
+
         &:hover {
             color: var(--hera-hover-color);
             text-decoration: underline;
@@ -241,6 +270,7 @@
     display: flex;
     align-items: center;
     flex: 1 1 auto;
+
     .author--icon {
         --fill: rgb(0, 149, 246);
         --height: 14px;
@@ -260,33 +290,38 @@
 .comment-meta {
     display: flex;
     align-items: center;
+
     .avatar {
         border-radius: 100%;
-        // margin-right: 10px;
     }
 }
 
 .comment-content {
     padding-left: 10px;
+    color: var(--hera-text-light);
+
     a {
         text-decoration: underline;
         &:hover {
             color: var(--hera-hover-color);
         }
     }
-    color: var(--hera-text-light);
 }
+
 .children {
     margin-left: 0px;
     padding-bottom: 10px;
+
     .avatar {
         width: 32px;
         height: 32px;
     }
+
     .comment-body {
         border-bottom: 0;
         padding: 15px 0;
     }
+
     .comment-content {
         font-size: 14px;
     }
@@ -301,6 +336,7 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+
     .comment-metadata {
         margin-left: auto;
     }
@@ -323,6 +359,7 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+
     svg {
         width: 24px;
         height: 24px;
@@ -341,12 +378,14 @@
     #wp-comment-cookies-consent {
         display: none;
     }
+
     label {
         font-size: 14px;
         color: var(--hera-text-gray);
         display: flex;
         align-items: center;
         position: relative;
+
         &::before {
             background-color: #fff;
             border: 1px solid rgba(0, 0, 0, 0.15);
@@ -359,6 +398,7 @@
             flex: 0 0 auto;
         }
     }
+
     input:checked + label {
         &::after {
             background-color: var(--hera-hover-color);
@@ -382,9 +422,11 @@
         margin-right: 4px;
         flex: 0 0 auto;
     }
+
     .text {
         flex: 0 0 auto;
     }
+
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -393,6 +435,7 @@
     font-size: 14px;
     color: var(--hera-text-gray);
     line-height: 1.2;
+
     .link {
         margin-left: 5px;
         border-bottom: 1px dotted var(--hera-hover-color);
@@ -406,12 +449,14 @@
     margin-right: 5px;
     color: var(--hera-main-color);
     text-decoration: none !important;
+    display: flex;
+    align-items: center;
+
     &:hover {
         color: var(--hera-hover-color);
         text-decoration: underline;
     }
-    display: flex;
-    align-items: center;
+
     .friend--icon {
         margin-left: 5px;
         width: 16px;
@@ -422,18 +467,22 @@
 .pingback {
     padding: 25px 0;
     border-bottom: 1px solid var(--hera-border-color-light);
+
     &:last-child {
         border-bottom: 0;
     }
+
     .pingback-content {
         display: flex;
         align-items: center;
+        font-size: 14px;
+        color: var(--hera-text-light);
+
         svg {
             fill: currentColor;
             margin-right: 6px;
         }
-        font-size: 14px;
-        color: var(--hera-text-light);
+
         a {
             &:hover {
                 color: var(--hera-hover-color);

@@ -48,13 +48,6 @@ html {
 
 body {
     letter-spacing: 0;
-    font: {
-        weight: 400;
-        style: normal;
-        family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
-            WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
-        size: var(--hera-basic-font-size);
-    }
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -64,10 +57,14 @@ body {
     background-color: var(--hera-background-color-white);
     word-break: break-all;
     background-color: var(--hera-background-gray-lightest);
-    // background-image: url(../images/gradient-dark.svg);
-    // background-position: top center;
-    // background-repeat: no-repeat;
-    // background-size: 100% auto;
+
+    font: {
+        weight: 400;
+        style: normal;
+        family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+            WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+        size: var(--hera-basic-font-size);
+    }
 }
 
 h1,
@@ -122,6 +119,7 @@ textarea {
     position: sticky;
     top: 20px;
     padding: 50px 60px 50px 50px;
+
     .is-singleColumn &,
     .page-template-template-map &,
     .page-template-template-wide & {

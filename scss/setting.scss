@@ -1,10 +1,12 @@
 a:focus {
     box-shadow: none;
 }
+
 .pure-wrap {
     display: flex;
     align-items: flex-start;
 }
+
 .pure-help-li {
     font-size: 16px;
     padding: 30px;
@@ -34,10 +36,12 @@ a:focus {
     padding: 50px 0 0;
     display: flex;
     flex-direction: column;
+
     li {
         font-size: 16px;
         margin-bottom: 0;
         position: relative;
+
         & > span {
             color: #626773;
             border-radius: 0;
@@ -45,6 +49,7 @@ a:focus {
             padding: 15px 25px;
             display: block;
             cursor: pointer;
+
             i {
                 width: 16px;
                 margin-right: 5px;
@@ -54,6 +59,7 @@ a:focus {
                 text-align: center;
             }
         }
+
         &.active {
             span {
                 background-color: #fff;
@@ -93,6 +99,7 @@ a:focus {
     cursor: pointer;
     margin-right: 20px;
     user-select: none;
+
     .dashicons-before {
         width: 18px;
         height: 18px;
@@ -103,6 +110,7 @@ a:focus {
         margin-right: 5px;
         position: relative;
     }
+
     &.checked {
         .dashicons-before {
             &::before {
@@ -120,28 +128,35 @@ a:focus {
     }
 }
 
-.form-table th {
-    width: 140px;
-    padding: 0;
+.form-table {
+    th {
+        width: 140px;
+        padding: 0;
+    }
+
+    td {
+        padding: 0 0 40px 0;
+    }
+
+    tr th label,
+    tr td label {
+        color: #455473;
+        font-weight: normal;
+        font-size: 16px;
+    }
 }
-.form-table td {
-    padding: 0 0 40px 0;
-}
+
 input.large-text,
 textarea.large-text {
     width: 100%;
 }
+
 textarea.code {
     line-height: 1.4;
     padding: 2%;
 }
-.form-table tr th label,
-.form-table tr td label {
-    color: #455473;
-    font-weight: normal;
-    font-size: 16px;
-}
-.pure-setting-switch {
+
+.form-table .pure-setting-switch {
     display: inline-block;
     height: 18px;
     width: 42px;
@@ -149,6 +164,7 @@ textarea.code {
     border-radius: 9px;
     background: #fff;
     position: relative;
+
     i {
         position: absolute;
         top: 2px;
@@ -186,9 +202,11 @@ textarea.code {
     0% {
         transform: scale(0);
     }
+
     80% {
         transform: scale(1.2);
     }
+
     100% {
         transform: scale(1);
     }
@@ -198,6 +216,7 @@ textarea.code {
     0% {
         transform: rotate(360deg);
     }
+
     100% {
         transform: rotate(0deg);
     }
@@ -224,6 +243,7 @@ textarea.code {
     cursor: pointer;
     transition: all 0.3s linear;
     border-radius: 3px;
+
     &:hover {
         background: #455473;
     }

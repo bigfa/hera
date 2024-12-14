@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/search-bar'); ?>
+
 <div class="post--list">
     <div class="search--title"><?php echo  get_query_var('s') ?>的搜索结果</div>
     <?php if (have_posts()) : ?>
