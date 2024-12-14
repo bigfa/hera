@@ -48,7 +48,6 @@
     &.is-active {
         right: 25px;
     }
-    background-color: var(--hera-border-color);
     z-index: 10;
     transition: all 0.3s ease;
 }
@@ -87,10 +86,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 0 50px;
     a {
         background-color: #000;
-        color: #fff;
+        color: var(--hera-color-white);
         padding: 8px 20px;
         font-size: 14px;
         border-radius: var(--hera-border-radius);

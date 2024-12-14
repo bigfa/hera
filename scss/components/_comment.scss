@@ -72,7 +72,7 @@
         cursor: pointer;
         line-height: 1.4;
         .required {
-            color: #f00;
+            color: var(--hera-warning-color);
         }
     }
     input,
@@ -81,9 +81,13 @@
         resize: none;
         border-radius: 5px;
         box-sizing: border-box;
-        border: 1px solid #999;
+        border: 1px solid var(--hera-border-color);
         padding: 8px 15px;
         font-size: 14px;
+        transition: border-color 0.3s;
+        &:focus {
+            border-color: var(--hera-main-color);
+        }
     }
     .submit {
         background-color: #000;
@@ -96,7 +100,7 @@
         width: auto;
         place-self: center;
         place-content: center;
-        color: #ededed;
+        color: var(--hera-color-white);
         text-align: center;
         &:hover {
             background-color: var(--hera-hover-color);
