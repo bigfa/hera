@@ -4,9 +4,115 @@ class heraBass
 {
     public function __construct()
     {
+        add_theme_support('html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption'
+        ));
+
+        add_theme_support('post-formats', array('status'));
+        add_theme_support('title-tag');
+        add_theme_support('post-thumbnails');
+        register_nav_menu('hera', 'hera');
+
         add_action('edit_category_form_fields', array($this, 'add_category_cover_form_item'));
         add_action('edited_terms', array($this, 'update_my_category_fields'));
+        add_action('after_setup_theme', array($this, 'farallon_setup'));
+
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
+        add_action('admin_enqueue_scripts', array($this, 'admin_enquenue_scripts'));
+
+        add_filter('the_content', array($this, 'panther_image_zoom'), 99);
     }
+
+    function farallon_setup()
+    {
+        load_theme_textdomain('Hera', get_template_directory() . '/languages');
+    }
+
+    function panther_image_zoom($content)
+    {
+        global $post;
+        $pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
+        $replacement = '<a$1href=$2$3.$4$5 data-action="imageZoomIn" $6>$7</a>';
+        $content = preg_replace($pattern, $replacement, $content);
+        return $content;
+    }
+
+
+    function admin_enquenue_scripts()
+    {
+        // check if is category edit page and enquenue wp media
+        if (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category') {
+            wp_enqueue_media();
+            wp_enqueue_script('hera-setting', get_template_directory_uri() . '/build/js/setting.min.js', ['jquery'], HERA_VERSION, true);
+            wp_localize_script(
+                'hera-setting',
+                'obvInit',
+                [
+                    'is_single' => is_singular(),
+                    'post_id' => get_the_ID(),
+                    'restfulBase' => esc_url_raw(rest_url()),
+                    'nonce' => wp_create_nonce('wp_rest'),
+                    'ajaxurl' => admin_url('admin-ajax.php'),
+                    'success_message' => __('Setting saved success!', 'Hera'),
+                    'upload_title' => __('Upload Image', 'Hera'),
+                    'upload_button' => __('Set Category Image', 'Hera'),
+                ]
+            );
+        }
+    }
+
+    function enqueue_styles()
+    {
+        global $heraSetting;
+        wp_dequeue_style('global-styles');
+        wp_enqueue_style('hera-style', get_template_directory_uri() . '/build/css/misc.css', array(), HERA_VERSION, 'all');
+        wp_enqueue_script('hera-script', get_template_directory_uri() . '/build/js/ts.js', array(), HERA_VERSION, true);
+        wp_localize_script(
+            'hera-script',
+            'obvInit',
+            [
+                'is_single' => is_singular(),
+                'post_id' => get_the_ID(),
+                'restfulBase' => esc_url_raw(rest_url()),
+                'nonce' => wp_create_nonce('wp_rest'),
+                'darkmode' => !!$heraSetting->get_setting('darkmode'),
+                'version' => HERA_VERSION,
+                'is_archive' => is_archive(),
+                'archive_id' => get_queried_object_id(),
+                'hide_home_cover' => !!$heraSetting->get_setting('hide_home_cover'),
+                'timeFormat' => [
+                    'second' => __('second ago', 'Hera'),
+                    'seconds' => __('seconds ago', 'Hera'),
+                    'minute' => __('minute ago', 'Hera'),
+                    'minutes' => __('minutes ago', 'Hera'),
+                    'hour' => __('hour ago', 'Hera'),
+                    'hours' => __('hours ago', 'Hera'),
+                    'day' => __('day ago', 'Hera'),
+                    'days' => __('days ago', 'Hera'),
+                    'week' => __('week ago', 'Hera'),
+                    'weeks' => __('weeks ago', 'Hera'),
+                    'month' => __('month ago', 'Hera'),
+                    'months' => __('months ago', 'Hera'),
+                    'year' => __('year ago', 'Hera'),
+                    'years' => __('years ago', 'Hera'),
+                ]
+            ]
+        );
+        if ($heraSetting->get_setting('css')) {
+            wp_add_inline_style('hera-style', $heraSetting->get_setting('css'));
+        }
+        if ($heraSetting->get_setting('disable_block_css')) {
+            wp_dequeue_style('wp-block-library');
+            wp_dequeue_style('wp-block-library-theme');
+            wp_dequeue_style('wc-blocks-style');
+        }
+        if (is_singular()) wp_enqueue_script("comment-reply");
+    }
+
 
     function update_my_category_fields($term_id)
     {
