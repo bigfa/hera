@@ -1,6 +1,6 @@
 # Hera
 
-![](https://static.fatesinger.com/2024/11/ypcms5j5idcpaihf.jpg)
+![](https://static.fatesinger.com/2024/12/2u80bhyxkmru4o9j.png)
 
 本主题禁止各种修改作者链接打包重新发布的行为。
 

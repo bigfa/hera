@@ -1,6 +1,6 @@
 # Hera
 
-![](https://static.fatesinger.com/2024/11/ypcms5j5idcpaihf.jpg)
+![](https://static.fatesinger.com/2024/12/2u80bhyxkmru4o9j.png)
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
