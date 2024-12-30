@@ -1,0 +1,493 @@
+@property --a {
+    /* must register --a to animate it */
+    syntax: '<angle>';
+    initial-value: 0deg;
+    /* used only on pseudo, nowhere to be inherited, 
+	 * better perf if set false, see 
+	 * https://www.bram.us/2024/10/03/benchmarking-the-performance-of-css-property/ */
+    inherits: false;
+}
+@keyframes a {
+    to {
+        --a: 1turn;
+    }
+}
+
+.cover {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+
+    &:hover {
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        &::before {
+            /* grid doesn't work for stacking when a stacked item is text node */
+            position: absolute;
+            /* place behind card content, so card text is selectable, etc */
+            z-index: 2;
+            /* best if inset is at least half the border-width with minus */
+            inset: -10px;
+            /* reserve space for border */
+            border: solid 1.25em;
+            border-image: 
+		/* adjust gradient as needed, I just used a random palette */ conic-gradient(
+                    from var(--a),
+                    #669900,
+                    #99cc33,
+                    #ccee66,
+                    #006699,
+                    #3399cc,
+                    #990066,
+                    #cc3399,
+                    #ff6600,
+                    #ff9900,
+                    #ffcc00,
+                    #669900
+                )
+                1;
+            /* blur this pseudo */
+            filter: blur(0.75em);
+            /* tweak animation duration as necessary */
+            animation: a 4s linear infinite;
+            /* needed so pseudo is displayed */
+            content: '';
+        }
+    }
+}
+
+.comment-form {
+    padding-bottom: 30px;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 14px;
+        cursor: pointer;
+        line-height: 1.4;
+
+        .required {
+            color: var(--hera-warning-color);
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        resize: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: 1px solid var(--hera-border-color);
+        padding: 8px 15px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: var(--hera-main-color);
+        }
+    }
+
+    .submit {
+        background-color: #000;
+        color: #fff;
+        border: 0;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 8px 30px;
+        border-radius: var(--hera-border-radius);
+        width: auto;
+        place-self: center;
+        place-content: center;
+        color: var(--hera-color-white);
+        text-align: center;
+
+        &:hover {
+            background-color: var(--hera-hover-color);
+        }
+    }
+
+    p {
+        margin-bottom: 15px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    .comment-notes,
+    .logged-in-as {
+        font-size: 12px;
+        color: var(--hera-text-gray);
+    }
+}
+
+.comment-reply-title {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    small {
+        margin-left: auto;
+        font-weight: normal;
+        font-size: 14px;
+        color: var(--hera-warning-color);
+    }
+}
+
+.commentlist {
+    border-top: 1px solid var(--hera-border-color-light);
+    list-style: none;
+    padding-top: 10px;
+
+    .comment {
+        padding: 0px 0;
+    }
+
+    .comment-respond {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: var(--hera-background-gray-lightest);
+        border-radius: 5px;
+    }
+}
+
+@keyframes comment--fresh {
+    0% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: rgba(255, 254, 224, 1);
+    }
+}
+
+.comment {
+    &:last-child {
+        & > .comment-body {
+            border-bottom: 0;
+        }
+    }
+
+    &.parent {
+        border-bottom: 1px solid var(--hera-border-color-light);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+.comment-body {
+    padding: 25px 0;
+
+    &__fresh {
+        animation: comment--fresh 1.5s ease-in-out infinite alternate;
+        border-radius: 5px;
+    }
+
+    .avatar {
+        transition: 0.5s box-shadow;
+    }
+
+    &:hover {
+        .avatar {
+            box-shadow: 0 0 3px 0px var(--hera-hover-color);
+        }
+    }
+}
+
+.comment--avatar {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    display: flex;
+}
+
+.comment--author {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+
+    .url {
+        display: flex;
+        align-items: center;
+    }
+
+    .friend--icon {
+        margin-left: 5px;
+        width: 16px;
+        height: 16px;
+    }
+
+    &__tip {
+        margin-left: 5px;
+        font-size: 12px;
+        color: var(--hera-background-white);
+        background-color: var(--hera-main-color);
+        line-height: 1.1;
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+
+    .comment-reply-link {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 8px;
+
+        svg {
+            fill: var(--hera-text-gray);
+            width: 14px;
+            height: 14px;
+        }
+
+        &:hover {
+            svg {
+                fill: var(--hera-hover-color);
+            }
+        }
+    }
+
+    a {
+        color: var(--hera-main-color);
+
+        &:hover {
+            color: var(--hera-hover-color);
+            text-decoration: underline;
+        }
+    }
+}
+
+.comment--meta {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+
+    .author--icon {
+        --fill: rgb(0, 149, 246);
+        --height: 14px;
+        --width: 14px;
+        fill: var(--fill);
+        height: var(--height);
+        width: var(--width);
+        margin-left: 4px;
+    }
+}
+
+.comment--time {
+    color: var(--hera-text-light);
+    margin-left: auto;
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        border-radius: 100%;
+    }
+}
+
+.comment-content {
+    padding-left: 10px;
+    color: var(--hera-text-light);
+
+    a {
+        text-decoration: underline;
+        &:hover {
+            color: var(--hera-hover-color);
+        }
+    }
+}
+
+.children {
+    margin-left: 0px;
+    padding-bottom: 10px;
+
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .comment-body {
+        border-bottom: 0;
+        padding: 15px 0;
+    }
+
+    .comment-content {
+        font-size: 14px;
+    }
+}
+
+.parent > .children {
+    margin-left: 50px;
+}
+
+.comment-meta {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    .comment-metadata {
+        margin-left: auto;
+    }
+}
+
+.comment-reply-link {
+    font-size: 12px;
+}
+
+.no--comment {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--hera-text-light);
+}
+
+.comments--title {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+        position: relative;
+        transform: translate3d(0, 1px, 0);
+        fill: var(--hera-text-color);
+    }
+}
+
+.comment-respond {
+    padding-top: 30px;
+}
+
+.comment-form-cookies-consent {
+    #wp-comment-cookies-consent {
+        display: none;
+    }
+
+    label {
+        font-size: 14px;
+        color: var(--hera-text-gray);
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 100%;
+            height: 16px;
+            margin-right: 6px;
+            vertical-align: middle;
+            width: 16px;
+            content: '';
+            flex: 0 0 auto;
+        }
+    }
+
+    input:checked + label {
+        &::after {
+            background-color: var(--hera-hover-color);
+            border-radius: 100%;
+            content: '';
+            position: absolute;
+            left: 1px;
+            height: 12px;
+            margin: 2px;
+            width: 12px;
+            flex: 0 0 auto;
+        }
+    }
+}
+
+.post--share {
+    svg {
+        height: 16px;
+        width: 16px;
+        fill: var(--hera-text-gray);
+        margin-right: 4px;
+        flex: 0 0 auto;
+    }
+
+    .text {
+        flex: 0 0 auto;
+    }
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 0 15px;
+    font-size: 14px;
+    color: var(--hera-text-gray);
+    line-height: 1.2;
+
+    .link {
+        margin-left: 5px;
+        border-bottom: 1px dotted var(--hera-hover-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.comment--parent__link {
+    margin-right: 5px;
+    color: var(--hera-main-color);
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: var(--hera-hover-color);
+        text-decoration: underline;
+    }
+
+    .friend--icon {
+        margin-left: 5px;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.pingback {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--hera-border-color-light);
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    .pingback-content {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: var(--hera-text-light);
+
+        svg {
+            fill: currentColor;
+            margin-right: 6px;
+        }
+
+        a {
+            &:hover {
+                color: var(--hera-hover-color);
+                text-decoration: underline;
+            }
+        }
+    }
+}

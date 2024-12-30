@@ -1,0 +1,41 @@
+{
+    "name": "hera",
+    "version": "0.0.8",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\""
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "autoprefixer": "^9.6.1",
+        "axios": "^0.19.2",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-browserify": "^0.5.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-eslint": "^6.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-rename": "^1.4.0",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "gulp-uglify": "^3.0.2",
+        "husky": "^9.0.11",
+        "normalize.scss": "^0.1.0",
+        "sass": "^1.49.9",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "gulp-sass": "^5.1.0",
+        "postcss": "^8.4.23",
+        "postcss-pxtorem": "^6.0.0"
+    },
+    "volta": {
+        "node": "18.0.0"
+    }
+}

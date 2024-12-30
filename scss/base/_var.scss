@@ -1,0 +1,35 @@
+:root {
+    --hera-main-color: #8b645a;
+    --hera-hover-color: #8b645a;
+    --hera-color-white: #fff;
+    --hera-background-gray: #f5f5f5;
+    --hera-background-gray-lightest: #fafafa;
+    --hera-warning-color: rgb(201, 74, 74);
+    --hera-fade: linear-gradient(0deg, #c0a294 0%, #c0a294 100%),
+        linear-gradient(0deg, #a69a90 0%, #a69a90 100%),
+        linear-gradient(0deg, #efe9e1 0%, #efe9e1 100%), #f5f5f5;
+
+    --hera-column-width: 720px;
+    --hera-article-width: 820px;
+    --hera-header-width: 25%;
+
+    --hera-basic-font-size: 16px;
+    --hera-text-color: rgba(0, 0, 0, 0.86);
+    --hera-text-light: rgba(0, 0, 0, 0.68);
+    --hera-text-gray: rgba(0, 0, 0, 0.6);
+    --hera-text-gray-lightest: rgba(0, 0, 0, 0.55);
+
+    --hera-border-color: rgba(0, 0, 0, 0.1);
+    --hera-border-color-light: rgba(0, 0, 0, 0.05);
+
+    --hera-background-color-white: #fff;
+
+    --hera-article-hero-font-size: 2rem;
+
+    --hera-border-radius: 999rem;
+
+    --hera-thumbnail-width: 96px;
+    --hera-thumbnail-height: 96px;
+
+    --hera-font-size-smallest: 12px;
+}

@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
+        url('../fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
+        url('../fonts/OpenSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'mrs_saint_delafieldregular';
+    src: url('../fonts/mrssaintdelafield-regular-webfont.woff2') format('woff2'),
+        url('../fonts/mrssaintdelafield-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: 'liga' on;
+    color: var(--hera-text-color);
+    line-height: 1.8;
+    background-color: var(--hera-background-color-white);
+    word-break: break-all;
+    background-color: var(--hera-background-gray-lightest);
+
+    font: {
+        weight: 400;
+        style: normal;
+        family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+            WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+        size: var(--hera-basic-font-size);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+button,
+input,
+textarea {
+    appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+        WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-size: var(--hera-basic-font-size);
+    color: var(--hera-text-color);
+}
+
+.u-textAligncenter {
+    text-align: center;
+}
+
+.js-contentFixed {
+    position: sticky;
+    top: 20px;
+    padding: 50px 60px 50px 50px;
+
+    .is-singleColumn &,
+    .page-template-template-map &,
+    .page-template-template-wide & {
+        padding: 15px 0;
+    }
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.w-full {
+    width: 100%;
+}
