@@ -10,7 +10,6 @@ class heraSetting
         add_action('admin_menu', [$this, 'setting_menu']);
         add_action('admin_enqueue_scripts', [$this, 'setting_scripts']);
         add_action('wp_ajax_hera_setting', array($this, 'setting_callback'));
-        //add_action('wp_ajax_nopriv_farallon_setting', array($this, 'setting_callback'));
     }
 
     function clean_options(&$value)

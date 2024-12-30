@@ -15,7 +15,6 @@ get_header();
                 </header>
             </article>
     <?php endwhile;
-    // get_template_part('template-parts/pagination');
     endif; ?>
     <?php
     $args = [
@@ -48,7 +47,6 @@ get_header();
             'title' => get_the_title(),
             'link' => get_permalink(),
             'commentnum' => get_comments_number(),
-            // 'views' => farallon_post_view($post->ID),
             'date' => get_the_time('m-d'),
         ];
 

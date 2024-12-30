@@ -25,7 +25,7 @@
                 <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time>
                 <span class="sep"></span>
                 <?php the_category(' '); ?>
-                <a href="<?php the_permalink(); ?>" class="status--link">
+                <a href="<?php the_permalink(); ?>" class="status--link" title="<?php the_title(); ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12" data-settings-arrow="true">
                         <path fill="#757575" d="M.646 10.646a.5.5 0 0 0 .708.708zM11 1h.5a.5.5 0 0 0-.5-.5zm-.5 7a.5.5 0 0 0 1 0zM4 .5a.5.5 0 0 0 0 1zM1.354 11.354l10-10-.708-.708-10 10zM10.5 1v7h1V1zM4 1.5h7v-1H4z"></path>
                     </svg>

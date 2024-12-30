@@ -10,7 +10,7 @@
  * @since Hera 0.0.1
  */
 ?>
-<article class="block--item">
+<article class="block--item" itemtype="http://schema.org/Article" itemscope="itemscope">
     <?php if (is_sticky()) : ?>
         <span class="sticky--post">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="ao fu">
@@ -19,7 +19,7 @@
             <?php _e('Sticky', 'Hera'); ?>
         </span>
     <?php endif; ?>
-    <h2 class="block--title">
+    <h2 class="block--title" itemprop="headline">
         <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
         </a>

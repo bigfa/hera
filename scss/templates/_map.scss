@@ -111,3 +111,9 @@
         margin-bottom: 10px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .markerPro--posts {
+        grid-template-columns: 1fr;
+    }
+}
