@@ -324,12 +324,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Qiniu OSS CDN', 'Hera'),
                         'description' => __('Make sure all images are uploaded to Qiniu OSS, otherwise thumbnails may not display properly.', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'darkmode',
-                        'label' => __('Dark Mode', 'Hera'),
-                        'description' => __('Enable dark mode', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'darkmode',
+                    //     'label' => __('Dark Mode', 'Hera'),
+                    //     'description' => __('Enable dark mode', 'Hera')
+                    // ],
                     [
                         'type' => 'input',
                         'name' => 'default_thumbnail',
@@ -342,12 +342,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Back to top', 'Hera'),
                         'description' => __('Enable back to top', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'loadmore',
-                        'label' => __('Load more', 'Hera'),
-                        'description' => __('Enable load more', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'loadmore',
+                    //     'label' => __('Load more', 'Hera'),
+                    //     'description' => __('Enable load more', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'home_author',
@@ -390,12 +390,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Author bio', 'Hera'),
                         'description' => __('Enable author bio', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'author_sns',
-                        'label' => __('Author sns icons', 'Hera'),
-                        'description' => __('Show author sns icons, will not show when author bio is off.', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'author_sns',
+                    //     'label' => __('Author sns icons', 'Hera'),
+                    //     'description' => __('Show author sns icons, will not show when author bio is off.', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'related',
@@ -432,18 +432,18 @@ $heraSetting = new heraSetting(
                         'label' => __('Show parent comment', 'Hera'),
                         'description' => __('Enable show parent comment', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'toc',
-                        'label' => __('Table of content', 'Hera'),
-                        'description' => __('Enable table of content', 'Hera')
-                    ],
-                    [
-                        'type' => 'input',
-                        'name' => 'toc_start',
-                        'label' => __('Start heading', 'Hera'),
-                        'description' => __('Start heading,default h3', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'toc',
+                    //     'label' => __('Table of content', 'Hera'),
+                    //     'description' => __('Enable table of content', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'input',
+                    //     'name' => 'toc_start',
+                    //     'label' => __('Start heading', 'Hera'),
+                    //     'description' => __('Start heading,default h3', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'show_author',

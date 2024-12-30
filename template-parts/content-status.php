@@ -5,7 +5,7 @@
  *
  * @package Bigfa
  * @subpackage Hera
- * @since Hera 0.0.1
+ * @since Hera 0.0.4
  */
 ?>
 <article class="block--item block--item__status">

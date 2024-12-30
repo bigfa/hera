@@ -25,23 +25,25 @@
     <main class="layout">
         <div class="navbar">
             <div class="js-contentFixed">
-                <a href="/" class="avatar--wrapper">
+                <a href="<?php echo home_url(); ?>" class="avatar--wrapper">
                     <img src="<?php echo ($heraSetting->get_setting('logo') ? $heraSetting->get_setting('logo') :  get_template_directory_uri() . '/build/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>" class="avatar">
                 </a>
-                <h1><?php if ($heraSetting->get_setting('sitename')) {
-                        echo $heraSetting->get_setting('sitename');
-                    } else {
-                        bloginfo('name');
-                    } ?></h1>
-                <p><?php if ($heraSetting->get_setting('sitedescription')) {
-                        echo $heraSetting->get_setting('sitedescription');
-                    } else {
-                        bloginfo('description');
-                    } ?></p>
+                <h1 class="site--title"><?php if ($heraSetting->get_setting('sitename')) {
+                                            echo $heraSetting->get_setting('sitename');
+                                        } else {
+                                            bloginfo('name');
+                                        } ?></h1>
+                <div class="site--description"><?php if ($heraSetting->get_setting('sitedescription')) {
+                                                    echo $heraSetting->get_setting('sitedescription');
+                                                } else {
+                                                    bloginfo('description');
+                                                } ?></div>
                 <?php wp_nav_menu(array('theme_location' => 'hera', 'menu_class' => 'widget--links', 'container' => 'ul', 'fallback_cb' => 'link_to_menu_editor')); ?>
-                <div class="site--footer__sns">
-                    <?php get_template_part('template-parts/sns'); ?>
-                </div>
+                <?php if ($heraSetting->get_setting('footer_sns')) : ?>
+                    <div class="site--footer__sns">
+                        <?php get_template_part('template-parts/sns'); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="content">

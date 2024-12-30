@@ -1,11 +1,11 @@
 <?php
 
 /**
- * The template for displaying posts in the Status post format
+ * The template for displaying posts related to the current post
  *
  * @package Bigfa
  * @subpackage Hera
- * @since Hera 0.0.1
+ * @since Hera 0.0.2
  */
 ?>
 <h3 class="related--posts__title"><?php _e('Related Posts', 'Hera'); ?></h3>

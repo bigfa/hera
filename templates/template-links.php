@@ -2,6 +2,12 @@
 /*
 Template Name: Links
 Template Post Type: page
+
+ * The Template for displaying blog links
+ *
+ * @package Bigfa
+ * @subpackage Hera
+ * @since Hera 0.0.2
 */
 get_header();
 ?>

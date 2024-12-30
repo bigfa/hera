@@ -1,11 +1,11 @@
 <?php
 
 /**
- * The template for displaying posts in the Status post format
+ * The template for displaying sns icons
  *
  * @package Bigfa
  * @subpackage Hera
- * @since Hera 0.0.1
+ * @since Hera 0.0.9
  */
 
 global $heraSetting;

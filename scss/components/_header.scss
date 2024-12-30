@@ -34,7 +34,7 @@
             transform: translateX(0);
         }
 
-        h1 {
+        .site--title {
             font-size: 20px;
             margin-top: 10px;
             margin-bottom: 5px;
@@ -84,14 +84,14 @@
         transform: translateX(20px);
     }
 
-    h1 {
+    .site--title {
         margin-top: 10px;
         margin-bottom: 5px;
         line-height: 1.4;
         font-size: 24px;
     }
 
-    p {
+    .site--description {
         margin: 0 0 5px;
         color: var(--hera-text-light);
         text-transform: capitalize;

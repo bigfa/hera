@@ -4,47 +4,51 @@
 
 本主题禁止各种修改作者链接打包重新发布的行为。
 
-最新版本 : `0.0.10`
+最新版本 : `0.0.11`
 
 ## 更新日志
 
+### 0.0.11
+
+- 修复上下文链接错误的问题
+
 ### 0.0.10
 
-- update translation
+- 更新翻译
 
 ### 0.0.9
 
-- add sns config
+- 增加社会化网络图标链接设置
 
 ### 0.0.8
 
-update translation
+- 更新翻译
 
 ### 0.0.7
 
-- format scss
+- 格式化`scss`文件
 
 ### 0.0.6
 
-- change header line-height
-- remove useless template
-- add menu support
+- 修改头部行高
+- 移除无效页面
+- 增加菜单设置
 
 ### 0.0.5
 
-- add more css vars
-- change some php vars
+- 增加更多`css`变量
+- 修改一些`php`常量
 
 ### 0.0.4
 
-- add status post format
-- add search template
-- add search form
-- add sticky post icon
+- 增加状态文章格式
+- 增加搜索页面
+- 增加搜索框
+- 增加文章制定标识
 
 ### 0.0.3
 
-- 增加评论提交
+- 增加异步评论提交
 
 ### 0.0.2
 

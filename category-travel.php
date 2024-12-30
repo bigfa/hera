@@ -1,9 +1,9 @@
 <?php
 
 /**
- * The template for displaying Category pages
+ * The template for displaying Category pages with card style.
  *
- * Used to display archive-type pages for posts in a category.
+ * Used to display archive-type pages for posts in a category with card style.
  *
  * @package Bigfa
  * @subpackage Hera

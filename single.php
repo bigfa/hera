@@ -8,6 +8,7 @@
  * @since Hera 0.0.1
  */
 
+global $heraSetting;
 get_header(); ?>
 <?php get_template_part('template-parts/search-bar'); ?>
 <div class="articleContainer">
@@ -23,7 +24,7 @@ get_header(); ?>
                             <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>的头像" class="avatar">
                             <span><?php the_author(); ?></span>
                         </a>
-                        <span><?php the_time('Y-m-d'); ?></span>
+                        <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time>
                         <span class="sep"></span>
                         <span><?php the_category(','); ?></span>
                         <a href="#comments" class="link2comment">
@@ -38,18 +39,20 @@ get_header(); ?>
                 </div>
                 <div class="article--tags"><?php the_tags('', ''); ?></div>
             </article>
-            <?php get_template_part('template-parts/author', 'card');
-            get_template_part('template-parts/post', 'navigation'); ?>
+            <?php if ($heraSetting->get_setting('bio')) get_template_part('template-parts/author', 'card');
+            if ($heraSetting->get_setting('post_navigation')) get_template_part('template-parts/post', 'navigation'); ?>
             <div class="post--ingle__comments">
                 <?php if (comments_open() || get_comments_number()) :
                     comments_template();
                 endif; ?>
             </div>
-    <?php get_template_part('template-parts/single', 'related');
+    <?php if ($heraSetting->get_setting('related')) get_template_part('template-parts/single', 'related');
         endwhile;
     endif; ?>
-    <div class="back">
-        <a href="<?php echo home_url(); ?>"><?php _e('Back to homepage', 'Hera'); ?></a>
-    </div>
+    <?php if ($heraSetting->get_setting('back2home')) : ?>
+        <div class="back">
+            <a href="<?php echo home_url(); ?>"><?php _e('Back to homepage', 'Hera'); ?></a>
+        </div>
+    <?php endif; ?>
 </div>
 <?php get_footer(); ?>
