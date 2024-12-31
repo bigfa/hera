@@ -118,7 +118,6 @@ class heraBass
 
     function panther_image_zoom($content)
     {
-        global $post;
         $pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
         $replacement = '<a$1href=$2$3.$4$5 data-action="imageZoomIn" $6>$7</a>';
         $content = preg_replace($pattern, $replacement, $content);

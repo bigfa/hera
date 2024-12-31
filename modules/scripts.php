@@ -50,18 +50,3 @@ function get_link_items()
     }
     return $result;
 }
-
-/**
- * Get post image count
- *
- * @since Hera 0.0.9
- *
- */
-
-
-function hera_get_post_image_count($post_id)
-{
-    $content = get_post_field('post_content', $post_id);
-    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
-    return count($strResult[1]);
-}
