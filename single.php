@@ -19,6 +19,9 @@ get_header(); ?>
             <article class="post" itemscope="itemscope" itemtype="http://schema.org/Article">
                 <header class="post--header">
                     <h2 class="post--headline" itemprop="headline"><?php the_title(); ?></h2>
+                    <?php if (get_post_meta(get_the_ID(), '_subtitle', true)) : ?>
+                        <h3 class="post--subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h3>
+                    <?php endif; ?>
                     <div class="meta">
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
                             <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>的头像" class="avatar">

@@ -3,8 +3,18 @@
         font-size: var(--hera-article-hero-font-size);
         margin-top: 0;
         line-height: 1.3;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         font-weight: bold;
+        & + .meta {
+            margin-top: 10px;
+        }
+    }
+
+    &--subtitle {
+        font-size: 22px;
+        color: var(--hera-text-gray-lightest);
+        line-height: 1.2;
+        margin-bottom: 10px;
     }
 
     &--location {
@@ -59,6 +69,20 @@
 
     header {
         margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post {
+        &--headline {
+            font-size: 24px;
+        }
+        &--subtitle {
+            font-size: 18px;
+        }
+        &--subline {
+            font-size: 16px;
+        }
     }
 }
 
@@ -124,27 +148,56 @@
         margin-top: 15px;
         margin-bottom: 15px;
     }
+
+    .block--snippet {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--hera-text-gray);
+        max-height: 4.8em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .block--title {
+        margin: 0 0 10px;
+        line-height: 1.2;
+        font-size: 22px;
+        font-weight: 900;
+        &:hover {
+            color: var(--hera-hover-color);
+        }
+    }
 }
 
-.block--snippet {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--hera-text-gray);
-    max-height: 4.8em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
+@media screen and (max-width: 768px) {
+    .block--item {
+        padding: 12px 0;
 
-.block--title {
-    margin: 0 0 10px;
-    line-height: 1.2;
-    font-size: 22px;
-    font-weight: 900;
-    &:hover {
-        color: var(--hera-hover-color);
+        .block--title {
+            font-size: 18px;
+        }
+
+        .block--snippet {
+            font-size: 13px;
+        }
+
+        &__status {
+            padding: 12px;
+        }
+    }
+
+    .addon {
+        .cover {
+            margin-left: 10px;
+            width: 72px;
+            img {
+                width: 72px;
+                height: 72px;
+            }
+        }
     }
 }
 
@@ -232,6 +285,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .post--cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .post--card {

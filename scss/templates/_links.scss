@@ -6,6 +6,12 @@
     padding-top: 15px;
 }
 
+@media screen and (max-width: 768px) {
+    .link-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .link-item {
     border-radius: 10px;
     padding: 20px;
@@ -49,7 +55,6 @@
 
 .link-title {
     font-size: 18px;
-    text-align: center;
     font-weight: bold;
     line-height: 1.2;
     margin-top: 30px;
@@ -58,5 +63,4 @@
 .link-description {
     font-size: 14px;
     color: var(--hera-text-gray);
-    text-align: center;
 }
