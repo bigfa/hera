@@ -38,3 +38,4 @@ get_template_part('modules/article');
 get_template_part('modules/base');
 get_template_part('modules/comment');
 get_template_part('modules/scripts');
+get_template_part('modules/update');

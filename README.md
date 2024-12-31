@@ -12,6 +12,7 @@ latest version : `0.0.12`
 
 - add microdata
 - improve responsive support
+- add auto update module
 
 ### 0.0.11
 
