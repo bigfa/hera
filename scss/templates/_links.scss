@@ -4,6 +4,7 @@
     grid-gap: 20px;
     list-style: none;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -46,6 +47,7 @@
         margin-top: 8px;
         font-style: normal;
         border-radius: 999rem;
+        padding: 1px 4px;
     }
 
     &:hover {
@@ -54,7 +56,7 @@
 }
 
 .link-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     line-height: 1.2;
     margin-top: 30px;

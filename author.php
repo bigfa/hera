@@ -15,7 +15,7 @@ get_header(); ?>
 <div class="post--list">
     <?php if (have_posts()) : the_post(); ?>
         <?php if (get_the_author_meta('description')) : ?>
-            <header class="archive-header">
+            <header class="term--header">
                 <div class="author--avatar">
                     <?php echo get_avatar(get_the_author_meta('user_email')); ?>
                 </div>

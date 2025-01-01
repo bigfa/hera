@@ -147,148 +147,84 @@
     }
 }
 
-.archive {
-    &--list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
-        margin-bottom: 10px;
-        margin-top: 30px;
+.term {
+    &--header {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        &__content {
+            flex: 1 1 auto;
+        }
+
+        .author--avatar {
+            width: 72px;
+            height: 72px;
+            margin-right: 15px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+        .author--bio {
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 1;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 16px;
+                color: var(--hera-text-gray);
+                line-height: 1.3;
+            }
+        }
     }
 
     &--title {
-        font-size: 18px;
-        line-height: 1.4;
-        height: 2.8em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-
-        &__year {
-            font-size: 22px;
-            font-weight: 900;
-        }
-    }
-
-    &--meta {
-        font-size: 12px;
-        color: var(--hera-text-gray);
-        margin-top: 5px;
-    }
-
-    &--item {
-        padding: 15px;
-        background-color: #fafafa;
-        border-radius: 10px;
-    }
-}
-
-.archive-header {
-    padding-top: 30px;
-    padding-bottom: 50px;
-    display: flex;
-    align-items: center;
-
-    .author--avatar {
-        width: 72px;
-        height: 72px;
-        margin-right: 15px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-    }
-
-    .author--bio {
-        h3 {
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        p {
-            font-size: 16px;
-            color: var(--hera-text-gray);
-            line-height: 1.3;
-        }
-    }
-
-    .archive-header-image {
-        height: 72px;
-        width: 72px;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-right: 15px;
-    }
-
-    h1 {
         font-size: 24px;
         font-weight: bold;
         line-height: 1;
         margin-bottom: 8px;
     }
 
-    .taxonomy-description {
+    &--description {
         font-size: 16px;
         color: var(--hera-text-gray);
         line-height: 1.3;
     }
 
-    & + .site--main {
-        padding-top: 30px;
-    }
-
-    &__search {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 20px;
-
-        .search-form {
-            border: 1px solid var(--hera-border-color);
-            border-radius: 999rem;
-            padding: 5px;
-
-            .search-field {
-                border: 0;
-                background-color: rgba(0, 0, 0, 0);
-                padding: 0 15px;
-                font-size: 14px;
-                width: 250px;
-            }
-
-            .search-submit {
-                border-radius: 999rem;
-                border: 0;
-                background: gredient(to right, #007cf0, #00dfd8);
-                font-size: 14px;
-                color: var(--hera-text-gray);
-                padding: 8px 18px;
-            }
-        }
+    &--image {
+        height: 72px;
+        width: 72px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .archive-header {
+    .term {
         // padding-left: 3.5%;
         // padding-right: 3.5%;
 
-        h1 {
+        &--title {
             font-size: 20px;
         }
 
-        .taxonomy-description {
+        &--description {
             font-size: 16px;
         }
-
-        & + .site--main {
-            padding-top: 20px;
-        }
     }
+}
+
+.term--container {
+    max-width: var(--hera-column-width);
+    margin: 0 auto;
+    width: 92%;
 }

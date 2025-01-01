@@ -46,8 +46,8 @@ class heraComment extends heraBase {
                                     <img alt="" src="${comment.author_avatar_urls}" class="avatar" height="42" width="42" />
                                 </div>
                                 <div class="comment--meta">
-                                    <div class="comment--author">${comment.comment_author}<span class="dot"></span>
-                                    <time>刚刚</time>
+                                    <div class="comment--author">${comment.comment_author}
+                                    <time class="comment--time">刚刚</time>
                                     </div>
                                 </div>
                             </footer>

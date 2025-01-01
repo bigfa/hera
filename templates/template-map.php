@@ -6,9 +6,9 @@ get_header(); ?>
 <div class="map--container">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
-            <article class="post">
-                <header class="page--header">
-                    <h2 class="post--headline"><?php the_title(); ?></h2>
+            <article class="article">
+                <header class="article--header">
+                    <h2 class="article--headline"><?php the_title(); ?></h2>
                 </header>
                 <div class="grap">
                     <?php the_content(); ?>

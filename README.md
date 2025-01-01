@@ -11,6 +11,9 @@ latest version : `0.0.14`
 ### 0.0.14
 
 - add image cdn support
+- fixed adjcent post cover alt error
+- improve responsive support
+- add search icon
 
 ### 0.0.13
 

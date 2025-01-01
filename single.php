@@ -10,19 +10,20 @@
 
 global $heraSetting;
 get_header(); ?>
-<?php get_template_part('template-parts/search-bar'); ?>
+<?php // get_template_part('template-parts/search-bar'); 
+?>
 <div class="articleContainer">
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();
     ?>
-            <article class="post" itemscope="itemscope" itemtype="http://schema.org/Article">
-                <header class="post--header">
-                    <h2 class="post--headline" itemprop="headline"><?php the_title(); ?></h2>
+            <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <header class="article--header">
+                    <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
                     <?php if (get_post_meta(get_the_ID(), '_subtitle', true)) : ?>
-                        <h3 class="post--subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h3>
+                        <h3 class="article--subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h3>
                     <?php endif; ?>
-                    <div class="meta">
+                    <div class="article--meta">
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
                             <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>的头像" class="avatar">
                             <span><?php the_author(); ?></span>

@@ -22,17 +22,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-if (document.querySelector('.nav--clicker')) {
-    var footerLogo = document.querySelector('.nav--clicker');
-    if (footerLogo) {
-        footerLogo.addEventListener('click', function () {
-            var body = document.querySelector('body');
-            if (body) {
-                body.classList.toggle('is-readingMode');
-            }
-        });
-    }
-}
 var heraBase = /** @class */ (function () {
     function heraBase() {
         this.is_single = false;
@@ -50,6 +39,17 @@ var heraBase = /** @class */ (function () {
         //@ts-ignore
         this.VERSION = obvInit.version;
         console.log('version', this.VERSION);
+        if (document.querySelector('.nav--clicker')) {
+            var footerLogo = document.querySelector('.nav--clicker');
+            if (footerLogo) {
+                footerLogo.addEventListener('click', function () {
+                    var body = document.querySelector('body');
+                    if (body) {
+                        body.classList.toggle('is-readingMode');
+                    }
+                });
+            }
+        }
     }
     heraBase.prototype.getCookie = function (t) {
         if (0 < document.cookie.length) {
@@ -261,7 +261,7 @@ var heraComment = /** @class */ (function (_super) {
                     }
                     var a = document.getElementById('cancel-comment-reply-link'), i = document.getElementById('respond'), n = document.getElementById('wp-temp-form-div');
                     var comment = data.data;
-                    var html = "<li class=\"comment\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"comment-body comment-body__fresh\">\n                            <footer class=\"comment-meta\">\n                                <div class=\"comment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"comment--meta\">\n                                    <div class=\"comment--author\">").concat(comment.comment_author, "<span class=\"dot\"></span>\n                                    <time>\u521A\u521A</time>\n                                    </div>\n                                </div>\n                            </footer>\n                            <div class=\"comment-content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>"); // @ts-ignore
+                    var html = "<li class=\"comment\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"comment-body comment-body__fresh\">\n                            <footer class=\"comment-meta\">\n                                <div class=\"comment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"comment--meta\">\n                                    <div class=\"comment--author\">").concat(comment.comment_author, "\n                                    <time class=\"comment--time\">\u521A\u521A</time>\n                                    </div>\n                                </div>\n                            </footer>\n                            <div class=\"comment-content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>"); // @ts-ignore
                     var parent_id = (_a = document.querySelector('#comment_parent')) === null || _a === void 0 ? void 0 : _a.value;
                     // @ts-ignore
                     (a.style.display = 'none'), // @ts-ignore

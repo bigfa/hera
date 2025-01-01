@@ -24,7 +24,7 @@
             <?php the_title(); ?>
         </a>
     </h2>
-    <div class="addon">
+    <div class="block--addon">
         <div class="meta">
             <div class="block--snippet" itemprop="about">
                 <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, hera_is_has_image($post->ID) ? 150 : 240, "...");
@@ -40,7 +40,7 @@
             </div>
         </div>
         <?php if (hera_is_has_image(get_the_ID())) : ?>
-            <a href="<?php the_permalink(); ?>" class="cover" title="<?php the_title(); ?>">
+            <a href="<?php the_permalink(); ?>" class="block--cover" title="<?php the_title(); ?>">
                 <img src="<?php echo hera_get_background_image(get_the_ID(), 184, 184); ?>" alt="<?php the_title(); ?>" />
             </a>
         <?php endif; ?>

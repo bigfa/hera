@@ -22,7 +22,7 @@ $next_post = get_next_post();
                     </span>
                 </a>
                 <a href="<?php the_permalink($previou_post->ID); ?>" aria-label="<?php the_title($previou_post->ID); ?>" class="cover--link">
-                    <img src="<?php echo hera_get_background_image($previou_post->ID, 400, 120); ?>" class="cover" alt="<?php the_title($previou_post->ID); ?>" />
+                    <img alt="<?php echo get_the_title($previou_post->ID); ?>" src="<?php echo hera_get_background_image($previou_post->ID, 400, 120); ?>" class="cover" />
                     <?php do_action('marker_pro_post_meta'); ?>
                 </a>
             </div>
@@ -36,7 +36,7 @@ $next_post = get_next_post();
                     </span>
                 </a>
                 <a href="<?php the_permalink($next_post->ID); ?>" aria-label="<?php the_title($next_post->ID); ?>" class="cover--link">
-                    <img src="<?php echo hera_get_background_image($next_post->ID, 400, 120); ?>" class="cover" alt="<?php the_title($next_post->ID); ?>" />
+                    <img src="<?php echo hera_get_background_image($next_post->ID, 400, 120); ?>" class="cover" alt="<?php echo  get_the_title($next_post->ID); ?>" />
                     <?php do_action('marker_pro_post_meta'); ?>
                 </a>
             </div>

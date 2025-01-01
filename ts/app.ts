@@ -1,15 +1,3 @@
-if (document.querySelector('.nav--clicker')) {
-    const footerLogo = document.querySelector('.nav--clicker');
-    if (footerLogo) {
-        footerLogo.addEventListener('click', function () {
-            const body = document.querySelector('body');
-            if (body) {
-                body.classList.toggle('is-readingMode');
-            }
-        });
-    }
-}
-
 class heraBase {
     is_single: boolean = false;
     post_id: number = 0;
@@ -30,6 +18,18 @@ class heraBase {
         this.VERSION = obvInit.version;
 
         console.log('version', this.VERSION);
+
+        if (document.querySelector('.nav--clicker')) {
+            const footerLogo = document.querySelector('.nav--clicker');
+            if (footerLogo) {
+                footerLogo.addEventListener('click', function () {
+                    const body = document.querySelector('body');
+                    if (body) {
+                        body.classList.toggle('is-readingMode');
+                    }
+                });
+            }
+        }
     }
 
     getCookie(t: any) {

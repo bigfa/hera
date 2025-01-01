@@ -141,3 +141,11 @@ textarea {
 .w-full {
     width: 100%;
 }
+
+.sep {
+    &::before {
+        content: '·';
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}

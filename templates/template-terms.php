@@ -6,9 +6,9 @@ get_header(); ?>
 
 <div class="template--terms layoutContainer">
     <?php while (have_posts()) : the_post(); ?>
-        <article class="post--single__douban">
-            <header class="post--header">
-                <h2 class="post--headline"><?php the_title(); ?></h2>
+        <article class="article">
+            <header class="article--header">
+                <h2 class="article--headline"><?php the_title(); ?></h2>
             </header>
             <div class="collectionCard">
                 <?php $categories = get_terms([
