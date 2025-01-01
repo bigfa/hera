@@ -50,6 +50,18 @@ var heraBase = /** @class */ (function () {
                 });
             }
         }
+        if (document.querySelector('.menu--icon')) {
+            document.querySelector('.menu--icon').addEventListener('click', function () {
+                document.querySelector('.site--nav').classList.add('is-active');
+                document.querySelector('body').classList.add('menu--actived');
+            });
+        }
+        if (document.querySelector('.mask')) {
+            document.querySelector('.mask').addEventListener('touchstart', function () {
+                document.querySelector('.site--nav').classList.remove('is-active');
+                document.querySelector('body').classList.remove('menu--actived');
+            });
+        }
     }
     heraBase.prototype.getCookie = function (t) {
         if (0 < document.cookie.length) {

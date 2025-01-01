@@ -1,12 +1,40 @@
 .nav-links {
-    padding: 20px 0;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .page-numbers {
-        font-size: 18px;
         color: var(--hera-text-gray);
-        margin-right: 5px;
+        margin: 0 5px;
+        height: 32px;
+        width: 32px;
+        border-radius: 100%;
+        border: 1px solid var(--hera-border-color);
+        text-align: center;
+        line-height: 32px;
+        font-size: 14px;
+        &.dots {
+            border: 0;
+            &:hover {
+                background-color: transparent;
+                color: var(--hera-text-gray);
+            }
+        }
         &.current,
         &:hover {
-            color: var(--hera-hover-color);
+            color: #fff;
+            background-color: #000;
+            border-color: #000;
+        }
+    }
+
+    &__comment {
+        .page-numbers {
+            font-size: 12px;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
         }
     }
 }

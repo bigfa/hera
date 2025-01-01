@@ -32,7 +32,7 @@
 
     &--meta {
         font-size: 14px;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--hera-text-gray);
         line-height: 1.6;
         display: flex;
         align-items: center;
@@ -41,7 +41,7 @@
             display: flex;
             align-items: center;
             margin-right: 10px;
-            color: #242424;
+            color: var(--hera-text-color);
             &:hover {
                 text-decoration: underline;
             }

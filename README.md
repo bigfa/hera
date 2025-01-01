@@ -4,9 +4,17 @@
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
-latest version : `0.0.14`
+latest version : `0.0.16`
 
 ## Changelog
+
+### 0.0.16
+
+- add mobile menu support
+
+### 0.0.15
+
+- redesign nav style
 
 ### 0.0.14
 

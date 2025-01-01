@@ -214,11 +214,42 @@
         // padding-right: 3.5%;
 
         &--title {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         &--description {
-            font-size: 16px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        &--image {
+            height: 48px;
+            width: 48px;
+        }
+
+        &--header {
+            padding-bottom: 15px;
+
+            & + .block--list {
+                padding-top: 5px;
+            }
+
+            .author--avatar {
+                width: 48px;
+                height: 48px;
+                margin-right: 8px;
+            }
+
+            .author--bio {
+                h3 {
+                    font-size: 18px;
+                    margin-bottom: 3px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+            }
         }
     }
 }

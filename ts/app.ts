@@ -30,6 +30,20 @@ class heraBase {
                 });
             }
         }
+
+        if (document.querySelector('.menu--icon')) {
+            document.querySelector('.menu--icon')!.addEventListener('click', () => {
+                document.querySelector('.site--nav')!.classList.add('is-active');
+                document.querySelector('body')!.classList.add('menu--actived');
+            });
+        }
+
+        if (document.querySelector('.mask')) {
+            document.querySelector('.mask')!.addEventListener('touchstart', () => {
+                document.querySelector('.site--nav')!.classList.remove('is-active');
+                document.querySelector('body')!.classList.remove('menu--actived');
+            });
+        }
     }
 
     getCookie(t: any) {
