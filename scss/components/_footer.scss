@@ -49,12 +49,12 @@
     z-index: 10;
     transition: all 0.3s ease;
     position: fixed;
-    bottom: 25px;
+    bottom: 50px;
     right: -25px;
     cursor: pointer;
 
     &.is-active {
-        right: 25px;
+        right: 50px;
     }
 }
 

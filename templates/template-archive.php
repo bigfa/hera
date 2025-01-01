@@ -9,9 +9,9 @@ get_header();
 <main class="page--archive layoutContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
-            <article class="article">
+            <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
                 <header>
-                    <h2 class="article--headline"><?php the_title(); ?></h2>
+                    <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
                 </header>
             </article>
     <?php endwhile;

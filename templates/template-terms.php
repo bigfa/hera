@@ -4,11 +4,11 @@ Template Name: Terms
 */
 get_header(); ?>
 
-<div class="template--terms layoutContainer">
+<div class="template--terms articleContainer">
     <?php while (have_posts()) : the_post(); ?>
-        <article class="article">
+        <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
             <header class="article--header">
-                <h2 class="article--headline"><?php the_title(); ?></h2>
+                <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
             </header>
             <div class="collectionCard">
                 <?php $categories = get_terms([
