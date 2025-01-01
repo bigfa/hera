@@ -4,7 +4,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
         margin-bottom: 10px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     &--title {
@@ -18,6 +18,7 @@
         &__year {
             font-size: 22px;
             font-weight: 900;
+            margin-top: 30px;
         }
     }
 
@@ -31,5 +32,10 @@
         padding: 15px;
         background-color: #fafafa;
         border-radius: 10px;
+        a {
+            &:hover {
+                color: var(--hera-main-color);
+            }
+        }
     }
 }
