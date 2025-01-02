@@ -14,6 +14,7 @@ latest version : `0.1.0`
 - update translation
 - add post like button
 - add copy post permalink
+- add mobile search icon
 
 ### 0.0.16
 

@@ -68,6 +68,34 @@ var heraBase = /** @class */ (function () {
     };
     return heraBase;
 }());
+if (document.querySelector('.nav--clicker')) {
+    var footerLogo = document.querySelector('.nav--clicker');
+    if (footerLogo) {
+        footerLogo.addEventListener('click', function () {
+            var body = document.querySelector('body');
+            if (body) {
+                body.classList.toggle('is-readingMode');
+            }
+        });
+    }
+}
+if (document.querySelector('.menu--icon')) {
+    document.querySelector('.menu--icon').addEventListener('click', function () {
+        document.querySelector('.site--nav').classList.add('is-active');
+        document.querySelector('body').classList.add('menu--actived');
+    });
+}
+if (document.querySelector('.search--icon')) {
+    document.querySelector('.search--icon').addEventListener('click', function () {
+        document.querySelector('body').classList.toggle('search--actived');
+    });
+}
+if (document.querySelector('.mask')) {
+    document.querySelector('.mask').addEventListener('touchstart', function () {
+        document.querySelector('.site--nav').classList.remove('is-active');
+        document.querySelector('body').classList.remove('menu--actived');
+    });
+}
 window.findParent = function (t, e, n) {
     do {
         if (e(t))

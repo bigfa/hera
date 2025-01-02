@@ -14,32 +14,6 @@ class heraAction extends heraBase {
         this.is_archive = obvInit.is_archive;
         this.like_btn = document.querySelector(this.selctor);
 
-        if (document.querySelector('.nav--clicker')) {
-            const footerLogo = document.querySelector('.nav--clicker');
-            if (footerLogo) {
-                footerLogo.addEventListener('click', function () {
-                    const body = document.querySelector('body');
-                    if (body) {
-                        body.classList.toggle('is-readingMode');
-                    }
-                });
-            }
-        }
-
-        if (document.querySelector('.menu--icon')) {
-            document.querySelector('.menu--icon')!.addEventListener('click', () => {
-                document.querySelector('.site--nav')!.classList.add('is-active');
-                document.querySelector('body')!.classList.add('menu--actived');
-            });
-        }
-
-        if (document.querySelector('.mask')) {
-            document.querySelector('.mask')!.addEventListener('touchstart', () => {
-                document.querySelector('.site--nav')!.classList.remove('is-active');
-                document.querySelector('body')!.classList.remove('menu--actived');
-            });
-        }
-
         if (this.like_btn) {
             this.like_btn.addEventListener('click', () => {
                 this.handleLike();

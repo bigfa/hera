@@ -49,3 +49,35 @@ class heraBase {
         }, 3000);
     }
 }
+
+if (document.querySelector('.nav--clicker')) {
+    const footerLogo = document.querySelector('.nav--clicker');
+    if (footerLogo) {
+        footerLogo.addEventListener('click', function () {
+            const body = document.querySelector('body');
+            if (body) {
+                body.classList.toggle('is-readingMode');
+            }
+        });
+    }
+}
+
+if (document.querySelector('.menu--icon')) {
+    document.querySelector('.menu--icon')!.addEventListener('click', () => {
+        document.querySelector('.site--nav')!.classList.add('is-active');
+        document.querySelector('body')!.classList.add('menu--actived');
+    });
+}
+
+if (document.querySelector('.search--icon')) {
+    document.querySelector('.search--icon')!.addEventListener('click', () => {
+        document.querySelector('body')!.classList.toggle('search--actived');
+    });
+}
+
+if (document.querySelector('.mask')) {
+    document.querySelector('.mask')!.addEventListener('touchstart', () => {
+        document.querySelector('.site--nav')!.classList.remove('is-active');
+        document.querySelector('body')!.classList.remove('menu--actived');
+    });
+}
