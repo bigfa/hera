@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         margin-top: 10px;
     }
 
@@ -36,6 +36,23 @@
             &:hover {
                 color: var(--hera-main-color);
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .archive {
+        &--list {
+            grid-gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        &--title {
+            font-size: 14px;
+        }
+
+        &--item {
+            padding: 10px;
         }
     }
 }

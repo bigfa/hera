@@ -3,7 +3,8 @@
 Template Name: Terms
 */
 get_header(); ?>
-
+<?php get_template_part('template-parts/search-bar');
+?>
 <div class="template--terms articleContainer">
     <?php while (have_posts()) : the_post(); ?>
         <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
