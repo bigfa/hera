@@ -7,8 +7,8 @@ class heraComment
     {
         global $heraSetting;
         add_action('rest_api_init', array($this, 'register_routes'));
-        if ($heraSetting->get_setting('show_author') &&  !is_admin())
-            add_filter('get_comment_author', array($this, 'get_comment_author_hack'), 10, 3);
+
+        // add_filter('get_comment_author', array($this, 'get_comment_author_hack'), 10, 3);
         if ($heraSetting->get_setting('show_parent'))
             add_filter('get_comment_text',  array($this, 'hack_get_comment_text'), 0, 2);
         if ($heraSetting->get_setting('disable_comment_link'))
@@ -78,14 +78,14 @@ class heraComment
         ));
     }
 
-    function get_comment_author_hack($comment_author, $comment_id, $comment)
-    {
-        $post = get_post($comment->comment_post_ID);
-        if ($comment->user_id == $post->post_author) {
-            $comment_author = $comment_author . '<span class="comment--author__tip">' . __('Author', 'Hera') . '</span>';
-        }
-        return $comment_author;
-    }
+    // function get_comment_author_hack($comment_author, $comment_id, $comment)
+    // {
+    //     $post = get_post($comment->comment_post_ID);
+    //     if ($comment->user_id == $post->post_author) {
+    //         $comment_author = $comment_author . '<span class="comment--author__tip">' . __('Author', 'Hera') . '</span>';
+    //     }
+    //     return $comment_author;
+    // }
 
     function handle_posts_request($request)
     {
@@ -259,7 +259,7 @@ function hera_comment($comment, $args, $depth)
             <?php
             break;
         default:
-            global $post;
+            global $post, $heraSetting;
             ?>
             <li class="comment<?php if (!$comment->comment_parent) echo ' parent'; ?>" itemtype="http://schema.org/Comment" data-id="<?php comment_ID() ?>" itemscope="" itemprop="comment" id="comment-<?php comment_ID() ?>">
                 <div class="comment-body">
@@ -269,7 +269,7 @@ function hera_comment($comment, $args, $depth)
                         </div>
                         <div class="comment--meta">
                             <div class="comment--author" itemprop="author"><?php echo get_comment_author_link(); ?>
-                                <?php if ($comment->user_id == $post->post_author) : ?>
+                                <?php if ($comment->user_id == $post->post_author && $heraSetting->get_setting('show_author') &&  !is_admin()) : ?>
                                     <svg aria-label="博主" role="img" viewBox="0 0 40 40" class="author--icon">
                                         <title>博主</title>
                                         <path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z"></path>

@@ -21,6 +21,7 @@
 if (post_password_required()) {
     return;
 }
+global $heraSetting;
 ?>
 <div id="comments" class="responsesWrapper">
     <h3 class="comments--title">
@@ -37,7 +38,11 @@ if (post_password_required()) {
             wp_list_comments(array('style' => 'ol', 'avatar_size' => 48, 'callback' => 'hera_comment'));
         } else { ?>
             <li class="no--comment">
-                <?php _e('no comments', 'Hera'); ?>
+                <?php if ($heraSetting->get_setting('no_reply_text')) {
+                    echo $heraSetting->get_setting('no_reply_text');
+                } else {
+                    _e('This post has no comment yet', 'Hera');
+                } ?>
             </li>
         <?php } ?>
     </ol>

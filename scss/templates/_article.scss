@@ -10,6 +10,10 @@
         }
     }
 
+    &--body {
+        margin-bottom: 15px;
+    }
+
     &--subtitle {
         font-size: 22px;
         color: var(--hera-text-gray-lightest);
@@ -174,7 +178,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 0;
+        padding: 20px 0 0px;
 
         .button--like {
             svg {

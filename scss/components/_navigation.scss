@@ -4,7 +4,12 @@
     align-items: center;
     justify-content: center;
 
-    .page-numbers {
+    .post-navigation & {
+        padding: 5px 0;
+    }
+
+    .page-numbers,
+    .post-page-numbers {
         color: var(--hera-text-gray);
         margin: 0 5px;
         height: 32px;
@@ -30,7 +35,8 @@
     }
 
     &__comment {
-        .page-numbers {
+        .page-numbers,
+        .post-page-numbers {
             font-size: 12px;
             width: 28px;
             height: 28px;
@@ -40,6 +46,10 @@
 }
 
 .post-navigation {
+    .article + & {
+        margin-top: 10px;
+    }
+
     // position: fixed;
     // bottom: 100px;
     // right: 10px;
@@ -51,8 +61,8 @@
             transform: translate3d(0, 0, 0);
         }
     }
-    overflow: hidden;
-    padding-top: 20px;
+    // overflow: hidden;
+    // padding-top: 20px;
     .nav-links {
         position: relative;
         transform: translate3d(0, 150%, 0);

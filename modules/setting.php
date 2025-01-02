@@ -419,12 +419,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Copy link', 'Hera'),
                         'description' => __('Enable copy link', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'category_card',
-                        'label' => __('Category card', 'Hera'),
-                        'description' => __('Show post category info after post.', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'category_card',
+                    //     'label' => __('Category card', 'Hera'),
+                    //     'description' => __('Show post category info after post.', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'show_parent',

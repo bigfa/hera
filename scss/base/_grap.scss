@@ -381,15 +381,3 @@
     margin-right: auto;
     display: block;
 }
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-    position: relative;
-    margin: 0 -50px 25px;
-}
-
-.gallery--3 {
-    grid-template-columns: repeat(2, 1fr);
-}

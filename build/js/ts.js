@@ -234,6 +234,170 @@ var imgZoom = /** @class */ (function () {
     return imgZoom;
 }());
 new imgZoom();
+var heraAction = /** @class */ (function (_super) {
+    __extends(heraAction, _super);
+    function heraAction() {
+        var _this = _super.call(this) || this;
+        _this.selctor = '.like-btn';
+        _this.is_single = false;
+        _this.post_id = 0;
+        _this.is_archive = false;
+        //@ts-ignore
+        _this.is_single = obvInit.is_single;
+        //@ts-ignore
+        _this.post_id = obvInit.post_id;
+        //@ts-ignore
+        _this.is_archive = obvInit.is_archive;
+        _this.like_btn = document.querySelector(_this.selctor);
+        if (_this.like_btn) {
+            _this.like_btn.addEventListener('click', function () {
+                _this.handleLike();
+            });
+            if (_this.getCookie('like_' + _this.post_id)) {
+                _this.like_btn.classList.add('is-active');
+            }
+        }
+        var theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'auto';
+        var html = "<div class=\"fixed--theme\">\n        <span class=\"".concat(theme == 'dark' ? 'is-active' : '', "\" data-action-value=\"dark\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 16px; height: 16px;\">\n                <path d=\"M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'light' ? 'is-active' : '', "\" data-action-value=\"light\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 16px; height: 16px;\">\n                <circle cx=\"12\" cy=\"12\" r=\"5\"></circle>\n                <path d=\"M12 1v2\"></path>\n                <path d=\"M12 21v2\"></path>\n                <path d=\"M4.22 4.22l1.42 1.42\"></path>\n                <path d=\"M18.36 18.36l1.42 1.42\"></path>\n                <path d=\"M1 12h2\"></path>\n                <path d=\"M21 12h2\"></path>\n                <path d=\"M4.22 19.78l1.42-1.42\"></path>\n                <path d=\"M18.36 5.64l1.42-1.42\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'auto' ? 'is-active' : '', "\"  data-action-value=\"auto\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 16px; height: 16px;\">\n                <rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"></rect>\n                <path d=\"M8 21h8\"></path>\n                <path d=\"M12 17v4\"></path>\n            </svg>\n        </span>\n    </div>");
+        if (_this.darkmode) {
+            document.querySelector('body').insertAdjacentHTML('beforeend', html);
+        }
+        document.querySelectorAll('.fixed--theme span').forEach(function (item) {
+            item.addEventListener('click', function () {
+                if (item.classList.contains('is-active'))
+                    return;
+                document.querySelectorAll('.fixed--theme span').forEach(function (item) {
+                    item.classList.remove('is-active');
+                });
+                // @ts-ignore
+                if (item.dataset.actionValue == 'dark') {
+                    localStorage.setItem('theme', 'dark');
+                    document.querySelector('body').classList.remove('auto');
+                    document.querySelector('body').classList.add('dark');
+                    item.classList.add('is-active');
+                    //this.showNotice('夜间模式已开启');
+                    // @ts-ignore
+                }
+                else if (item.dataset.actionValue == 'light') {
+                    localStorage.setItem('theme', 'light');
+                    document.querySelector('body').classList.remove('auto');
+                    document.querySelector('body').classList.remove('dark');
+                    item.classList.add('is-active');
+                    //this.showNotice('夜间模式已关闭');
+                    // @ts-ignore
+                }
+                else if (item.dataset.actionValue == 'auto') {
+                    localStorage.setItem('theme', 'auto');
+                    document.querySelector('body').classList.remove('dark');
+                    document.querySelector('body').classList.add('auto');
+                    item.classList.add('is-active');
+                    //this.showNotice('夜间模式已关闭');
+                }
+            });
+        });
+        if (document.querySelector('.post--share')) {
+            document.querySelector('.post--share').addEventListener('click', function () {
+                navigator.clipboard.writeText(document.location.href).then(function () {
+                    _this.showNotice('复制成功');
+                });
+            });
+        }
+        if (_this.is_single) {
+            _this.trackPostView();
+        }
+        if (_this.is_archive) {
+            _this.trackArchiveView();
+        }
+        console.log("theme version: ".concat(_this.VERSION, " init success!"));
+        return _this;
+        //     const copyright = `<div class="site--footer__info">
+        //     Theme <a href="https://fatesinger.com/101971" target="_blank">hera</a> by bigfa / version ${this.VERSION}
+        // </div>`;
+        //     document.querySelector('.site--footer__content')!.insertAdjacentHTML('afterend', copyright);
+        //     document.querySelector('.icon--copryrights')!.addEventListener('click', () => {
+        //         document.querySelector('.site--footer__info')!.classList.toggle('active');
+        //     });
+    }
+    heraAction.prototype.trackPostView = function () {
+        //@ts-ignore
+        var id = obvInit.post_id;
+        //@ts-ignore
+        var url = obvInit.restfulBase + 'hera/v1/view?id=' + id;
+        fetch(url, {
+            headers: {
+                // @ts-ignore
+                'X-WP-Nonce': obvInit.nonce,
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (response) {
+            return response.json();
+        })
+            .then(function (data) {
+            console.log(data);
+        });
+    };
+    heraAction.prototype.trackArchiveView = function () {
+        if (document.querySelector('.archive-header')) {
+            // @ts-ignore
+            var id = obvInit.archive_id;
+            // @ts-ignore
+            fetch("".concat(obvInit.restfulBase, "hera/v1/archive/").concat(id), {
+                method: 'POST',
+                // body: JSON.stringify({
+                //     // @ts-ignore
+                //     id: this.post_id,
+                // }),
+                headers: {
+                    // @ts-ignore
+                    'X-WP-Nonce': obvInit.nonce,
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(function (response) {
+                return response.json();
+            })
+                .then(function (data) {
+                //this.showNotice('Thanks for your like');
+                // @ts-ignore
+                //this.setCookie('like_' + this.post_id, '1', 1);
+            });
+        }
+    };
+    heraAction.prototype.handleLike = function () {
+        var _this = this;
+        // @ts-ignore
+        if (this.getCookie('like_' + this.post_id)) {
+            return this.showNotice('You have already liked this post');
+        }
+        // @ts-ignore
+        var url = obvInit.restfulBase + 'hera/v1/like';
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                // @ts-ignore
+                id: this.post_id
+            }),
+            headers: {
+                // @ts-ignore
+                'X-WP-Nonce': obvInit.nonce,
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (response) {
+            return response.json();
+        })
+            .then(function (data) {
+            _this.showNotice('Thanks for your like');
+            // @ts-ignore
+            _this.setCookie('like_' + _this.post_id, '1', 1);
+        });
+        this.like_btn.classList.add('is-active');
+    };
+    heraAction.prototype.refresh = function () { };
+    return heraAction;
+}(heraBase));
+new heraAction();
 var heraComment = /** @class */ (function (_super) {
     __extends(heraComment, _super);
     function heraComment() {

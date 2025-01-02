@@ -38,7 +38,7 @@ get_header(); ?>
                         </a>
                     </div>
                 </header>
-                <div class="grap" itemprop="articleBody">
+                <div class="grap article--body" itemprop="articleBody">
                     <?php the_content(); ?>
                 </div>
                 <?php wp_link_pages(array(

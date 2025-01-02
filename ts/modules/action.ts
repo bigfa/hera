@@ -100,12 +100,6 @@ class heraAction extends heraBase {
             });
         }
 
-        document.querySelector('[data-action="show-search"]')!.addEventListener('click', () => {
-            document
-                .querySelector('.site--header__center .inner')!
-                .classList.toggle('search--active');
-        });
-
         if (this.is_single) {
             this.trackPostView();
         }
@@ -116,15 +110,15 @@ class heraAction extends heraBase {
 
         console.log(`theme version: ${this.VERSION} init success!`);
 
-        const copyright = `<div class="site--footer__info">
-        Theme <a href="https://fatesinger.com/101971" target="_blank">farallon</a> by bigfa / version ${this.VERSION}
-    </div>`;
+        //     const copyright = `<div class="site--footer__info">
+        //     Theme <a href="https://fatesinger.com/101971" target="_blank">hera</a> by bigfa / version ${this.VERSION}
+        // </div>`;
 
-        document.querySelector('.site--footer__content')!.insertAdjacentHTML('afterend', copyright);
+        //     document.querySelector('.site--footer__content')!.insertAdjacentHTML('afterend', copyright);
 
-        document.querySelector('.icon--copryrights')!.addEventListener('click', () => {
-            document.querySelector('.site--footer__info')!.classList.toggle('active');
-        });
+        //     document.querySelector('.icon--copryrights')!.addEventListener('click', () => {
+        //         document.querySelector('.site--footer__info')!.classList.toggle('active');
+        //     });
     }
 
     trackPostView() {
@@ -132,7 +126,7 @@ class heraAction extends heraBase {
         const id = obvInit.post_id;
         //@ts-ignore
 
-        const url = obvInit.restfulBase + 'farallon/v1/view?id=' + id;
+        const url = obvInit.restfulBase + 'hera/v1/view?id=' + id;
         fetch(url, {
             headers: {
                 // @ts-ignore
@@ -153,7 +147,7 @@ class heraAction extends heraBase {
             // @ts-ignore
             const id = obvInit.archive_id;
             // @ts-ignore
-            fetch(`${obvInit.restfulBase}farallon/v1/archive/${id}`, {
+            fetch(`${obvInit.restfulBase}hera/v1/archive/${id}`, {
                 method: 'POST',
                 // body: JSON.stringify({
                 //     // @ts-ignore
@@ -182,7 +176,7 @@ class heraAction extends heraBase {
             return this.showNotice('You have already liked this post');
         }
         // @ts-ignore
-        const url = obvInit.restfulBase + 'farallon/v1/like';
+        const url = obvInit.restfulBase + 'hera/v1/like';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({

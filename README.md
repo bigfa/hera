@@ -15,6 +15,7 @@ latest version : `0.1.0`
 - add post like button
 - add copy post permalink
 - add mobile search icon
+- add post view
 
 ### 0.0.16
 
