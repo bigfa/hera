@@ -4,6 +4,9 @@ class heraBass
 {
     public function __construct()
     {
+
+        global  $heraSetting;
+
         add_theme_support('html5', array(
             'search-form',
             'comment-form',
@@ -56,6 +59,23 @@ class heraBass
 
         add_filter('the_content', array($this, 'panther_image_zoom'), 99);
         add_action('wp_head', array($this, 'head_output'));
+
+        if ($heraSetting->get_setting('exclude_status'))
+            add_filter('pre_get_posts', array($this, 'exclude_post_format'));
+    }
+
+    function exclude_post_format($query)
+    {
+        if ($query->is_home() && $query->is_main_query()) {
+            $query->set('tax_query', array(
+                array(
+                    'taxonomy' => 'post_format',
+                    'field' => 'slug',
+                    'terms' => array('post-format-status'),
+                    'operator' => 'NOT IN'
+                )
+            ));
+        }
     }
 
     function head_output()

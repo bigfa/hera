@@ -347,24 +347,24 @@ $heraSetting = new heraSetting(
                     //     'label' => __('Load more', 'Hera'),
                     //     'description' => __('Enable load more', 'Hera')
                     // ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_author',
-                        'label' => __('Author info', 'Hera'),
-                        'description' => __('Enable author info in homepage', 'Hera')
-                    ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_cat',
-                        'label' => __('Category info', 'Hera'),
-                        'description' => __('Enable category info in homepage', 'Hera')
-                    ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_like',
-                        'label' => __('Like info', 'Hera'),
-                        'description' => __('Enable like info in homepage', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_author',
+                    //     'label' => __('Author info', 'Hera'),
+                    //     'description' => __('Enable author info in homepage', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_cat',
+                    //     'label' => __('Category info', 'Hera'),
+                    //     'description' => __('Enable category info in homepage', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_like',
+                    //     'label' => __('Like info', 'Hera'),
+                    //     'description' => __('Enable like info in homepage', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'hide_home_cover',

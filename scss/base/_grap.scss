@@ -140,7 +140,7 @@
     }
 
     a {
-        text-decoration: none;
+        text-decoration: underline;
         transition: 0.2s;
         color: var(--main-color);
 
@@ -152,10 +152,6 @@
         &[href*='JPG'],
         &[href*='gif'] {
             box-shadow: none;
-
-            &::after {
-                content: '.';
-            }
             &:hover {
                 box-shadow: none;
             }

@@ -3,19 +3,6 @@
         padding-top: 25px;
     }
 
-    &--item {
-        padding: 25px 0;
-        position: relative;
-
-        &__status {
-            background-color: #f8f8f8;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-    }
-
     &--snippet {
         font-size: 15px;
         line-height: 1.6;
@@ -80,6 +67,25 @@
                 svg {
                     fill: var(--hera-hover-color);
                 }
+            }
+        }
+    }
+
+    &--item {
+        padding: 25px 0;
+        position: relative;
+
+        &__status {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            .block--title {
+                margin-bottom: 5px;
             }
         }
     }

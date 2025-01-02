@@ -9,8 +9,9 @@
  * @subpackage Hera
  * @since Hera 0.0.1
  */
+global $heraSetting;
 ?>
-<article class="block--item" itemtype="http://schema.org/Article" itemscope="itemscope">
+<article class="block--item<?php if ($heraSetting->get_setting('hide_home_cover')) echo ' block--item__text'; ?>" itemtype="http://schema.org/Article" itemscope="itemscope">
     <?php if (is_sticky()) : ?>
         <span class="sticky--post">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="ao fu">
@@ -27,7 +28,7 @@
     <div class="block--addon">
         <div class="meta">
             <div class="block--snippet" itemprop="about">
-                <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, hera_is_has_image($post->ID) ? 150 : 240, "...");
+                <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, (hera_is_has_image($post->ID) && !$heraSetting->get_setting('hide_home_cover')) ? 150 : 240, "...");
                 echo $sippnet;
                 ?>
             </div>
@@ -39,7 +40,7 @@
                 <?php echo hera_get_post_image_count(get_the_ID()); ?> <?php _e('pics', 'Hera'); ?>
             </div>
         </div>
-        <?php if (hera_is_has_image(get_the_ID())) : ?>
+        <?php if (hera_is_has_image(get_the_ID()) && !$heraSetting->get_setting('hide_home_cover')) : ?>
             <a href="<?php the_permalink(); ?>" class="block--cover" title="<?php the_title(); ?>">
                 <img src="<?php echo hera_get_background_image(get_the_ID(), 184, 184); ?>" alt="<?php the_title(); ?>" />
             </a>
