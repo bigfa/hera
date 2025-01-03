@@ -8,7 +8,6 @@ class heraComment
         global $heraSetting;
         add_action('rest_api_init', array($this, 'register_routes'));
 
-        // add_filter('get_comment_author', array($this, 'get_comment_author_hack'), 10, 3);
         if ($heraSetting->get_setting('show_parent'))
             add_filter('get_comment_text',  array($this, 'hack_get_comment_text'), 0, 2);
         if ($heraSetting->get_setting('disable_comment_link'))
@@ -77,15 +76,6 @@ class heraComment
             'permission_callback' => '__return_true',
         ));
     }
-
-    // function get_comment_author_hack($comment_author, $comment_id, $comment)
-    // {
-    //     $post = get_post($comment->comment_post_ID);
-    //     if ($comment->user_id == $post->post_author) {
-    //         $comment_author = $comment_author . '<span class="comment--author__tip">' . __('Author', 'Hera') . '</span>';
-    //     }
-    //     return $comment_author;
-    // }
 
     function handle_posts_request($request)
     {

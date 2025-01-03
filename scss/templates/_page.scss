@@ -1,55 +1,7 @@
 .post--single {
-    max-width: 678px;
-    margin-left: auto;
-    margin-right: auto;
-
-    &__douban {
-        .db--nav {
-            padding-top: 10px;
-        }
-        .db--list {
-            .db--item {
-                margin-right: 12px;
-            }
-        }
-        .post--single__title {
-            // text-align: center;
-        }
-    }
-
-    &__title {
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 1.5;
-        margin-bottom: 20px;
-    }
-
-    &__meta {
-        font-size: 14px;
-        color: var(--hera-text-gray);
-    }
-
     &__copyright {
         color: var(--hera-text-gray);
     }
-
-    // &__action {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     padding: 20px 0;
-    //     .button--like {
-    //         svg {
-    //             fill: var(--hera-text-gray);
-    //         }
-    //         &:hover,
-    //         &.is-active {
-    //             svg {
-    //                 fill: var(--hera-hover-color);
-    //             }
-    //         }
-    //     }
-    // }
 
     &__related {
         display: grid;
@@ -92,6 +44,10 @@
             border-radius: 10px;
             display: flex;
             flex-direction: column;
+            &__img {
+                display: flex;
+                align-items: center;
+            }
             .cover {
                 border-radius: 10px 10px 0 0;
                 aspect-ratio: 2/1;
