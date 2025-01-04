@@ -22,6 +22,20 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <?php if ($heraSetting->get_setting('darkmode')) : ?>
+        <script>
+            window.DEFAULT_THEME = "auto";
+            if (localStorage.getItem("theme") == null) {
+                localStorage.setItem("theme", window.DEFAULT_THEME);
+            }
+            if (localStorage.getItem("theme") == "dark") {
+                document.querySelector("body").classList.add("dark");
+            }
+            if (localStorage.getItem("theme") == "auto") {
+                document.querySelector("body").classList.add("auto");
+            }
+        </script>
+    <?php endif; ?>
     <main class="layout">
         <div class="navbar">
             <div class="moblie--icon">
