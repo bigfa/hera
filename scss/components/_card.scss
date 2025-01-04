@@ -17,14 +17,9 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    background-color: #f2f2f2;
+    background-color: var(--hera-background-gray);
     &:hover {
-        background-color: #fafafa;
-        // background: linear-gradient(
-        //     89.99999999999999deg,
-        //     rgba(255, 233, 244, 0.3) 0%,
-        //     rgba(234, 243, 255, 0.5) 100%
-        // );
+        background-color: var(--hera-background-gray-lightest);
         border-radius: 12px;
         transform: none;
         transform-origin: 50% 50% 0px;
@@ -78,10 +73,8 @@
         font-size: 15px;
         color: var(--hera-text-light);
         line-height: 1.6;
-        //padding: 5px;
-        // letter-spacing: 0.2px;
-        //text-align: justify;
     }
+
     .meta {
         font-size: 14px;
         color: var(--hera-text-gray-lightest);

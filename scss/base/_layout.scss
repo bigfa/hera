@@ -13,11 +13,10 @@
     padding: 30px 0 5px 0;
     flex: 1 1 auto;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: var(--hera-background-white);
     margin: 18px;
     border-radius: 12px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.02);
-    // border: 1px solid var(--hera-border-color-light);
 }
 
 .post--list {

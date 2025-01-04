@@ -4,9 +4,14 @@
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
-latest version : `0.1.1`
+latest version : `0.1.2`
 
 ## Changelog
+
+### 0.1.2
+
+- ignore sticky post in related posts
+- add dark mode support
 
 ### 0.1.1
 

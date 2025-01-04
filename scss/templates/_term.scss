@@ -75,7 +75,7 @@
         border-radius: 5px;
         overflow: hidden;
         position: relative;
-        background-color: #f2f2f2;
+        background-color: var(--hera-background-gray);
 
         &:hover {
             .collectionCard--title {

@@ -21,7 +21,7 @@
     <link type="image/vnd.microsoft.icon" href="<?php echo ($heraSetting->get_setting('favicon') ? $heraSetting->get_setting('favicon') :  get_template_directory_uri() . '/build/images/favicon.png'); ?>" rel="shortcut icon">
 </head>
 
-<body <?php body_class(''); ?>>
+<body <?php body_class(); ?>>
     <main class="layout">
         <div class="navbar">
             <div class="moblie--icon">

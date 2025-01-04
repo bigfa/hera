@@ -14,7 +14,7 @@
             border-radius: 5px;
             padding: 12px;
             &:hover {
-                background-color: #fafafa;
+                background-color: var(--hera-background-gray-lightest);
             }
             a {
                 color: var(--hera-text-gray);
@@ -40,7 +40,7 @@
         }
 
         &__item {
-            background-color: #f2f2f2;
+            background-color: var(--hera-background-gray);
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -64,7 +64,7 @@
                 padding-top: 8px;
             }
             &:hover {
-                background-color: #fafafa;
+                background-color: var(--hera-background-gray-lightest);
             }
             .meta {
                 font-size: 12px;

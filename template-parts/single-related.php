@@ -17,6 +17,7 @@
         'post__not_in' => array(get_the_ID()),
         'posts_per_page' => 6,
         'category__in' => wp_get_post_categories(get_the_ID()),
+        'ignore_sticky_posts' => 1,
         'tax_query' => get_post_format(get_the_ID()) ? array( // same post format
             array(
                 'taxonomy' => 'post_format',

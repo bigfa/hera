@@ -323,12 +323,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Qiniu OSS CDN', 'Hera'),
                         'description' => __('Make sure all images are uploaded to Qiniu OSS, otherwise thumbnails may not display properly.', 'Hera')
                     ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'darkmode',
-                    //     'label' => __('Dark Mode', 'Hera'),
-                    //     'description' => __('Enable dark mode', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'darkmode',
+                        'label' => __('Dark Mode', 'Hera'),
+                        'description' => __('Enable dark mode', 'Hera')
+                    ],
                     [
                         'type' => 'input',
                         'name' => 'default_thumbnail',

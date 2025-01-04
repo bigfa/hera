@@ -320,8 +320,8 @@
         position: relative;
 
         &::before {
-            background-color: #fff;
-            border: 1px solid rgba(0, 0, 0, 0.15);
+            background-color: var(--hera-background-white);
+            border: 1px solid var(--hera-border-color);
             border-radius: 100%;
             height: 16px;
             margin-right: 6px;
