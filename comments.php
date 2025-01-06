@@ -1,7 +1,27 @@
 <?php
+
+/**
+ * The template for displaying Comments
+ *
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to twentytwelve_comment() which is
+ * located in the functions.php file.
+ *
+ * @package Bigfa
+ * @subpackage Hera
+ * @since Hera 0.0.1
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
 if (post_password_required()) {
     return;
 }
+global $heraSetting;
 ?>
 <div id="comments" class="responsesWrapper">
     <h3 class="comments--title">
@@ -18,7 +38,12 @@ if (post_password_required()) {
             wp_list_comments(array('style' => 'ol', 'avatar_size' => 48, 'callback' => 'hera_comment'));
         } else { ?>
             <li class="no--comment">
-                <?php _e('no comments', 'Hera'); ?>
+                <<<<<<< HEAD
+                    <?php _e('no comments', 'Hera'); ?>=======<?php if ($heraSetting->get_setting('no_reply_text')) {
+                                                                    echo $heraSetting->get_setting('no_reply_text');
+                                                                } else {
+                                                                    _e('This post has no comment yet', 'Hera');
+                                                                } ?>>>>>>>> 0559a4f7dee2afc9812f50d229fc2cd3e5befed6
             </li>
         <?php } ?>
     </ol>

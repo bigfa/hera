@@ -1,0 +1,54 @@
+.author--card {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--hera-border-color);
+    margin-top: 20px;
+
+    & + .post--ingle__comments {
+        .comments--title {
+            padding-top: 5px;
+        }
+    }
+    .avatar {
+        border-radius: 100%;
+        margin-right: 20px;
+    }
+    .author--name {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .author--description {
+        font-size: 14px;
+        color: var(--hera-text-gray);
+    }
+
+    .author--sns {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        a {
+            margin: 0 10px 0 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        svg {
+            fill: var(--hera-text-color);
+            &:hover {
+                fill: var(--hera-hover-color);
+            }
+            width: 24px;
+            height: 24px;
+            &.sns {
+                fill: none;
+                stroke: var(--hera-text-color);
+                &:hover {
+                    stroke: var(--hera-hover-color);
+                    fill: none;
+                }
+            }
+        }
+    }
+}

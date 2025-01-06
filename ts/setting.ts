@@ -50,7 +50,7 @@ document.querySelector('#pure-save')?.addEventListener('click', (event) => {
     jQuery.ajax({
         //@ts-ignore
         url: obvInit.ajaxurl,
-        data: data + '&action=farallon_setting',
+        data: data + '&action=hera_setting',
         type: 'POST',
         success: function () {
             //@ts-ignore

@@ -5,17 +5,17 @@ Template Post Type: page
 */
 get_header();
 ?>
-
-<main class="page--archive layoutContainer">
+<?php get_template_part('template-parts/search-bar');
+?>
+<main class="articleContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
-            <article class="post">
-                <header>
-                    <h2 class="post--headline"><?php the_title(); ?></h2>
+            <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <header class="article--header">
+                    <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
                 </header>
             </article>
     <?php endwhile;
-    // get_template_part('template-parts/pagination');
     endif; ?>
     <?php
     $args = [
@@ -48,7 +48,6 @@ get_header();
             'title' => get_the_title(),
             'link' => get_permalink(),
             'commentnum' => get_comments_number(),
-            // 'views' => farallon_post_view($post->ID),
             'date' => get_the_time('m-d'),
         ];
 

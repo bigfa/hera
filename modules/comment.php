@@ -1,20 +1,19 @@
 <?php
 
-class farallonComment
+class heraComment
 {
 
     public function __construct()
     {
-        global $farallonSetting;
+        global $heraSetting;
         add_action('rest_api_init', array($this, 'register_routes'));
-        // if ($farallonSetting->get_setting('show_author') &&  !is_admin())
-        //     add_filter('get_comment_author', array($this, 'get_comment_author_hack'), 10, 3);
-        // if ($farallonSetting->get_setting('show_parent'))
-        //     add_filter('get_comment_text',  array($this, 'hack_get_comment_text'), 0, 2);
-        // if ($farallonSetting->get_setting('disable_comment_link'))
-        //     add_filter('get_comment_author_link', array($this, 'get_comment_author_link_hack'), 10, 3);
-        // if ($farallonSetting->get_setting('friend_icon') && !is_admin())
-        //     add_filter('get_comment_author', array($this, 'show_friend_icon'), 10, 3);
+
+        if ($heraSetting->get_setting('show_parent'))
+            add_filter('get_comment_text',  array($this, 'hack_get_comment_text'), 0, 2);
+        if ($heraSetting->get_setting('disable_comment_link'))
+            add_filter('get_comment_author_link', array($this, 'get_comment_author_link_hack'), 10, 3);
+        if ($heraSetting->get_setting('friend_icon') && !is_admin())
+            add_filter('get_comment_author', array($this, 'show_friend_icon'), 10, 3);
     }
 
     function is_friend($url = '')
@@ -78,15 +77,6 @@ class farallonComment
         ));
     }
 
-    function get_comment_author_hack($comment_author, $comment_id, $comment)
-    {
-        $post = get_post($comment->comment_post_ID);
-        if ($comment->user_id == $post->post_author) {
-            $comment_author = $comment_author . '<span class="comment--author__tip">' . __('Author', 'Farallon') . '</span>';
-        }
-        return $comment_author;
-    }
-
     function handle_posts_request($request)
     {
         $page = $request['page'];
@@ -125,13 +115,13 @@ class farallonComment
                 'author_avatar_urls' => get_avatar_url(get_the_author_meta('ID'), array('size' => 64)),
                 'author_posts_url' => get_author_posts_url(get_the_author_meta('ID')),
                 'comment_count' => get_comments_number(),
-                // 'view_count' => (int)get_post_meta(get_the_ID(), FARALLON_POST_VIEW_KEY, true),
-                // 'like_count' => (int)get_post_meta(get_the_ID(), FARALLON_POST_LIKE_KEY, true),
-                // 'thumbnail' => farallon_get_background_image(get_the_ID(), 300, 200),
+                'view_count' => (int)get_post_meta(get_the_ID(), HERA_POST_VIEW_KEY, true),
+                'like_count' => (int)get_post_meta(get_the_ID(), HERA_POST_LIKE_KEY, true),
+                'thumbnail' => hera_get_background_image(get_the_ID(), 300, 200),
                 'permalink' => get_permalink(),
                 'categories' => get_the_category(),
                 'tags' => get_the_tags(),
-                // 'has_image' => farallon_is_has_image(get_the_ID()),
+                'has_image' => hera_is_has_image(get_the_ID()),
                 'day' => get_the_date('d'),
                 'post_format' => get_post_format(),
             ];
@@ -140,7 +130,7 @@ class farallonComment
 
         return [
             'code' => 200,
-            'message' => __('Success', 'Farallon'),
+            'message' => __('Success', 'Hera'),
             'data' => $data
         ];
     }
@@ -159,7 +149,7 @@ class farallonComment
         update_term_meta($request['id'], HERA_ARCHIVE_VIEW_KEY, $views);
         return [
             'code' => 200,
-            'message' => __('Success', 'Farallon'),
+            'message' => __('Success', 'Hera'),
             'data' => $views
         ];
     }
@@ -189,7 +179,7 @@ class farallonComment
         update_post_meta($post_id, HERA_POST_VIEW_KEY, $post_views);
         return [
             'code' => 200,
-            'message' => __('Success', 'Farallon'),
+            'message' => __('Success', 'Hera'),
             'data' => $post_views
         ];
     }
@@ -202,7 +192,7 @@ class farallonComment
         update_post_meta($post_id, HERA_POST_LIKE_KEY, $post_views);
         return [
             'code' => 200,
-            'message' => __('Success', 'Farallon'),
+            'message' => __('Success', 'Hera'),
             'data' => $post_views
         ];
     }
@@ -228,7 +218,7 @@ class farallonComment
         $GLOBALS['comment'] = $comment;
         return [
             'code' => 200,
-            'message' => __('Success', 'Farallon'),
+            'message' => __('Success', 'Hera'),
             'data' =>  [
                 'author_avatar_urls' => get_avatar_url($comment->comment_author_email, array('size' => 64)),
                 'comment_author' => $comment->comment_author,
@@ -243,7 +233,7 @@ class farallonComment
     }
 }
 
-new farallonComment();
+new heraComment();
 
 function hera_comment($comment, $args, $depth)
 {
@@ -259,7 +249,7 @@ function hera_comment($comment, $args, $depth)
             <?php
             break;
         default:
-            global $post;
+            global $post, $heraSetting;
             ?>
             <li class="comment<?php if (!$comment->comment_parent) echo ' parent'; ?>" itemtype="http://schema.org/Comment" data-id="<?php comment_ID() ?>" itemscope="" itemprop="comment" id="comment-<?php comment_ID() ?>">
                 <div class="comment-body">
@@ -269,7 +259,7 @@ function hera_comment($comment, $args, $depth)
                         </div>
                         <div class="comment--meta">
                             <div class="comment--author" itemprop="author"><?php echo get_comment_author_link(); ?>
-                                <?php if ($comment->user_id == $post->post_author) : ?>
+                                <?php if ($comment->user_id == $post->post_author && $heraSetting->get_setting('show_author') &&  !is_admin()) : ?>
                                     <svg aria-label="博主" role="img" viewBox="0 0 40 40" class="author--icon">
                                         <title>博主</title>
                                         <path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z"></path>

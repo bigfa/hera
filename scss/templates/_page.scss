@@ -1,0 +1,81 @@
+.post--single {
+    &__copyright {
+        color: var(--hera-text-gray);
+    }
+
+    &__related {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding-bottom: 20px;
+        &__status {
+            font-size: 14px;
+            background-color: var(--hera-background-gray);
+            border-radius: 5px;
+            padding: 12px;
+            &:hover {
+                background-color: var(--hera-background-gray-lightest);
+            }
+            a {
+                color: var(--hera-text-gray);
+                p {
+                    line-height: 1.6;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .meta {
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                margin-top: 2px;
+                svg {
+                    fill: var(--hera-text-gray);
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &__item {
+            background-color: var(--hera-background-gray);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            &__img {
+                display: flex;
+                align-items: center;
+            }
+            .cover {
+                border-radius: 10px 10px 0 0;
+                aspect-ratio: 2/1;
+                object-fit: cover;
+                width: 100%;
+            }
+            &__title {
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.4;
+                margin-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 8px;
+            }
+            &:hover {
+                background-color: var(--hera-background-gray-lightest);
+            }
+            .meta {
+                font-size: 12px;
+                color: var(--hera-text-gray);
+                line-height: 1;
+                padding: 0 10px 10px;
+            }
+        }
+    }
+}
+
+.page--single {
+    padding-top: 30px;
+}

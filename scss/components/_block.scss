@@ -1,0 +1,119 @@
+.block {
+    &--list {
+        padding-top: 25px;
+    }
+
+    &--snippet {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--hera-text-gray);
+        max-height: 4.8em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    &--title {
+        margin: 0 0 10px;
+        line-height: 1.2;
+        font-size: 22px;
+        font-weight: 900;
+        &:hover {
+            color: var(--hera-hover-color);
+        }
+    }
+
+    &--cover {
+        flex: 0 0 auto;
+        margin-left: 15px;
+        width: var(--hera-thumbnail-width);
+        img {
+            width: var(--hera-thumbnail-width);
+            height: var(--hera-thumbnail-height);
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    }
+
+    &--addon {
+        display: flex;
+        align-items: flex-start;
+
+        .meta {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &--meta {
+        margin: 0;
+        margin-top: 5px;
+        display: flex;
+        font-size: var(--hera-font-size-smallest);
+        color: var(--hera-text-gray-lightest);
+        a {
+            &:hover {
+                text-decoration: underline;
+                color: var(--hera-text-color);
+            }
+        }
+        .status--link {
+            margin-left: auto;
+            &:hover {
+                svg {
+                    fill: var(--hera-hover-color);
+                }
+            }
+        }
+    }
+
+    &--item {
+        padding: 25px 0;
+        position: relative;
+
+        &__status {
+            background-color: var(--hera-background-gray);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            .block--title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .block {
+        &--item {
+            padding: 12px 0;
+
+            &__status {
+                padding: 12px;
+            }
+        }
+
+        &--title {
+            font-size: 18px;
+        }
+
+        &--snippet {
+            font-size: 13px;
+        }
+
+        &--cover {
+            margin-left: 10px;
+            --hera-thumbnail-width: 72px;
+            img {
+                --hera-thumbnail-height: 72px;
+            }
+        }
+    }
+}

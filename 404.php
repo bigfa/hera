@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * The template for displaying 404 pages (Not Found)
+ *
+ * @package Bigfa
+ * @subpackage Hera
+ * @since Hera 0.0.1
+ */
+get_header(); ?>
 <?php get_template_part('template-parts/search-bar'); ?>
 <div class="articleContainer">
     <article class="post">

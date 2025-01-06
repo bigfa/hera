@@ -1,0 +1,103 @@
+.post--cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .post--cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.post--card {
+    // padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--hera-background-gray);
+    &:hover {
+        background-color: var(--hera-background-gray-lightest);
+        border-radius: 12px;
+        transform: none;
+        transform-origin: 50% 50% 0px;
+    }
+    .cover--link {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .cover {
+        border-radius: 12px 12px 0 0;
+        margin-bottom: 12px;
+        object-fit: cover;
+        aspect-ratio: 60/36;
+    }
+    .post--title {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.4;
+        margin-bottom: 5px;
+        &:hover {
+            color: var(--hera-hover-color);
+        }
+        & + .meta {
+            margin-top: 10px;
+        }
+    }
+
+    .card--content {
+        position: relative;
+        padding: 0 20px 20px;
+        .date {
+            height: 36px;
+            width: 36px;
+            background-color: var(--hera-background-white);
+            border-radius: 100%;
+            position: absolute;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+            color: var(--hera-text-gray);
+            right: 15px;
+            top: -30px;
+            box-shadow: 0 0 0 5px var(--hera-border-color-light);
+        }
+    }
+
+    .description {
+        font-size: 15px;
+        color: var(--hera-text-light);
+        line-height: 1.6;
+    }
+
+    .meta {
+        font-size: 14px;
+        color: var(--hera-text-gray-lightest);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2px;
+        time {
+            display: flex;
+            align-items: center;
+        }
+        svg {
+            margin-right: 4px;
+            fill: var(--hera-text-gray-lightest);
+            margin-left: 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

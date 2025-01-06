@@ -1,9 +1,19 @@
+<?php
+
+/**
+ * The template for displaying posts in the Status post format
+ *
+ * @package Bigfa
+ * @subpackage Hera
+ * @since Hera 0.0.1
+ */
+?>
 <article class="post--card" itemtype="http://schema.org/Article" itemscope="itemscope">
-    <?php if (aladdin_is_has_image(get_the_ID())) : ?>
+    <?php if (hera_is_has_image(get_the_ID())) : ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="cover--link">
             <?php // do_action('marker_pro_post_meta'); 
             ?>
-            <img src="<?php echo aladdin_get_background_image(get_the_ID(), 800, 480); ?>" class="cover" alt="<?php the_title(); ?>" />
+            <img src="<?php echo hera_get_background_image(get_the_ID(), 800, 480); ?>" class="cover" alt="<?php the_title(); ?>" />
         </a>
     <?php endif; ?>
     <div class="card--content">

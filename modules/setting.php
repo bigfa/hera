@@ -1,6 +1,6 @@
 <?php
 
-class farallonSetting
+class heraSetting
 {
     public $config;
 
@@ -9,8 +9,7 @@ class farallonSetting
         $this->config = $config;
         add_action('admin_menu', [$this, 'setting_menu']);
         add_action('admin_enqueue_scripts', [$this, 'setting_scripts']);
-        add_action('wp_ajax_farallon_setting', array($this, 'setting_callback'));
-        //add_action('wp_ajax_nopriv_farallon_setting', array($this, 'setting_callback'));
+        add_action('wp_ajax_hera_setting', array($this, 'setting_callback'));
     }
 
     function clean_options(&$value)
@@ -194,7 +193,7 @@ class farallonSetting
 <?php }
 }
 global $heraSetting;
-$heraSetting = new farallonSetting(
+$heraSetting = new heraSetting(
     [
         "header" => [
             [
@@ -342,30 +341,30 @@ $heraSetting = new farallonSetting(
                         'label' => __('Back to top', 'Hera'),
                         'description' => __('Enable back to top', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'loadmore',
-                        'label' => __('Load more', 'Hera'),
-                        'description' => __('Enable load more', 'Hera')
-                    ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_author',
-                        'label' => __('Author info', 'Hera'),
-                        'description' => __('Enable author info in homepage', 'Hera')
-                    ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_cat',
-                        'label' => __('Category info', 'Hera'),
-                        'description' => __('Enable category info in homepage', 'Hera')
-                    ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'home_like',
-                        'label' => __('Like info', 'Hera'),
-                        'description' => __('Enable like info in homepage', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'loadmore',
+                    //     'label' => __('Load more', 'Hera'),
+                    //     'description' => __('Enable load more', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_author',
+                    //     'label' => __('Author info', 'Hera'),
+                    //     'description' => __('Enable author info in homepage', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_cat',
+                    //     'label' => __('Category info', 'Hera'),
+                    //     'description' => __('Enable category info in homepage', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'home_like',
+                    //     'label' => __('Like info', 'Hera'),
+                    //     'description' => __('Enable like info in homepage', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'hide_home_cover',
@@ -390,12 +389,12 @@ $heraSetting = new farallonSetting(
                         'label' => __('Author bio', 'Hera'),
                         'description' => __('Enable author bio', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'author_sns',
-                        'label' => __('Author sns icons', 'Hera'),
-                        'description' => __('Show author sns icons, will not show when author bio is off.', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'author_sns',
+                    //     'label' => __('Author sns icons', 'Hera'),
+                    //     'description' => __('Show author sns icons, will not show when author bio is off.', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'related',
@@ -420,30 +419,30 @@ $heraSetting = new farallonSetting(
                         'label' => __('Copy link', 'Hera'),
                         'description' => __('Enable copy link', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'category_card',
-                        'label' => __('Category card', 'Hera'),
-                        'description' => __('Show post category info after post.', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'category_card',
+                    //     'label' => __('Category card', 'Hera'),
+                    //     'description' => __('Show post category info after post.', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'show_parent',
                         'label' => __('Show parent comment', 'Hera'),
                         'description' => __('Enable show parent comment', 'Hera')
                     ],
-                    [
-                        'type' => 'switch',
-                        'name' => 'toc',
-                        'label' => __('Table of content', 'Hera'),
-                        'description' => __('Enable table of content', 'Hera')
-                    ],
-                    [
-                        'type' => 'input',
-                        'name' => 'toc_start',
-                        'label' => __('Start heading', 'Hera'),
-                        'description' => __('Start heading,default h3', 'Hera')
-                    ],
+                    // [
+                    //     'type' => 'switch',
+                    //     'name' => 'toc',
+                    //     'label' => __('Table of content', 'Hera'),
+                    //     'description' => __('Enable table of content', 'Hera')
+                    // ],
+                    // [
+                    //     'type' => 'input',
+                    //     'name' => 'toc_start',
+                    //     'label' => __('Start heading', 'Hera'),
+                    //     'description' => __('Start heading,default h3', 'Hera')
+                    // ],
                     [
                         'type' => 'switch',
                         'name' => 'show_author',

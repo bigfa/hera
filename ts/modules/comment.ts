@@ -1,4 +1,4 @@
-class farallonComment extends farallonBase {
+class heraComment extends heraBase {
     loading = false;
     constructor() {
         super();
@@ -46,8 +46,8 @@ class farallonComment extends farallonBase {
                                     <img alt="" src="${comment.author_avatar_urls}" class="avatar" height="42" width="42" />
                                 </div>
                                 <div class="comment--meta">
-                                    <div class="comment--author">${comment.comment_author}<span class="dot"></span>
-                                    <time>刚刚</time>
+                                    <div class="comment--author">${comment.comment_author}
+                                    <time class="comment--time">刚刚</time>
                                     </div>
                                 </div>
                             </footer>
@@ -106,4 +106,4 @@ class farallonComment extends farallonBase {
     }
 }
 
-new farallonComment();
+new heraComment();

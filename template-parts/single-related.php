@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * The template for displaying posts related to the current post
+ *
+ * @package Bigfa
+ * @subpackage Hera
+ * @since Hera 0.0.2
+ */
+?>
 <h3 class="related--posts__title"><?php _e('Related Posts', 'Hera'); ?></h3>
 <div class="post--single__related">
     <?php
@@ -7,6 +17,7 @@
         'post__not_in' => array(get_the_ID()),
         'posts_per_page' => 6,
         'category__in' => wp_get_post_categories(get_the_ID()),
+        'ignore_sticky_posts' => 1,
         'tax_query' => get_post_format(get_the_ID()) ? array( // same post format
             array(
                 'taxonomy' => 'post_format',
@@ -35,8 +46,13 @@
             <div class="post--single__related__item">
                 <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
                     <div class="post--single__related__item__img">
+<<<<<<< HEAD
                         <?php if (aladdin_is_has_image(get_the_ID())) : ?>
                             <img src="<?php echo aladdin_get_background_image(get_the_ID(), 400, 200); ?>" class="cover" alt="<?php the_title(); ?>" />
+=======
+                        <?php if (hera_is_has_image(get_the_ID())) : ?>
+                            <img src="<?php echo hera_get_background_image(get_the_ID(), 400, 200); ?>" class="cover" alt="<?php the_title(); ?>" />
+>>>>>>> 0559a4f7dee2afc9812f50d229fc2cd3e5befed6
                         <?php endif; ?>
                     </div>
                     <div class="post--single__related__item__title">

@@ -8,8 +8,15 @@
 @use 'components/zoom';
 @use 'components/comment';
 @use 'components/footer';
+@use 'components/block';
+@use 'components/card';
+@use 'components/navigation';
+@use 'components/author';
+@use 'components/audio';
 
 @use 'templates/map';
 @use 'templates/term';
 @use 'templates/links';
 @use 'templates/article';
+@use 'templates/page';
+@use 'templates/archive';

@@ -10,10 +10,13 @@
 }
 
 .content {
-    padding: 30px 0 0 0;
+    padding: 30px 0 5px 0;
     flex: 1 1 auto;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: var(--hera-background-white);
+    margin: 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.02);
 }
 
 .post--list {
@@ -29,6 +32,8 @@
 
     .content {
         padding-top: 0;
+        margin: 0;
+        border-radius: 0;
     }
 }
 
@@ -41,6 +46,13 @@
     max-width: var(--hera-article-width);
     margin: 0 auto;
     width: 92%;
+    padding-top: 15px;
+}
+
+@media (max-width: 1280px) {
+    .articleContainer {
+        padding-top: 0;
+    }
 }
 
 .doubanContainer {

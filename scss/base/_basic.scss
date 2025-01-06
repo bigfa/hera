@@ -54,7 +54,6 @@ body {
     -moz-font-feature-settings: 'liga' on;
     color: var(--hera-text-color);
     line-height: 1.8;
-    background-color: var(--hera-background-color-white);
     word-break: break-all;
     background-color: var(--hera-background-gray-lightest);
 
@@ -141,4 +140,33 @@ textarea {
 
 .w-full {
     width: 100%;
+}
+
+.sep {
+    &::before {
+        content: '·';
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.notice--wrapper {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-size: var(--hera-font-size-smallest);
+    max-width: 800px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: fixed;
+    z-index: 1000;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s transform;
+}
+
+@media (max-width: 768px) {
+    .notice--wrapper {
+        width: 80%;
+    }
 }

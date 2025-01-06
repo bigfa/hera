@@ -4,13 +4,72 @@
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
-latest version : `0.0.8`
+latest version : `0.1.3`
 
 ## Changelog
 
+### 0.1.3
+
+- fixed some style issues
+
+### 0.1.2
+
+- ignore sticky post in related posts
+- add dark mode support
+
+### 0.1.1
+
+- fixed some style issues
+
+### 0.1.0
+
+- bug fixed
+- update translation
+- add post like button
+- add copy post permalink
+- add mobile search icon
+- add post view
+
+### 0.0.16
+
+- add mobile menu support
+
+### 0.0.15
+
+- redesign nav style
+
+### 0.0.14
+
+- add image cdn support
+- fixed adjcent post cover alt error
+- improve responsive support
+- add search icon
+
+### 0.0.13
+
+- improve responsive support
+
+### 0.0.12
+
+- add microdata
+- improve responsive support
+- add auto update module
+
+### 0.0.11
+
+- fixed ajcent post link error
+
+### 0.0.10
+
+- update translation
+
+### 0.0.9
+
+- add sns config
+
 ### 0.0.8
 
-update translation
+- update translation
 
 ### 0.0.7
 
@@ -36,7 +95,11 @@ update translation
 
 ### 0.0.3
 
-- add comment submit action
+<<<<<<< HEAD
+
+- # add comment submit action
+- add ajax comment submit action
+  > > > > > > > 0559a4f7dee2afc9812f50d229fc2cd3e5befed6
 
 ### 0.0.2
 

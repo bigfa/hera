@@ -1,4 +1,4 @@
-class farallonScroll {
+class heraScroll {
     is_single: boolean = false;
     constructor() {
         //@ts-ignore
@@ -52,4 +52,4 @@ class farallonScroll {
     }
 }
 
-new farallonScroll();
+new heraScroll();

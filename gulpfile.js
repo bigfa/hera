@@ -61,7 +61,7 @@ function typescripts() {
                 // './ts/modules/lazy.ts',
                 // './ts/modules/map.ts',
                 './ts/modules/zoom.ts',
-                // './ts/modules/photos.ts',
+                './ts/modules/action.ts',
                 './ts/modules/comment.ts',
                 './ts/modules/scroll.ts',
                 './ts/modules/date.ts',

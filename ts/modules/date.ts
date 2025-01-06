@@ -1,4 +1,4 @@
-class farallonDate {
+class heraDate {
     selector: string;
     timeFormat: any = {
         second: 'second ago',
@@ -68,7 +68,7 @@ class farallonDate {
     }
 }
 
-new farallonDate({
+new heraDate({
     selector: '.humane--time',
     //@ts-ignore
     timeFormat: obvInit.timeFormat,
