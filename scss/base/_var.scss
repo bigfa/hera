@@ -55,6 +55,11 @@
         --hera-border-color: rgba(63, 63, 70, 0.6);
         --hera-border-color-light: rgba(63, 63, 70, 0.4);
 
+
+        --db--text-color: #a1a1aa;
+        --db--text-color-light: rgba(255, 255, 255, 0.25);
+        --db--background-gray: #3a3a3a;
+
         .comment-form .submit {
             background-color: rgb(63 63 70/1);
             &:hover {
@@ -153,6 +158,10 @@
 
     --hera-border-color: rgba(63, 63, 70, 0.6);
     --hera-border-color-light: rgba(63, 63, 70, 0.4);
+
+    --db--text-color: #a1a1aa;
+    --db--text-color-light: rgba(255, 255, 255, 0.25);
+    --db--background-gray: #3a3a3a;
 
     .doulist-item {
         background: rgba(63, 63, 70, 0.15);
