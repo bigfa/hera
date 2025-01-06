@@ -153,6 +153,7 @@
         padding-bottom: 30px;
         display: flex;
         align-items: center;
+
         &__content {
             flex: 1 1 auto;
         }
@@ -210,9 +211,6 @@
 
 @media (max-width: 768px) {
     .term {
-        // padding-left: 3.5%;
-        // padding-right: 3.5%;
-
         &--title {
             font-size: 18px;
         }

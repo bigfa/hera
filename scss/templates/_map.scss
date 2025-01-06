@@ -31,7 +31,7 @@
     &--post {
         box-shadow: none;
         transition: 1s background-position;
-        background-color: #f8f8f8;
+        background-color: var(--hera-background-gray-lightest);
         color: var(--hera-text-gray);
         padding: 15px;
         border-radius: 10px;

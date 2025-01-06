@@ -20,6 +20,7 @@
         line-height: 1.2;
         font-size: 22px;
         font-weight: 900;
+
         &:hover {
             color: var(--hera-hover-color);
         }
@@ -29,6 +30,7 @@
         flex: 0 0 auto;
         margin-left: 15px;
         width: var(--hera-thumbnail-width);
+
         img {
             width: var(--hera-thumbnail-width);
             height: var(--hera-thumbnail-height);
@@ -54,6 +56,7 @@
         display: flex;
         font-size: var(--hera-font-size-smallest);
         color: var(--hera-text-gray-lightest);
+
         a {
             &:hover {
                 text-decoration: underline;
@@ -62,6 +65,7 @@
         }
         .status--link {
             margin-left: auto;
+
             &:hover {
                 svg {
                     fill: var(--hera-hover-color);
@@ -111,6 +115,7 @@
         &--cover {
             margin-left: 10px;
             --hera-thumbnail-width: 72px;
+
             img {
                 --hera-thumbnail-height: 72px;
             }

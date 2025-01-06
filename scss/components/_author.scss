@@ -10,12 +10,14 @@
             padding-top: 5px;
         }
     }
+
     .avatar {
         border-radius: 100%;
         margin-right: 20px;
     }
+
     .author--name {
-        font-weight: bold;
+        font-weight: 900;
         font-size: 18px;
     }
 
@@ -28,22 +30,27 @@
         margin-top: 12px;
         display: flex;
         align-items: center;
+
         a {
             margin: 0 10px 0 0;
             &:last-child {
                 margin-right: 0;
             }
         }
+
         svg {
             fill: var(--hera-text-color);
+            width: 24px;
+            height: 24px;
+
             &:hover {
                 fill: var(--hera-hover-color);
             }
-            width: 24px;
-            height: 24px;
+
             &.sns {
                 fill: none;
                 stroke: var(--hera-text-color);
+
                 &:hover {
                     stroke: var(--hera-hover-color);
                     fill: none;

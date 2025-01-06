@@ -88,25 +88,6 @@
             background: linear-gradient(180deg, #1e1e1e, #121212);
         }
 
-        .post--single__related__item,
-        .post--single__related__status,
-        .post--item,
-        .link-item,
-        .post--card {
-            position: relative;
-            &:hover {
-                background: linear-gradient(180deg, #1e1e1e, #121212);
-                &::after {
-                    content: '';
-                    pointer-events: none;
-                    position: absolute;
-                    inset: 0;
-                    border-radius: 12px;
-                    border: 1px solid #333;
-                }
-            }
-        }
-
         .nav-links .page-numbers.current:after,
         .nav-links .post-page-numbers.current:after {
             background-image: none;
@@ -180,24 +161,6 @@
     .graph blockquote,
     .graph ol li::before {
         background: linear-gradient(180deg, #1e1e1e, #121212);
-    }
-    .post--single__related__item,
-    .post--single__related__status,
-    .post--item,
-    .link-item,
-    .post--card {
-        position: relative;
-        &:hover {
-            background: linear-gradient(180deg, #1e1e1e, #121212);
-            &::after {
-                content: '';
-                pointer-events: none;
-                position: absolute;
-                inset: 0;
-                border-radius: 12px;
-                border: 1px solid #333;
-            }
-        }
     }
 
     .nav-links .page-numbers.current:after,

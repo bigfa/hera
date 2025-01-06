@@ -38,12 +38,11 @@ global $heraSetting;
             wp_list_comments(array('style' => 'ol', 'avatar_size' => 48, 'callback' => 'hera_comment'));
         } else { ?>
             <li class="no--comment">
-                <<<<<<< HEAD
-                    <?php _e('no comments', 'Hera'); ?>=======<?php if ($heraSetting->get_setting('no_reply_text')) {
-                                                                    echo $heraSetting->get_setting('no_reply_text');
-                                                                } else {
-                                                                    _e('This post has no comment yet', 'Hera');
-                                                                } ?>>>>>>>> 0559a4f7dee2afc9812f50d229fc2cd3e5befed6
+                <?php if ($heraSetting->get_setting('no_reply_text')) {
+                    echo $heraSetting->get_setting('no_reply_text');
+                } else {
+                    _e('This post has no comment yet', 'Hera');
+                } ?>
             </li>
         <?php } ?>
     </ol>

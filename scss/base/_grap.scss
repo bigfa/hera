@@ -56,6 +56,13 @@
         }
     }
 
+    code {
+        background-color: var(--hera-background-gray);
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
     pre {
         word-break: break-all;
         white-space: break-spaces;

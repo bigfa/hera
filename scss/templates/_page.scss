@@ -8,14 +8,17 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px;
         padding-bottom: 20px;
+
         &__status {
             font-size: 14px;
             background-color: var(--hera-background-gray);
             border-radius: 5px;
             padding: 12px;
+
             &:hover {
                 background-color: var(--hera-background-gray-lightest);
             }
+
             a {
                 color: var(--hera-text-gray);
                 p {
@@ -27,11 +30,13 @@
                     text-overflow: ellipsis;
                 }
             }
+
             .meta {
                 font-size: 12px;
                 display: flex;
                 align-items: center;
                 margin-top: 2px;
+
                 svg {
                     fill: var(--hera-text-gray);
                     margin-right: 5px;
@@ -44,16 +49,19 @@
             border-radius: 10px;
             display: flex;
             flex-direction: column;
+
             &__img {
                 display: flex;
                 align-items: center;
             }
+
             .cover {
                 border-radius: 10px 10px 0 0;
                 aspect-ratio: 2/1;
                 object-fit: cover;
                 width: 100%;
             }
+
             &__title {
                 font-size: 14px;
                 font-weight: bold;
@@ -63,9 +71,11 @@
                 padding-right: 10px;
                 padding-top: 8px;
             }
+
             &:hover {
                 background-color: var(--hera-background-gray-lightest);
             }
+
             .meta {
                 font-size: 12px;
                 color: var(--hera-text-gray);

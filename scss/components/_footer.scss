@@ -153,13 +153,12 @@
     left: 0px;
     bottom: -5px;
     display: flex;
-    // flex-direction: column;
     height: max-content;
     background-color: var(--hera-background-gray-lightest);
-    // box-shadow: inset -2px 2px 1px 0 var(--hera-border-color-light);
     border-radius: 0 10px 0 10px;
     width: max-content;
     padding: 3px;
+
     span {
         width: 28px;
         height: 28px;
