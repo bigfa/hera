@@ -126,16 +126,6 @@
         animation: comment--fresh 1.5s ease-in-out infinite alternate;
         border-radius: 5px;
     }
-
-    .avatar {
-        transition: 0.5s box-shadow;
-    }
-
-    &:hover {
-        .avatar {
-            box-shadow: 0 0 3px 0px var(--hera-hover-color);
-        }
-    }
 }
 
 .comment--avatar {
@@ -218,6 +208,7 @@
 .comment--time {
     color: var(--hera-text-light);
     margin-left: auto;
+    font-size: 12px;
 }
 
 .comment-meta {
@@ -382,7 +373,7 @@
     margin-right: 5px;
     color: var(--hera-main-color);
     text-decoration: none !important;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 
     &:hover {

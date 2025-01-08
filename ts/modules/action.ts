@@ -28,14 +28,14 @@ class heraAction extends heraBase {
         <span class="${theme == 'dark' ? 'is-active' : ''}" data-action-value="dark">
             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"
-                style="color: currentcolor; width: 16px; height: 16px;">
+                style="color: currentcolor; width: 13px; height: 13px;">
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
             </svg>
         </span>
         <span class="${theme == 'light' ? 'is-active' : ''}" data-action-value="light">
             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"
-                style="color: currentcolor; width: 16px; height: 16px;">
+                style="color: currentcolor; width: 13px; height: 13px;">
                 <circle cx="12" cy="12" r="5"></circle>
                 <path d="M12 1v2"></path>
                 <path d="M12 21v2"></path>
@@ -50,7 +50,7 @@ class heraAction extends heraBase {
         <span class="${theme == 'auto' ? 'is-active' : ''}"  data-action-value="auto">
             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"
-                style="color: currentcolor; width: 16px; height: 16px;">
+                style="color: currentcolor; width: 13px; height: 13px;">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M8 21h8"></path>
                 <path d="M12 17v4"></path>
@@ -58,7 +58,7 @@ class heraAction extends heraBase {
         </span>
     </div>`;
         if (this.darkmode) {
-            document.querySelector('body')!.insertAdjacentHTML('beforeend', html);
+            document.querySelector('.site--footer')!.insertAdjacentHTML('beforeend', html);
         }
 
         document.querySelectorAll('.fixed--theme span').forEach((item) => {

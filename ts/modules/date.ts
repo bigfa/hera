@@ -30,6 +30,7 @@ class heraDate {
 
     init() {
         this.doms = Array.from(document.querySelectorAll(this.selector));
+        console.log(this.doms);
         this.doms.forEach((dom: any) => {
             dom.innerText = this.humanize_time_ago(dom.attributes['datetime'].value);
         });

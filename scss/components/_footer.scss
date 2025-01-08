@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 @keyframes toTop {
@@ -148,20 +149,19 @@
 }
 
 .fixed--theme {
-    position: fixed;
-    left: 10px;
-    top: 40%;
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
     display: flex;
-    flex-direction: column;
     height: max-content;
-    box-shadow: 0 0 0 1px var(--hera-border-color);
-    background-color: var(--hera-background-white);
-    border-radius: 999rem;
+    background-color: var(--hera-background-gray-lightest);
+    border-radius: 0 10px 0 10px;
     width: max-content;
     padding: 3px;
+
     span {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
         cursor: pointer;
         border-radius: 100%;
         display: flex;
@@ -178,10 +178,10 @@
             background-color: var(--hera-background-gray);
         }
 
-        margin-bottom: 5px;
+        margin-right: 5px;
 
         &:last-child {
-            margin-bottom: 0;
+            margin-right: 0;
         }
     }
 }
