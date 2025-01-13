@@ -257,3 +257,19 @@
     margin: 0 auto;
     width: 92%;
 }
+
+.archive--tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+.archive--tagItem {
+    margin: 10px;
+    background-color: var(--hera-background-gray);
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--hera-text-gray-light);
+    span {
+        margin-left: 3px;
+    }
+}
