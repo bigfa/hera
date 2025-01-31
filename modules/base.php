@@ -138,6 +138,12 @@ class heraBass
 
     function panther_image_zoom($content)
     {
+        global $heraSetting;
+        // Check if image zoom is enabled in settings
+        if (!$heraSetting->get_setting('image_zoom')) {
+            return $content;
+        }
+        
         $pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
         $replacement = '<a$1href=$2$3.$4$5 data-action="imageZoomIn" $6>$7</a>';
         $content = preg_replace($pattern, $replacement, $content);
