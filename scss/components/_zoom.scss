@@ -111,14 +111,13 @@
 }
 
 .image--nav {
-    width: 120px;
     display: flex;
     flex-direction: column;
     margin-left: 50px;
     transform: rotate(90deg) translateX(4%);
     text-align: right;
     pointer-events: none;
-    font-size: 100px;
+    font-size: 64px;
     max-height: 80vh;
     color: var(--hera-text-light);
     font-style: italic;
