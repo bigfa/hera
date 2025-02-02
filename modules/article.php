@@ -68,6 +68,7 @@ function hera_is_has_image($post_id)
 function hera_get_post_image_count($post_id)
 {
     $content = get_post_field('post_content', $post_id);
+    $content = apply_filters('the_content', $content);
     preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
     return count($strResult[1]);
 }
