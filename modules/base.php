@@ -53,6 +53,7 @@ class heraBass
 
         add_action('edit_category_form_fields', array($this, 'add_category_cover_form_item'));
         add_action('edited_terms', array($this, 'update_my_category_fields'));
+        add_filter('template_include', array($this, 'category_card_template'), 1);
 
         add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
         add_action('admin_enqueue_scripts', array($this, 'admin_enquenue_scripts'));
@@ -222,6 +223,18 @@ class heraBass
         if (is_singular()) wp_enqueue_script("comment-reply");
     }
 
+    function category_card_template($template_path)
+    {
+        global $wp_query;
+        if (is_category()) {
+            $category_id = get_queried_object_id();
+            $card = get_term_meta($category_id, '_card', true);
+            if ($card) {
+                $template_path = get_template_directory() . '/category-travel.php';
+            }
+        }
+        return $template_path;
+    }
 
     function update_my_category_fields($term_id)
     {
