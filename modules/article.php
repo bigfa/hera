@@ -72,3 +72,28 @@ function hera_get_post_image_count($post_id)
     preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
     return count($strResult[1]);
 }
+
+/**
+ * Get post images
+ *
+ * @since Hera 0.2.0
+ *
+ */
+
+
+function hera_get_post_images($post_id, $count = 3)
+{
+    if (! $post_id) {
+        $post_id = get_the_ID();
+    }
+
+    $post = get_post($post_id);
+    $content = apply_filters('the_content', $post->post_content);
+    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+    $n = count($strResult[1]);
+    $output = array();
+    if ($n > 0) {
+        $output = array_slice($strResult[1], 0, $count);
+    }
+    return $output;
+}

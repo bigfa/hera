@@ -229,3 +229,20 @@
         display: none;
     }
 }
+
+.status--archiveLink {
+    padding: 10px 0;
+    display: flex;
+    a {
+        background-color: var(--hera-background-gray-lightest);
+        border-radius: 999rem;
+        color: var(--hera-text-gray);
+        padding: 10px 20px;
+        line-height: 1.2;
+        font-size: 14px;
+        &:hover {
+            color: var(--hera-hover-color);
+            background-color: var(--hera-background-gray);
+        }
+    }
+}

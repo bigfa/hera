@@ -41,6 +41,15 @@ get_header(); ?>
                 <div class="grap article--body" itemprop="articleBody">
                     <?php the_content(); ?>
                 </div>
+                <?php
+                // link to status post format arvhive page
+                if (get_post_format() == 'status') : ?>
+                    <div class="status--archiveLink">
+                        <a href="<?php echo get_post_format_link('status'); ?>" class="status--link" title="<?php _e('View all status posts', 'Hera'); ?>">
+                            <?php _e('View all status posts', 'Hera'); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
                 <?php wp_link_pages(array(
                     'before'      => '<div class="nav-links nav-links__comment">',
                     'after'       => '</div>',
