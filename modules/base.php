@@ -61,8 +61,18 @@ class heraBass
         add_filter('the_content', array($this, 'hera_image_zoom'), 99);
         add_action('wp_head', array($this, 'head_output'));
 
+        if ($heraSetting->get_setting('gravatar_proxy'))
+            add_filter('get_avatar_url', array($this, 'gravatar_proxy'), 10, 3);
+
         if ($heraSetting->get_setting('exclude_status'))
             add_filter('pre_get_posts', array($this, 'exclude_post_format'));
+    }
+
+    function gravatar_proxy($url, $id_or_email, $args)
+    {
+        global $farallonSetting;
+        $url = str_replace(array("www.gravatar.com", "cn.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), $farallonSetting->get_setting('gravatar_proxy'), $url);
+        return $url;
     }
 
     function exclude_post_format($query)

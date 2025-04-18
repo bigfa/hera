@@ -4,9 +4,13 @@
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
-latest version : `0.2.0`
+latest version : `0.2.1`
 
 ## Changelog
+
+### 0.2.1
+
+- add gravatar proxy domain setting
 
 ### 0.2.0
 
