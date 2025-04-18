@@ -70,8 +70,8 @@ class heraBass
 
     function gravatar_proxy($url, $id_or_email, $args)
     {
-        global $farallonSetting;
-        $url = str_replace(array("www.gravatar.com", "cn.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), $farallonSetting->get_setting('gravatar_proxy'), $url);
+        global $heraSetting;
+        $url = str_replace(array("www.gravatar.com", "cn.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), $heraSetting->get_setting('gravatar_proxy'), $url);
         return $url;
     }
 
