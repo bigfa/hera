@@ -431,18 +431,18 @@ $heraSetting = new heraSetting(
                         'label' => __('Show parent comment', 'Hera'),
                         'description' => __('Enable show parent comment', 'Hera')
                     ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'toc',
-                    //     'label' => __('Table of content', 'Hera'),
-                    //     'description' => __('Enable table of content', 'Hera')
-                    // ],
-                    // [
-                    //     'type' => 'input',
-                    //     'name' => 'toc_start',
-                    //     'label' => __('Start heading', 'Hera'),
-                    //     'description' => __('Start heading,default h3', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'toc',
+                        'label' => __('Table of content', 'Hera'),
+                        'description' => __('Enable table of content', 'Hera')
+                    ],
+                    [
+                        'type' => 'input',
+                        'name' => 'toc_start',
+                        'label' => __('Start heading', 'Hera'),
+                        'description' => __('Start heading,default h3', 'Hera')
+                    ],
                     [
                         'type' => 'switch',
                         'name' => 'show_author',

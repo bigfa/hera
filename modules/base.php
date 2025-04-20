@@ -66,6 +66,9 @@ class heraBass
 
         if ($heraSetting->get_setting('exclude_status'))
             add_filter('pre_get_posts', array($this, 'exclude_post_format'));
+
+        if ($heraSetting->get_setting('toc'))
+            add_filter('the_content', array($this, 'hera_toc'));
     }
 
     function gravatar_proxy($url, $id_or_email, $args)
@@ -73,6 +76,43 @@ class heraBass
         global $heraSetting;
         $url = str_replace(array("www.gravatar.com", "cn.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), $heraSetting->get_setting('gravatar_proxy'), $url);
         return $url;
+    }
+    function hera_toc($content)
+    {
+        global $heraSetting;
+        $toc_start = $heraSetting->get_setting('toc_start') ? $heraSetting->get_setting('toc_start') : 3;
+        preg_match_all('/<h([' . $toc_start . '-6]).*?>(.*?)<\/h[' . $toc_start . '-6]>/i', $content, $matches, PREG_SET_ORDER);
+
+        if ($matches && is_singular()) {
+            $toc = '<ul>';
+            $previous_level = 3;
+            $count = 1;
+
+            foreach ($matches as $match) {
+                $level = $match[1];
+                $title = $match[2];
+                if ($level > $previous_level) {
+                    $toc .= '<ul>';
+                } elseif ($level < $previous_level) {
+                    $toc .= str_repeat('</ul></li>', $previous_level - $level);
+                } else {
+                    $toc .= '</li>';
+                }
+
+                $toc .= sprintf('<li><a href="#toc-%s">%s</a>', $count, $title);
+                $content = str_replace($match[0], sprintf('<h%s id="toc-%s">%s</h%s>', $level, $count, $title, $level), $content);
+
+                $previous_level = $level;
+                $count++;
+            }
+
+            $toc .= str_repeat('</li></ul>', $previous_level - 2);
+            $toc .= '</ul>';
+
+            $content = '<details class="hera--toc" open><summary>' . __('Table of content', 'Hera') . '</summary>' . $toc . '</details>' . $content;
+        }
+
+        return $content;
     }
 
     function exclude_post_format($query)

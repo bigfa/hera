@@ -246,3 +246,33 @@
         }
     }
 }
+
+.hera--toc {
+    background-color: var(--hera-background-gray);
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: var(--hera-text-size-small);
+    margin-bottom: 15px;
+    color: var(--hera-text-light);
+    summary {
+        cursor: pointer;
+    }
+    ul {
+        margin-bottom: 0 !important;
+        li {
+            margin-bottom: 0 !important;
+            margin-left: 20px !important;
+            &::before {
+                padding-right: 6px !important;
+            }
+        }
+    }
+    line-height: 1.4 !important;
+    a {
+        box-shadow: none !important;
+        text-decoration: none;
+        &:hover {
+            color: var(--hera-hover-color);
+        }
+    }
+}
