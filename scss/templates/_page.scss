@@ -70,6 +70,10 @@
                 padding-left: 10px;
                 padding-right: 10px;
                 padding-top: 8px;
+
+                &:hover {
+                    color: var(--hera-hover-color);
+                }
             }
 
             &:hover {
@@ -81,6 +85,13 @@
                 color: var(--hera-text-gray);
                 line-height: 1;
                 padding: 0 10px 10px;
+
+                a {
+                    &:hover {
+                        color: var(--hera-text-color);
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }

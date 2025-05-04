@@ -535,6 +535,12 @@ $heraSetting = new heraSetting(
                         'description' => __('Mastodon link', 'Hera')
                     ],
                     [
+                        'type' => 'input',
+                        'name' => 'threads',
+                        'label' => __('Threads', 'Hera'),
+                        'description' => __('Threads link', 'Hera')
+                    ],
+                    [
                         'type' => 'textarea',
                         'name' => 'custom_sns',
                         'label' => __('Custom', 'Hera'),

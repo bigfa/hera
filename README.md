@@ -4,11 +4,16 @@
 
 Hera is a simple single column wordpress theme with perfect performace and elegance design.
 
-latest version : `0.2.2`
+latest version : `0.2.3`
 
 [中文说明](https://github.com/bigfa/hera/blob/develop/README_CN.md)
 
 ## Changelog
+
+### 0.2.3
+
+- update icon
+- add threads link setting
 
 ### 0.2.2
 

@@ -36,8 +36,10 @@ global $heraSetting;
                 <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time>
                 <span class="sep"></span>
                 <?php the_category(' '); ?>
-                <span class="sep"></span>
-                <?php echo hera_get_post_image_count(get_the_ID()); ?> <?php _e('pics', 'Hera'); ?>
+                <?php if (hera_get_post_image_count(get_the_ID())) : ?>
+                    <span class="sep"></span>
+                    <?php echo hera_get_post_image_count(get_the_ID()); ?> <?php _e('pics', 'Hera'); ?>
+                <?php endif; ?>
             </div>
         </div>
         <?php if (hera_is_has_image(get_the_ID()) && !$heraSetting->get_setting('hide_home_cover')) : ?>
