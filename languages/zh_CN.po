@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: Hera 0.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Hera\n"
 "POT-Creation-Date: 2024-12-29T15:20:57+00:00\n"
-"PO-Revision-Date: 2024-12-29 23:22+0800\n"
+"PO-Revision-Date: 2025-05-12 00:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Domain: Hera\n"
 
 #. Theme Name of the theme
@@ -51,6 +51,18 @@ msgstr "增加菜单"
 #: functions.php:132
 msgid "No links yet"
 msgstr "尚无链接"
+
+#: modules/scripts.php:83
+msgid "No views yet"
+msgstr "暂无浏览"
+
+#: modules/scripts.php:85
+msgid "1 View"
+msgstr "1 浏览"
+
+#: modules/scripts.php:87
+msgid "%d Views"
+msgstr "%d 浏览"
 
 #: modules/base.php:72
 msgid "Cover"

@@ -51,3 +51,39 @@ function get_link_items()
     }
     return $result;
 }
+
+
+
+function hera_get_post_views($post_id = 0)
+{
+
+    $views_number = (int)get_post_meta($post_id, HERA_POST_VIEW_KEY, true);
+
+    /**
+     * Filters the returned views for a post.
+     *
+     * @since Hera 0.2.4
+     */
+    return apply_filters('hera_get_post_views', $views_number, $post_id);
+}
+
+/**
+ * Get post views
+ *
+ * @since Hera 0.2.4
+ *
+ * @param post id
+ * @return post views
+ */
+
+function hera_get_post_views_text($zero = false, $one = false, $more = false, $post = 0)
+{
+    $views = hera_get_post_views($post);
+    if ($views == 0) {
+        return $zero ? $zero : __('No views yet', 'Hera');
+    } elseif ($views == 1) {
+        return $one ? $one : __('1 View', 'Hera');
+    } else {
+        return $more ? str_replace('%d', $views, $more) : sprintf(__('%d Views', 'Hera'), $views);
+    }
+}
