@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Hera 0.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Hera\n"
 "POT-Creation-Date: 2024-12-29T15:20:57+00:00\n"
-"PO-Revision-Date: 2025-05-12 00:43+0800\n"
+"PO-Revision-Date: 2025-07-17 16:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -104,62 +104,6 @@ msgstr "首页底部"
 msgid "Single Pgae Bottom"
 msgstr "文章详情页底部"
 
-#: modules/base.php:191
-msgid "second ago"
-msgstr "秒前"
-
-#: modules/base.php:192
-msgid "seconds ago"
-msgstr "秒前"
-
-#: modules/base.php:193
-msgid "minute ago"
-msgstr "分钟前"
-
-#: modules/base.php:194
-msgid "minutes ago"
-msgstr "分钟前"
-
-#: modules/base.php:195
-msgid "hour ago"
-msgstr "小时前"
-
-#: modules/base.php:196
-msgid "hours ago"
-msgstr "小时前"
-
-#: modules/base.php:197
-msgid "day ago"
-msgstr "天前"
-
-#: modules/base.php:198
-msgid "days ago"
-msgstr "天前"
-
-#: modules/base.php:199
-msgid "week ago"
-msgstr "周前"
-
-#: modules/base.php:200
-msgid "weeks ago"
-msgstr "周天"
-
-#: modules/base.php:201
-msgid "month ago"
-msgstr "个月前"
-
-#: modules/base.php:202
-msgid "months ago"
-msgstr "个月前"
-
-#: modules/base.php:203
-msgid "year ago"
-msgstr "年前"
-
-#: modules/base.php:204
-msgid "years ago"
-msgstr "年前"
-
 #: modules/comment.php:53
 msgid "Author"
 msgstr "作者"
@@ -168,6 +112,13 @@ msgstr "作者"
 #: modules/comment.php:146 modules/comment.php:172 modules/setting.php:28
 msgid "Success"
 msgstr "成功"
+
+#: modules/comment.php:269 template-parts/content-archive.php:36
+#: template-parts/content-card.php:33 template-parts/content-status.php:25
+#: template-parts/content.php:36 template-parts/single-related.php:43
+#: template-parts/single-related.php:61
+msgid "ago"
+msgstr "前"
 
 #: modules/setting.php:47
 msgid "Setting saved success!"

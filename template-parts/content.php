@@ -33,7 +33,7 @@ global $heraSetting;
                 ?>
             </div>
             <div class="block--meta">
-                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time>
+                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __('ago', 'Hera'); ?></time>
                 <span class="sep"></span>
                 <?php the_category(' '); ?>
                 <?php if (hera_get_post_image_count(get_the_ID())) : ?>

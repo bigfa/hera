@@ -64,7 +64,6 @@ function typescripts() {
                 './ts/modules/action.ts',
                 './ts/modules/comment.ts',
                 './ts/modules/scroll.ts',
-                './ts/modules/date.ts',
             ])
             .pipe(
                 ts({

@@ -29,7 +29,7 @@ get_header(); ?>
                             <span><?php the_author(); ?></span>
                         </a>
                         <span>
-                            <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" class="humane--time"><?php the_time('Y-m-d'); ?></time>
+                            <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __('ago', 'Hera'); ?></time>
                             <span class="sep"></span>
                             <span><?php the_category(','); ?></span>
                             <span class="sep"></span>
