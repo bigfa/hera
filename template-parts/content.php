@@ -40,6 +40,8 @@ global $heraSetting;
                     <span class="sep"></span>
                     <?php echo hera_get_post_image_count(get_the_ID()); ?> <?php _e('pics', 'Hera'); ?>
                 <?php endif; ?>
+                <span class="sep"></span>
+                <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
             </div>
         </div>
         <?php if (hera_is_has_image(get_the_ID()) && !$heraSetting->get_setting('hide_home_cover')) : ?>

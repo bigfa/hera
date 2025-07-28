@@ -34,6 +34,8 @@ get_header(); ?>
                             <span><?php the_category(','); ?></span>
                             <span class="sep"></span>
                             <?php echo hera_get_post_views_text(false, false, false, get_the_ID()); ?>
+                            <span class="sep"></span>
+                            <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
                         </span>
                         <a href="#comments" class="link2comment" title="<?php _e('Jump to comments', 'Hera'); ?>">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="sy">
