@@ -1,3 +1,33 @@
+.hComment {
+    &--area {
+        padding-top: 10px;
+    }
+
+    &--list {
+        border-top: 1px solid var(--hera-border-color-light);
+        list-style: none;
+        padding-top: 10px;
+    }
+
+    &--title {
+        padding-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+            position: relative;
+            transform: translate3d(0, 1px, 0);
+            fill: var(--hera-text-color);
+        }
+    }
+}
+
 .comment-form {
     padding-bottom: 30px;
 
@@ -90,16 +120,6 @@
         padding: 20px;
         background-color: var(--hera-background-gray-lightest);
         border-radius: 5px;
-    }
-}
-
-@keyframes comment--fresh {
-    0% {
-        background-color: #fff;
-    }
-
-    100% {
-        background-color: rgba(255, 254, 224, 1);
     }
 }
 
@@ -276,24 +296,6 @@
     color: var(--hera-text-light);
 }
 
-.comments--title {
-    padding-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-
-    svg {
-        width: 24px;
-        height: 24px;
-        margin-right: 5px;
-        position: relative;
-        transform: translate3d(0, 1px, 0);
-        fill: var(--hera-text-color);
-    }
-}
-
 .comment-respond {
     padding-top: 30px;
 }
@@ -335,37 +337,6 @@
             width: 12px;
             flex: 0 0 auto;
         }
-    }
-}
-
-.post--share {
-    svg {
-        height: 16px;
-        width: 16px;
-        fill: var(--hera-text-gray);
-        margin-right: 4px;
-        flex: 0 0 auto;
-    }
-
-    .text {
-        flex: 0 0 auto;
-    }
-
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 0 15px;
-    font-size: 14px;
-    color: var(--hera-text-gray);
-    line-height: 1.2;
-
-    .link {
-        margin-left: 5px;
-        border-bottom: 1px dotted var(--hera-hover-color);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 }
 

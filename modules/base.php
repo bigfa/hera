@@ -230,7 +230,7 @@ class heraBass
         global $heraSetting;
         wp_dequeue_style('global-styles');
         wp_enqueue_style('hera-style', get_template_directory_uri() . '/build/css/misc.css', array(), HERA_VERSION, 'all');
-        wp_enqueue_script('hera-script', get_template_directory_uri() . '/build/js/ts.js', array(), HERA_VERSION, true);
+        wp_enqueue_script('hera-script', get_template_directory_uri() . '/build/js/misc.js', array(), HERA_VERSION, true);
         wp_localize_script(
             'hera-script',
             'obvInit',
@@ -244,22 +244,6 @@ class heraBass
                 'is_archive' => is_archive(),
                 'archive_id' => get_queried_object_id(),
                 'hide_home_cover' => !!$heraSetting->get_setting('hide_home_cover'),
-                'timeFormat' => [
-                    'second' => __('second ago', 'Hera'),
-                    'seconds' => __('seconds ago', 'Hera'),
-                    'minute' => __('minute ago', 'Hera'),
-                    'minutes' => __('minutes ago', 'Hera'),
-                    'hour' => __('hour ago', 'Hera'),
-                    'hours' => __('hours ago', 'Hera'),
-                    'day' => __('day ago', 'Hera'),
-                    'days' => __('days ago', 'Hera'),
-                    'week' => __('week ago', 'Hera'),
-                    'weeks' => __('weeks ago', 'Hera'),
-                    'month' => __('month ago', 'Hera'),
-                    'months' => __('months ago', 'Hera'),
-                    'year' => __('year ago', 'Hera'),
-                    'years' => __('years ago', 'Hera'),
-                ]
             ]
         );
         if ($heraSetting->get_setting('css')) {

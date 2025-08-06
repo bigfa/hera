@@ -15,7 +15,7 @@ get_header(); ?>
             <h2 class="post--headline">404</h2>
         </header>
         <div class="grap">
-            <p>Sorry, the page you are looking for does not exist.</p>
+            <p><?php _e('Sorry, the page you are looking for does not exist.', 'Hera'); ?></p>
         </div>
     </article>
 </div>

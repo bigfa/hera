@@ -26,6 +26,10 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 16px;
         display: grid;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &--post {
@@ -46,15 +50,21 @@
         background-repeat: no-repeat;
         text-decoration: none !important;
 
+        a {
+            text-decoration: none;
+        }
+
         .markerPro--content {
             flex: 1 1 auto;
         }
 
         &__hera {
+            flex-direction: row;
+
             &::before {
                 display: none;
             }
-            flex-direction: row;
+
             img {
                 width: 80px;
                 height: 80px;
@@ -81,7 +91,6 @@
         display: flex;
         align-items: center;
         font-size: 12px;
-        // color: rgba(255, 255, 255, 0.9);
         display: flex;
         align-items: center;
         position: relative;
@@ -109,11 +118,5 @@
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .markerPro--posts {
-        grid-template-columns: 1fr;
     }
 }

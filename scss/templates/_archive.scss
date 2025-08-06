@@ -8,7 +8,7 @@
     }
 
     &--title {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.4;
         height: 2.8em;
         overflow: hidden;
@@ -26,6 +26,9 @@
         font-size: 12px;
         color: var(--hera-text-gray);
         margin-top: 5px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
     }
 
     &--item {

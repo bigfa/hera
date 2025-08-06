@@ -10,7 +10,7 @@
  * @since Hera 0.0.1
  */
 ?>
-<footer class="site--footer u-textAligncenter">
+<footer class="site--footer">
     <div><?php
             global $heraSetting;
             if ($heraSetting->get_setting('copyright')) {

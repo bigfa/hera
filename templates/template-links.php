@@ -15,10 +15,10 @@ get_header();
 <?php get_template_part('template-parts/search-bar');
 ?>
 <main class="articleContainer">
-    <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <article class="hArticle" itemscope="itemscope" itemtype="http://schema.org/Article">
         <?php while (have_posts()) : the_post(); ?>
-            <header class="article--header">
-                <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
+            <header class="hArticle--header">
+                <h2 class="hArticle--headline" itemprop="headline"><?php the_title(); ?></h2>
             </header>
             <?php echo get_link_items(); ?>
         <?php endwhile; ?>

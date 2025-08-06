@@ -73,6 +73,15 @@ function hera_get_post_image_count($post_id)
     return count($strResult[1]);
 }
 
+function hera_get_post_image_count_text($post_id)
+{
+    $count = hera_get_post_image_count($post_id);
+    if ($count > 0) {
+        return sprintf(_n('%d pic', '%d pics', $count, 'Hera'), $count);
+    }
+    return '';
+}
+
 /**
  * Get post images
  *

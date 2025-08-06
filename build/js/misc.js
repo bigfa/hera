@@ -28,17 +28,12 @@ var heraBase = /** @class */ (function () {
         this.post_id = 0;
         this.is_archive = false;
         this.darkmode = false;
-        //@ts-ignore
+        var obvInit = window.obvInit;
         this.is_single = obvInit.is_single;
-        //@ts-ignore
         this.post_id = obvInit.post_id;
-        //@ts-ignore
         this.is_archive = obvInit.is_archive;
-        //@ts-ignore
         this.darkmode = obvInit.darkmode;
-        //@ts-ignore
         this.VERSION = obvInit.version;
-        console.log('version', this.VERSION);
     }
     heraBase.prototype.getCookie = function (t) {
         if (0 < document.cookie.length) {
@@ -415,9 +410,7 @@ var heraComment = /** @class */ (function (_super) {
                 if (_this.loading)
                     return;
                 var form = document.querySelector('.comment-form');
-                // @ts-ignore
                 var formData = new FormData(form);
-                // @ts-ignore
                 var formDataObj = {};
                 formData.forEach(function (value, key) { return (formDataObj[key] = value); });
                 _this.loading = true;
@@ -442,26 +435,26 @@ var heraComment = /** @class */ (function (_super) {
                     }
                     var a = document.getElementById('cancel-comment-reply-link'), i = document.getElementById('respond'), n = document.getElementById('wp-temp-form-div');
                     var comment = data.data;
-                    var html = "<li class=\"comment\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"comment-body comment-body__fresh\">\n                            <footer class=\"comment-meta\">\n                                <div class=\"comment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"comment--meta\">\n                                    <div class=\"comment--author\">").concat(comment.comment_author, "\n                                    <time class=\"comment--time\">\u521A\u521A</time>\n                                    </div>\n                                </div>\n                            </footer>\n                            <div class=\"comment-content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>"); // @ts-ignore
+                    var html = "<li class=\"comment\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"comment-body comment-body__fresh\">\n                            <footer class=\"comment-meta\">\n                                <div class=\"comment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"comment--meta\">\n                                    <div class=\"comment--author\">").concat(comment.comment_author, "\n                                    <time class=\"comment--time\">\u521A\u521A</time>\n                                    </div>\n                                </div>\n                            </footer>\n                            <div class=\"comment-content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>");
                     var parent_id = (_a = document.querySelector('#comment_parent')) === null || _a === void 0 ? void 0 : _a.value;
-                    // @ts-ignore
-                    (a.style.display = 'none'), // @ts-ignore
-                        (a.onclick = null), // @ts-ignore
-                        (document.getElementById('comment_parent').value = '0'),
-                        n && // @ts-ignore
-                            i && // @ts-ignore
+                    (a.style.display = 'none'),
+                        (a.onclick = null),
+                        (document.getElementById('comment_parent').value =
+                            '0'),
+                        n &&
+                            i &&
+                            n.parentNode &&
                             (n.parentNode.insertBefore(i, n), n.parentNode.removeChild(n));
                     if (document.querySelector('.comment-body__fresh'))
                         (_b = document
                             .querySelector('.comment-body__fresh')) === null || _b === void 0 ? void 0 : _b.classList.remove('comment-body__fresh');
-                    // @ts-ignore
-                    document.getElementById('comment').value = '';
-                    // @ts-ignore
+                    var commentInput = document.getElementById('comment');
+                    if (commentInput) {
+                        commentInput.value = '';
+                    }
                     if (parent_id != '0') {
                         (_c = document
-                            .querySelector(
-                        // @ts-ignore
-                        '#comment-' + parent_id)) === null || _c === void 0 ? void 0 : _c.insertAdjacentHTML('beforeend', '<ol class="children">' + html + '</ol>');
+                            .querySelector('#comment-' + parent_id)) === null || _c === void 0 ? void 0 : _c.insertAdjacentHTML('beforeend', '<ol class="children">' + html + '</ol>');
                         console.log(parent_id);
                     }
                     else {
@@ -469,7 +462,7 @@ var heraComment = /** @class */ (function (_super) {
                             (_d = document.querySelector('.no--comment')) === null || _d === void 0 ? void 0 : _d.remove();
                         }
                         (_e = document
-                            .querySelector('.commentlist')) === null || _e === void 0 ? void 0 : _e.insertAdjacentHTML('beforeend', html);
+                            .querySelector('.hComment--list')) === null || _e === void 0 ? void 0 : _e.insertAdjacentHTML('beforeend', html);
                     }
                     var newComment = document.querySelector("#comment-".concat(comment.comment_ID));
                     if (newComment) {

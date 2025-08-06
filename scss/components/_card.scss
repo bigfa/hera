@@ -1,44 +1,36 @@
-.post--cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-}
+.hCard {
+    &--list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
 
-@media screen and (max-width: 768px) {
-    .post--cards {
-        grid-template-columns: repeat(1, 1fr);
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
-}
 
-.post--card {
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--hera-background-gray);
-
-    &:hover {
-        background-color: var(--hera-background-gray-lightest);
+    &--item {
         border-radius: 12px;
-        transform: none;
-        transform-origin: 50% 50% 0px;
-    }
-
-    .cover--link {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        background-color: var(--hera-background-gray);
+
+        &:hover {
+            background-color: var(--hera-background-gray-lightest);
+            border-radius: 12px;
+            transform: none;
+            transform-origin: 50% 50% 0px;
+        }
+    }
+
+    &--content {
         position: relative;
+        padding: 0 20px 20px;
     }
 
-    .cover {
-        border-radius: 12px 12px 0 0;
-        margin-bottom: 12px;
-        object-fit: cover;
-        aspect-ratio: 60/36;
-    }
-
-    .post--title {
+    &--title {
         font-size: 20px;
         font-weight: bold;
         line-height: 1.4;
@@ -48,23 +40,12 @@
             color: var(--hera-hover-color);
         }
 
-        & + .meta {
+        & + .hCard--meta {
             margin-top: 10px;
         }
     }
 
-    .card--content {
-        position: relative;
-        padding: 0 20px 20px;
-    }
-
-    .description {
-        font-size: 15px;
-        color: var(--hera-text-light);
-        line-height: 1.6;
-    }
-
-    .meta {
+    &--meta {
         font-size: 14px;
         color: var(--hera-text-gray-lightest);
         display: flex;
@@ -91,6 +72,25 @@
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+
+    &--snippet {
+        font-size: 15px;
+        color: var(--hera-text-light);
+        line-height: 1.6;
+    }
+
+    &--cover {
+        border-radius: 12px 12px 0 0;
+        margin-bottom: 12px;
+        object-fit: cover;
+        aspect-ratio: 60/36;
+
+        &Link {
+            display: flex;
+            align-items: center;
+            position: relative;
         }
     }
 }

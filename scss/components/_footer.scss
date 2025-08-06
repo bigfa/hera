@@ -1,25 +1,3 @@
-.site--footer {
-    text-align: center;
-    font-size: 14px;
-    color: var(--hera-text-gray);
-    padding: 25px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-}
-
-@keyframes toTop {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-50%);
-    }
-}
-
 .backToTop {
     .svgIcon {
         width: 17px;
@@ -64,87 +42,19 @@
 }
 
 .site--footer {
+    text-align: center;
     font-size: 14px;
-    padding: 20px 80px;
-    color: var(--hera-text-light);
+    color: var(--hera-text-gray);
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 
     &__content {
         display: flex;
         align-items: center;
-    }
-
-    &__info {
-        display: none;
-        text-align: center;
-        color: var(--hera-text-light);
-
-        a {
-            text-decoration: underline;
-
-            &:hover {
-                color: var(--hera-hover-color);
-            }
-        }
-
-        &.active {
-            display: block;
-        }
-    }
-
-    .copyright {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        svg {
-            fill: var(--hera-text-light);
-            margin-left: 8px;
-            cursor: pointer;
-            &:hover {
-                fill: var(--hera-hover-color);
-            }
-        }
-    }
-
-    &__sns {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 10px;
-        padding-bottom: 10px;
-        .is-singleColumn &,
-        .page-template-template-map &,
-        .page-template-template-wide & {
-            justify-content: center;
-        }
-
-        a {
-            margin: 0 0 0 12px;
-            display: flex;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-
-        svg {
-            fill: var(--hera-text-color);
-            width: 24px;
-            height: 24px;
-
-            &:hover {
-                fill: var(--hera-hover-color);
-            }
-
-            &.sns {
-                fill: none;
-                stroke: var(--hera-text-color);
-
-                &:hover {
-                    stroke: var(--hera-hover-color);
-                    fill: none;
-                }
-            }
-        }
     }
 }
 
@@ -182,15 +92,6 @@
 
         &:last-child {
             margin-right: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .site--footer {
-        &__sns {
-            padding-bottom: 20px;
-            margin-top: 5px;
         }
     }
 }

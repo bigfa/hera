@@ -11,9 +11,7 @@ class heraComment extends heraBase {
                 e.preventDefault();
                 if (this.loading) return;
                 const form = document.querySelector('.comment-form') as HTMLFormElement;
-                // @ts-ignore
                 const formData = new FormData(form);
-                // @ts-ignore
                 const formDataObj: { [index: string]: any } = {};
                 formData.forEach((value, key: any) => (formDataObj[key] = value));
                 this.loading = true;
@@ -35,7 +33,9 @@ class heraComment extends heraBase {
                         if (data.code != 200) {
                             return this.showNotice(data.message, 'error');
                         }
-                        let a = document.getElementById('cancel-comment-reply-link'),
+                        let a = document.getElementById(
+                                'cancel-comment-reply-link'
+                            ) as HTMLAnchorElement,
                             i = document.getElementById('respond'),
                             n = document.getElementById('wp-temp-form-div');
                         const comment = data.data;
@@ -55,28 +55,32 @@ class heraComment extends heraBase {
                                 ${comment.comment_content}
                             </div>
                         </div>
-                    </li>`; // @ts-ignore
-                        const parent_id = document.querySelector('#comment_parent')?.value;
-                        // @ts-ignore
-                        (a.style.display = 'none'), // @ts-ignore
-                            (a.onclick = null), // @ts-ignore
-                            (document.getElementById('comment_parent').value = '0'),
-                            n && // @ts-ignore
-                                i && // @ts-ignore
+                    </li>`;
+                        const parent_id = (
+                            document.querySelector('#comment_parent') as HTMLInputElement
+                        )?.value;
+                        (a.style.display = 'none'),
+                            (a.onclick = null),
+                            ((document.getElementById('comment_parent') as HTMLInputElement).value =
+                                '0'),
+                            n &&
+                                i &&
+                                n.parentNode &&
                                 (n.parentNode.insertBefore(i, n), n.parentNode.removeChild(n));
                         if (document.querySelector('.comment-body__fresh'))
                             document
                                 .querySelector('.comment-body__fresh')
                                 ?.classList.remove('comment-body__fresh');
-                        // @ts-ignore
-                        document.getElementById('comment').value = '';
-                        // @ts-ignore
+
+                        const commentInput = document.getElementById(
+                            'comment'
+                        ) as HTMLInputElement | null;
+                        if (commentInput) {
+                            commentInput.value = '';
+                        }
                         if (parent_id != '0') {
                             document
-                                .querySelector(
-                                    // @ts-ignore
-                                    '#comment-' + parent_id
-                                )
+                                .querySelector('#comment-' + parent_id)
                                 ?.insertAdjacentHTML(
                                     'beforeend',
                                     '<ol class="children">' + html + '</ol>'
@@ -87,7 +91,7 @@ class heraComment extends heraBase {
                                 document.querySelector('.no--comment')?.remove();
                             }
                             document
-                                .querySelector('.commentlist')
+                                .querySelector('.hComment--list')
                                 ?.insertAdjacentHTML('beforeend', html);
                         }
 

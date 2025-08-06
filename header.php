@@ -71,7 +71,7 @@
                 </nav>
 
                 <?php if ($heraSetting->get_setting('footer_sns')) : ?>
-                    <div class="site--footer__sns">
+                    <div class="site--nav__sns">
                         <?php get_template_part('template-parts/sns'); ?>
                     </div>
                 <?php endif; ?>

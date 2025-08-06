@@ -7,9 +7,9 @@ get_header(); ?>
 ?>
 <div class="template--terms articleContainer">
     <?php while (have_posts()) : the_post(); ?>
-        <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <header class="article--header">
-                <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
+        <article class="hArticle" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <header class="hArticle--header">
+                <h2 class="hArticle--headline" itemprop="headline"><?php the_title(); ?></h2>
             </header>
             <div class="collectionCard">
                 <?php $categories = get_terms([

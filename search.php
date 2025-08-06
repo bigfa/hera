@@ -13,9 +13,9 @@ get_header(); ?>
 <?php get_template_part('template-parts/search-bar'); ?>
 
 <div class="post--list">
-    <div class="search--title"><?php echo  get_query_var('s') ?>的搜索结果</div>
+    <div class="search--title"><?php _e('Search results for: ', 'Hera') . get_query_var('s'); ?></div>
     <?php if (have_posts()) : ?>
-        <div class="posts">
+        <div class="hBlock--list">
             <?php while (have_posts()) : the_post();
                 get_template_part('template-parts/content', get_post_format());
             endwhile; ?>

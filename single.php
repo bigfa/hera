@@ -17,19 +17,19 @@ get_header(); ?>
     if (have_posts()) :
         while (have_posts()) : the_post();
     ?>
-            <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
-                <header class="article--header">
-                    <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
+            <article class="hArticle" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <header class="hArticle--header">
+                    <h2 class="hArticle--headline" itemprop="headline"><?php the_title(); ?></h2>
                     <?php if (get_post_meta(get_the_ID(), '_subtitle', true)) : ?>
-                        <h3 class="article--subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h3>
+                        <h3 class="hArticle--subtitle" itemprop="headlineSecondary"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h3>
                     <?php endif; ?>
-                    <div class="article--meta">
+                    <div class="hArticle--meta">
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
                             <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>的头像" class="avatar">
                             <span><?php the_author(); ?></span>
                         </a>
-                        <span>
-                            <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __('ago', 'Hera'); ?></time>
+                        <span class="u-flex">
+                            <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __(' ago', 'Hera'); ?></time>
                             <span class="sep"></span>
                             <span><?php the_category(','); ?></span>
                             <span class="sep"></span>
@@ -37,14 +37,16 @@ get_header(); ?>
                             <span class="sep"></span>
                             <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
                         </span>
-                        <a href="#comments" class="link2comment" title="<?php _e('Jump to comments', 'Hera'); ?>">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="sy">
-                                <path d="M18.006 16.803c1.533-1.456 2.234-3.325 2.234-5.321C20.24 7.357 16.709 4 12.191 4S4 7.357 4 11.482c0 4.126 3.674 7.482 8.191 7.482.817 0 1.622-.111 2.393-.327.231.2.48.391.744.559 1.06.693 2.203 1.044 3.399 1.044.224-.008.4-.112.486-.287a.49.49 0 0 0-.042-.518c-.495-.67-.845-1.364-1.04-2.057a4 4 0 0 1-.125-.598zm-3.122 1.055-.067-.223-.315.096a8 8 0 0 1-2.311.338c-4.023 0-7.292-2.955-7.292-6.587 0-3.633 3.269-6.588 7.292-6.588 4.014 0 7.112 2.958 7.112 6.593 0 1.794-.608 3.469-2.027 4.72l-.195.168v.255c0 .056 0 .151.016.295.025.231.081.478.154.733.154.558.398 1.117.722 1.659a5.3 5.3 0 0 1-2.165-.845c-.276-.176-.714-.383-.941-.59z"></path>
-                            </svg>
-                        </a>
+                        <?php if (comments_open() || get_comments_number()) : ?>
+                            <a href="#comments" class="link2comment" title="<?php _e('Jump to comments', 'Hera'); ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="sy">
+                                    <path d="M18.006 16.803c1.533-1.456 2.234-3.325 2.234-5.321C20.24 7.357 16.709 4 12.191 4S4 7.357 4 11.482c0 4.126 3.674 7.482 8.191 7.482.817 0 1.622-.111 2.393-.327.231.2.48.391.744.559 1.06.693 2.203 1.044 3.399 1.044.224-.008.4-.112.486-.287a.49.49 0 0 0-.042-.518c-.495-.67-.845-1.364-1.04-2.057a4 4 0 0 1-.125-.598zm-3.122 1.055-.067-.223-.315.096a8 8 0 0 1-2.311.338c-4.023 0-7.292-2.955-7.292-6.587 0-3.633 3.269-6.588 7.292-6.588 4.014 0 7.112 2.958 7.112 6.593 0 1.794-.608 3.469-2.027 4.72l-.195.168v.255c0 .056 0 .151.016.295.025.231.081.478.154.733.154.558.398 1.117.722 1.659a5.3 5.3 0 0 1-2.165-.845c-.276-.176-.714-.383-.941-.59z"></path>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </header>
-                <div class="grap article--body" itemprop="articleBody">
+                <div class="hGraph hArticle--body" itemprop="articleBody">
                     <?php the_content(); ?>
                 </div>
                 <?php
@@ -64,7 +66,7 @@ get_header(); ?>
                 )); ?>
                 <?php if ($heraSetting->get_setting('update_time')) : ?>
                     <div class="post--single__update">
-                        <span class="text"><?php _e('Updated on', 'Farallon') ?></span>
+                        <span class="text"><?php _e('Updated on', 'Hera') ?></span>
                         <time datetime="<?php echo get_the_modified_time('c'); ?>" itemprop="dateModified"><?php echo get_the_modified_time('Y-m-d'); ?></time>
                     </div>
                 <?php endif; ?>
@@ -87,18 +89,16 @@ get_header(); ?>
                                 <path d="M18.36 5.64c-1.95-1.96-5.11-1.96-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.16-2.73 9.9 0 2.73 2.74 2.73 7.17 0 9.9l-1.42 1.42-1.41-1.42 1.41-1.41c1.96-1.96 1.96-5.12 0-7.07zm-2.12 3.53l-7.07 7.07-1.41-1.41 7.07-7.07 1.41 1.41zm-12.02.71l1.42-1.42 1.41 1.42-1.41 1.41c-1.96 1.96-1.96 5.12 0 7.07 1.95 1.96 5.11 1.96 7.07 0l1.41-1.41 1.42 1.41-1.42 1.42c-2.73 2.73-7.16 2.73-9.9 0-2.73-2.74-2.73-7.17 0-9.9z"></path>
                             </g>
                         </svg>
-                        <span class="text"><?php _e('Copy link.', 'Farallon') ?></span> <span class="link"><?php the_permalink(); ?></span>
+                        <span class="text"><?php _e('Copy link.', 'Hera') ?></span> <span class="link"><?php the_permalink(); ?></span>
                     </div>
                 <?php endif; ?>
-                <div class="article--tags"><?php the_tags('', ''); ?></div>
+                <div class="hArticle--tags" itemprop="keywords"><?php the_tags('', ''); ?></div>
             </article>
             <?php if ($heraSetting->get_setting('bio')) get_template_part('template-parts/author', 'card');
             if ($heraSetting->get_setting('post_navigation')) get_template_part('template-parts/post', 'navigation'); ?>
-            <div class="post--ingle__comments">
-                <?php if (comments_open() || get_comments_number()) :
-                    comments_template();
-                endif; ?>
-            </div>
+            <?php if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif; ?>
     <?php if ($heraSetting->get_setting('related')) get_template_part('template-parts/single', 'related');
         endwhile;
     endif; ?>

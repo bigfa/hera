@@ -3,6 +3,7 @@
 @use 'base/normalize';
 @use 'base/basic';
 @use 'base/layout';
+@use 'base/keyframes';
 
 @use 'components/header';
 @use 'components/zoom';
@@ -13,6 +14,7 @@
 @use 'components/navigation';
 @use 'components/author';
 @use 'components/audio';
+@use 'components/relatedPost';
 
 @use 'templates/map';
 @use 'templates/term';
@@ -20,3 +22,5 @@
 @use 'templates/article';
 @use 'templates/page';
 @use 'templates/archive';
+
+@use 'utilities/wp';

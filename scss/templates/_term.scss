@@ -2,6 +2,10 @@
     padding: 50px 80px;
     min-height: 60vh;
 
+    @media screen and (max-width: 920px) {
+        padding: 50px 20px;
+    }
+
     .page--header {
         padding: 0px 0 40px;
         text-align: center;
@@ -13,6 +17,14 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 15px;
     padding-top: 20px;
+
+    @media (max-width: 920px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     &--item {
         transition: 0.5s;
@@ -47,23 +59,19 @@
     }
 }
 
-@media (max-width: 920px) {
-    .tagCard {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .tagCard {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 .collectionCard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
     padding-top: 20px;
+
+    @media (max-width: 920px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     &--icon {
         margin-top: 10px;
@@ -128,22 +136,6 @@
     &--count {
         font-size: 12px;
         color: var(--hera-text-gray);
-    }
-}
-
-@media (max-width: 920px) {
-    .template--terms {
-        padding: 50px 20px;
-    }
-
-    .collectionCard {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .collectionCard {
-        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -262,6 +254,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .archive--tagItem {
     margin: 10px;
     background-color: var(--hera-background-gray);
@@ -269,6 +262,7 @@
     border-radius: 4px;
     font-size: 14px;
     color: var(--hera-text-gray-light);
+
     span {
         margin-left: 3px;
     }

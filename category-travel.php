@@ -23,7 +23,7 @@ get_header(); ?>
         </div>
     </header>
     <?php if (have_posts()) : ?>
-        <div class="post--cards">
+        <div class="hCard--list">
             <?php while (have_posts()) : the_post();
                 get_template_part('template-parts/content', 'card');
             endwhile; ?>

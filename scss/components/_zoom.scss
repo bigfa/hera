@@ -10,6 +10,10 @@
     align-items: center;
     z-index: 100;
 
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+
     &-img-wrap {
         position: relative;
         opacity: 0;
@@ -121,14 +125,8 @@
     max-height: 80vh;
     color: var(--hera-text-light);
     font-style: italic;
-}
 
-@media (max-width: 800px) {
-    .overlay {
-        flex-direction: column;
-    }
-
-    .image--nav {
+    @media (max-width: 800px) {
         width: 100%;
         margin-left: 0;
         overflow-x: auto;

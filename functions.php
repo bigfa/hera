@@ -23,9 +23,9 @@
 
 define('HERA_VERSION', wp_get_theme()->get('Version'));
 define('HERA_SETTING_KEY', 'hera_setting');
-define('HERA_ARCHIVE_VIEW_KEY', 'hera_post_view');
+define('HERA_ARCHIVE_VIEW_KEY', 'hera_archive_view');
 define('HERA_POST_VIEW_KEY', 'hera_post_view');
-define('HERA_POST_LIKE_KEY', 'hera_comment_view');
+define('HERA_POST_LIKE_KEY', 'hera_post_like');
 
 add_action('after_setup_theme', 'hera_setup');
 function hera_setup()

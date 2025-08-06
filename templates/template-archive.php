@@ -10,9 +10,9 @@ get_header();
 <main class="articleContainer">
     <?php if (have_posts()) :
         while (have_posts()) : the_post(); ?>
-            <article class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
-                <header class="article--header">
-                    <h2 class="article--headline" itemprop="headline"><?php the_title(); ?></h2>
+            <article class="hArticle" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <header class="hArticle--header">
+                    <h2 class="hArticle--headline" itemprop="headline"><?php the_title(); ?></h2>
                 </header>
             </article>
     <?php endwhile;
@@ -49,6 +49,7 @@ get_header();
             'link' => get_permalink(),
             'commentnum' => get_comments_number(),
             'date' => get_the_time('m-d'),
+            'readtime' => hera_get_post_read_time_text(get_the_ID())
         ];
 
     endwhile;
@@ -59,7 +60,7 @@ get_header();
         foreach ($year_post as $month => $month_post) {
             $output .=  '<ul class="archive--list" data-year="' . $year . ' - ' . $month  . '">';
             foreach ($month_post as $value) {
-                $output .= '<li class="archive--item"><div class="archive--title"><a href="' . $value['link'] . '">' . $value['title'] . '</a></div><div class="archive--meta">' . $value['date'] . '</div></li>';
+                $output .= '<li class="archive--item"><div class="archive--title"><a href="' . $value['link'] . '">' . $value['title'] . '</a></div><div class="archive--meta">' . $value['date'] . '<span class="sep"></span>' . $value['readtime'] . '</div></li>';
             }
             $output .= '</ul>';
         }

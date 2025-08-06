@@ -11,7 +11,7 @@
  */
 global $heraSetting;
 ?>
-<article class="block--item<?php if ($heraSetting->get_setting('hide_home_cover')) echo ' block--item__text'; ?>" itemtype="http://schema.org/Article" itemscope="itemscope">
+<article class="hBlock--item<?php if ($heraSetting->get_setting('hide_home_cover')) echo ' hBlock--item__text'; ?>" itemtype="http://schema.org/Article" itemscope="itemscope">
     <?php if (is_sticky()) : ?>
         <span class="sticky--post">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="ao fu">
@@ -20,33 +20,37 @@ global $heraSetting;
             <?php _e('Sticky', 'Hera'); ?>
         </span>
     <?php endif; ?>
-    <h2 class="block--title" itemprop="headline">
-        <a href="<?php the_permalink(); ?>">
+    <h2 class="hBlock--title" itemprop="headline">
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark" itemprop="url">
             <?php the_title(); ?>
         </a>
     </h2>
-    <div class="block--addon">
-        <div class="meta">
-            <div class="block--snippet" itemprop="about">
-                <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, (hera_is_has_image($post->ID) && !$heraSetting->get_setting('hide_home_cover')) ? 150 : 240, "...");
-                echo $sippnet;
-                ?>
+    <div class="hBlock--addon">
+        <div class="hBlock--content">
+            <div class="hBlock--snippet" itemprop="about">
+                <?php if (has_excerpt()) : ?>
+                    <?php the_excerpt(); ?>
+                <?php else : ?>
+                    <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, (hera_is_has_image($post->ID) && !$heraSetting->get_setting('hide_home_cover')) ? 150 : 240, "...");
+                    echo $sippnet;
+                    ?>
+                <?php endif; ?>
             </div>
-            <div class="block--meta">
-                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __('ago', 'Hera'); ?></time>
+            <div class="hBlock--meta">
+                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __(' ago', 'Hera'); ?></time>
                 <span class="sep"></span>
                 <?php the_category(' '); ?>
                 <?php if (hera_get_post_image_count(get_the_ID())) : ?>
                     <span class="sep"></span>
-                    <?php echo hera_get_post_image_count(get_the_ID()); ?> <?php _e('pics', 'Hera'); ?>
+                    <?php echo hera_get_post_image_count_text(get_the_ID()); ?>
                 <?php endif; ?>
                 <span class="sep"></span>
                 <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
             </div>
         </div>
         <?php if (hera_is_has_image(get_the_ID()) && !$heraSetting->get_setting('hide_home_cover')) : ?>
-            <a href="<?php the_permalink(); ?>" class="block--cover" title="<?php the_title(); ?>">
-                <img src="<?php echo hera_get_background_image(get_the_ID(), 184, 184); ?>" alt="<?php the_title(); ?>" />
+            <a href="<?php the_permalink(); ?>" class="hBlock--cover" title="<?php the_title(); ?>">
+                <img src="<?php echo hera_get_background_image(get_the_ID(), 184, 184); ?>" alt="<?php the_title(); ?>" class="hBlock--coverImage" itemprop="image" />
             </a>
         <?php endif; ?>
     </div>

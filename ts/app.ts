@@ -1,3 +1,11 @@
+interface ObvInit {
+    is_single: boolean;
+    post_id: number;
+    is_archive: boolean;
+    darkmode: boolean;
+    version: string;
+}
+
 class heraBase {
     is_single: boolean = false;
     post_id: number = 0;
@@ -6,18 +14,12 @@ class heraBase {
     VERSION: string;
 
     constructor() {
-        //@ts-ignore
+        const obvInit = (window as any).obvInit as ObvInit;
         this.is_single = obvInit.is_single;
-        //@ts-ignore
         this.post_id = obvInit.post_id;
-        //@ts-ignore
         this.is_archive = obvInit.is_archive;
-        //@ts-ignore
         this.darkmode = obvInit.darkmode;
-        //@ts-ignore
         this.VERSION = obvInit.version;
-
-        console.log('version', this.VERSION);
     }
 
     getCookie(t: any) {

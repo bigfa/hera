@@ -24,7 +24,7 @@ get_header(); ?>
         </div>
     </header>
     <?php if (have_posts()) : ?>
-        <div class="block--list">
+        <div class="hBlock--list">
             <?php while (have_posts()) : the_post();
                 get_template_part('template-parts/content', get_post_format());
             endwhile;  ?>

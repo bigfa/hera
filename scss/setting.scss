@@ -174,28 +174,26 @@ textarea.code {
         border-radius: 12px;
         border: 1px solid #cfd6e5;
         transition: all 0.3s ease-out;
+        animation: loader-spinner 400ms linear 1;
     }
-}
 
-.pure-setting-switch.active i {
-    left: 26px;
-}
-
-.pure-setting-switch i {
-    animation: loader-spinner 400ms linear 1;
-}
-
-.pure-setting-switch.active i:after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 12px;
-    border: 1px solid #0074a2;
-    background-color: #0074a2;
-    left: -1px;
-    top: -1px;
-    animation: loader-spinner 400ms linear 1;
+    &.active {
+        i {
+            left: 26px;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border-radius: 12px;
+                border: 1px solid #0074a2;
+                background-color: #0074a2;
+                left: -1px;
+                top: -1px;
+                animation: loader-spinner 400ms linear 1;
+            }
+        }
+    }
 }
 
 @keyframes loader-spinner {

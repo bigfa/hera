@@ -8,21 +8,25 @@
  * @since Hera 0.2.0
  */
 ?>
-<article class="block--item">
+<article class="hBlock--item">
     <div class="status--icon">
         <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path>
         </svg>
     </div>
-    <div class="block--addon">
+    <div class="hBlock--addon">
         <div class="meta">
-            <div class="block--snippet" itemprop="about">
-                <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, hera_is_has_image($post->ID) ? 120 : 240, "...");
-                echo $sippnet;
-                ?>
+            <div class="hBlock--snippet" itemprop="about">
+                <?php if (has_excerpt()) : ?>
+                    <?php the_excerpt(); ?>
+                <?php else : ?>
+                    <?php $sippnet = get_post_meta(get_the_ID(), '_desription', true) ? get_post_meta(get_the_ID(), '_desription', true) : mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, hera_is_has_image($post->ID) ? 120 : 240, "...");
+                    echo $sippnet;
+                    ?>
+                <?php endif; ?>
             </div>
             <?php if (hera_get_post_image_count(get_the_ID()) > 0) : ?>
-                <div class="block--images">
+                <div class="hBlock--images">
                     <?php $images = hera_get_post_images(get_the_ID(), 3);
                     if ($images) {
                         foreach ($images as $image) {
@@ -32,8 +36,8 @@
                     ?>
                 </div>
             <?php endif; ?>
-            <div class="block--meta">
-                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __('ago', 'Hera'); ?></time>
+            <div class="hBlock--meta">
+                <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __(' ago', 'Hera'); ?></time>
                 <span class="sep"></span>
                 <?php the_category(' '); ?>
                 <a href="<?php the_permalink(); ?>" class="status--link" title="<?php the_title(); ?>">
