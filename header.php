@@ -50,9 +50,11 @@
             </div>
             <div class="js-contentFixed">
                 <div class="site--info">
-                    <a href="<?php echo home_url(); ?>" class="avatar--wrapper">
-                        <img src="<?php echo ($heraSetting->get_setting('logo') ? $heraSetting->get_setting('logo') :  get_template_directory_uri() . '/build/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>" class="avatar">
-                    </a>
+                    <?php if ($heraSetting->get_setting('logo')) : ?>
+                        <a href="<?php echo home_url(); ?>" class="avatar--wrapper">
+                            <img src="<?php echo $heraSetting->get_setting('logo'); ?>" alt="<?php bloginfo('name'); ?>" class="avatar">
+                        </a>
+                    <?php endif; ?>
                     <div class="site--info__content">
                         <h1 class="site--title"><?php if ($heraSetting->get_setting('sitename')) {
                                                     echo $heraSetting->get_setting('sitename');
