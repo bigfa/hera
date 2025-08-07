@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Hera 0.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Hera\n"
 "POT-Creation-Date: 2024-12-29T15:20:57+00:00\n"
-"PO-Revision-Date: 2025-07-29 15:24+0800\n"
+"PO-Revision-Date: 2025-08-08 00:52+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -228,7 +228,7 @@ msgstr "Favicon 地址"
 msgid "Title sep"
 msgstr "标题分隔符"
 
-#: modules/setting.php:251
+#: modules/setting.php:276
 msgid "Default is"
 msgstr "默认是"
 
@@ -247,6 +247,10 @@ msgstr "头像代理"
 #: modules/setting.php:263
 msgid "Gravatar proxy domain,like <code>cravatar.cn</code>"
 msgstr "头像代理域名，比如<code>cravatar.cn</code>"
+
+#: modules/setting.php:294
+msgid "You can add tag in rss to verify follow."
+msgstr "你可以在RSS中添加标签来验证Folo。"
 
 #: modules/setting.php:274
 msgid "Update notice"
@@ -345,9 +349,25 @@ msgstr "首页展示文章点赞数量"
 msgid "Image count"
 msgstr "文章图片数"
 
-#: modules/setting.php:361
-msgid "Show image count of the post"
-msgstr "展示文章包含的图片数量"
+#: modules/setting.php:354
+msgid "Enable image count in homepage"
+msgstr "首页展示文章图片数量"
+
+#: modules/setting.php:365
+msgid "View info"
+msgstr "文章浏览数量"
+
+#: modules/setting.php:366
+msgid "Enable view info in homepage"
+msgstr "首页展示文章浏览数量"
+
+#: modules/setting.php:347
+msgid "Single column"
+msgstr "单列布局"
+
+#: modules/setting.php:348
+msgid "Enable single column layout"
+msgstr "开启单列布局"
 
 #: modules/setting.php:333 modules/setting.php:334
 msgid "Hide home cover"
@@ -376,6 +396,14 @@ msgstr "展示作者SNS图标，作者信息关闭时不会展示。"
 #: modules/setting.php:346
 msgid "Enable author bio"
 msgstr "开启作者信息"
+
+#: modules/setting.php:395
+msgid "Reading mode"
+msgstr "阅读模式"
+
+#: modules/setting.php:396
+msgid "Enable reading mode"
+msgstr "开启阅读模式"
 
 #: modules/setting.php:351
 msgid "Related posts"
@@ -416,6 +444,14 @@ msgstr "分类卡片"
 #: modules/setting.php:383
 msgid "Show post category info after post."
 msgstr "在文章结尾展示卡片信息"
+
+#: modules/setting.php:425
+msgid "Back to home"
+msgstr "返回首页"
+
+#: modules/setting.php:426
+msgid "Show back to home link after post."
+msgstr "在文章结尾展示返回首页链接"
 
 #: modules/setting.php:375
 msgid "Show parent comment"
@@ -560,6 +596,10 @@ msgstr "长毛象"
 #: modules/setting.php:478
 msgid "Mastodon link"
 msgstr "长毛象地址"
+
+#: modules/setting.php:541
+msgid "Threads link"
+msgstr "Threads 地址"
 
 #: modules/setting.php:497
 msgid "Custom"

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Hera theme.
 msgid ""
 msgstr ""
-"Project-Id-Version: Hera 0.3.1\n"
+"Project-Id-Version: Hera 0.3.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Hera\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-06T05:33:15+00:00\n"
+"POT-Creation-Date: 2025-08-07T16:50:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: Hera\n"
@@ -47,69 +47,94 @@ msgstr ""
 msgid "This post has no comment yet"
 msgstr ""
 
-#: modules/article.php:80
+#: modules/article.php:84
 msgid "%d pic"
 msgid_plural "%d pics"
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/base.php:112
+#: modules/base.php:123
 #: modules/setting.php:437
 msgid "Table of content"
 msgstr ""
 
-#: modules/base.php:220
+#: modules/base.php:231
 #: modules/setting.php:46
 msgid "Setting saved success!"
 msgstr ""
 
-#: modules/base.php:221
+#: modules/base.php:232
 #: modules/setting.php:47
 msgid "Upload Image"
 msgstr ""
 
-#: modules/base.php:222
+#: modules/base.php:233
 msgid "Set Category Image"
 msgstr ""
 
-#: modules/base.php:298
+#: modules/base.php:258
+msgid "Comment submitted successfully!"
+msgstr ""
+
+#: modules/base.php:259
+msgid "Just now"
+msgstr ""
+
+#: modules/base.php:260
+msgid "Link copied to clipboard!"
+msgstr ""
+
+#: modules/base.php:261
+msgid "Thanks for your like!"
+msgstr ""
+
+#: modules/base.php:312
 msgid "Cover"
 msgstr ""
 
-#: modules/base.php:300
+#: modules/base.php:314
 msgid "Upload"
 msgstr ""
 
-#: modules/base.php:301
+#: modules/base.php:315
 msgid "Category cover url."
 msgstr ""
 
-#: modules/base.php:305
-#: modules/base.php:309
+#: modules/base.php:319
+#: modules/base.php:323
 msgid "Card Template"
 msgstr ""
 
-#: modules/base.php:311
+#: modules/base.php:325
 msgid "Use Card Template"
 msgstr ""
 
-#: modules/comment.php:133
-#: modules/comment.php:152
-#: modules/comment.php:182
-#: modules/comment.php:195
-#: modules/comment.php:221
+#: modules/comment.php:39
+msgid "Friend of author."
+msgstr ""
+
+#: modules/comment.php:88
+#: modules/comment.php:116
+#: modules/comment.php:129
+#: modules/comment.php:155
 #: modules/setting.php:27
 msgid "Success"
 msgstr ""
 
-#: modules/comment.php:269
+#: modules/comment.php:197
+#: modules/comment.php:198
+#: modules/setting.php:449
+msgid "Post Author"
+msgstr ""
+
+#: modules/comment.php:203
 #: single.php:32
 #: template-parts/content-archive.php:40
-#: template-parts/content-card.php:33
-#: template-parts/content-status.php:29
+#: template-parts/content-card.php:32
+#: template-parts/content-status.php:31
 #: template-parts/content.php:40
 #: template-parts/single-related.php:47
-#: template-parts/single-related.php:68
+#: template-parts/single-related.php:67
 msgid " ago"
 msgstr ""
 
@@ -129,15 +154,15 @@ msgstr ""
 msgid "1 View"
 msgstr ""
 
-#: modules/scripts.php:87
+#: modules/scripts.php:88
 msgid "%d Views"
 msgstr ""
 
-#: modules/scripts.php:110
+#: modules/scripts.php:112
 msgid "1 min read"
 msgstr ""
 
-#: modules/scripts.php:112
+#: modules/scripts.php:114
 msgid "%d min read"
 msgstr ""
 
@@ -319,6 +344,30 @@ msgstr ""
 msgid "Enable back to top"
 msgstr ""
 
+#: modules/setting.php:347
+msgid "Single column"
+msgstr ""
+
+#: modules/setting.php:348
+msgid "Enable single column layout"
+msgstr ""
+
+#: modules/setting.php:353
+msgid "Image count"
+msgstr ""
+
+#: modules/setting.php:354
+msgid "Enable image count in homepage"
+msgstr ""
+
+#: modules/setting.php:365
+msgid "View info"
+msgstr ""
+
+#: modules/setting.php:366
+msgid "Enable view info in homepage"
+msgstr ""
+
 #: modules/setting.php:371
 #: modules/setting.php:372
 msgid "Hide home cover"
@@ -338,6 +387,14 @@ msgstr ""
 
 #: modules/setting.php:390
 msgid "Enable author bio"
+msgstr ""
+
+#: modules/setting.php:395
+msgid "Reading mode"
+msgstr ""
+
+#: modules/setting.php:396
+msgid "Enable reading mode"
 msgstr ""
 
 #: modules/setting.php:401
@@ -372,6 +429,14 @@ msgstr ""
 msgid "Enable copy link"
 msgstr ""
 
+#: modules/setting.php:425
+msgid "Back to home"
+msgstr ""
+
+#: modules/setting.php:426
+msgid "Show back to home link after post."
+msgstr ""
+
 #: modules/setting.php:431
 msgid "Show parent comment"
 msgstr ""
@@ -390,10 +455,6 @@ msgstr ""
 
 #: modules/setting.php:444
 msgid "Start heading,default h3"
-msgstr ""
-
-#: modules/setting.php:449
-msgid "Post Author"
 msgstr ""
 
 #: modules/setting.php:450
@@ -551,29 +612,31 @@ msgstr ""
 msgid "Custom footer content"
 msgstr ""
 
+#: page.php:37
+#: single.php:105
+#: templates/template-map.php:20
+msgid "Back to homepage"
+msgstr ""
+
 #: search.php:16
 msgid "Search results for: "
 msgstr ""
 
-#: single.php:41
+#: single.php:39
 msgid "Jump to comments"
 msgstr ""
 
-#: single.php:56
-#: single.php:57
+#: single.php:54
+#: single.php:55
 msgid "View all status posts"
 msgstr ""
 
-#: single.php:69
+#: single.php:67
 msgid "Updated on"
 msgstr ""
 
-#: single.php:92
+#: single.php:90
 msgid "Copy link."
-msgstr ""
-
-#: single.php:107
-msgid "Back to homepage"
 msgstr ""
 
 #: template-parts/content.php:20

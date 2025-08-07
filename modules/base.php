@@ -61,6 +61,8 @@ class heraBass
         add_filter('the_content', array($this, 'hera_image_zoom'), 99);
         add_action('wp_head', array($this, 'head_output'));
 
+        add_filter('body_class', array($this, 'hack_body_class'));
+
         if ($heraSetting->get_setting('gravatar_proxy'))
             add_filter('get_avatar_url', array($this, 'gravatar_proxy'), 10, 3);
 
@@ -69,6 +71,15 @@ class heraBass
 
         if ($heraSetting->get_setting('toc'))
             add_filter('the_content', array($this, 'hera_toc'));
+    }
+
+    function hack_body_class($classes)
+    {
+        global $heraSetting;
+        if ($heraSetting->get_setting('single_column')) {
+            $classes[] = 'is-singleColumn';
+        }
+        return $classes;
     }
 
     function gravatar_proxy($url, $id_or_email, $args)

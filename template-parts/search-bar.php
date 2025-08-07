@@ -11,7 +11,7 @@
 global $heraSetting;
 ?>
 <div class="search--area">
-	<?php if (is_single() && $heraSetting->get_setting('reading_mode')) : ?>
+	<?php if (is_single() && $heraSetting->get_setting('reading_mode') && !$heraSetting->get_setting('single_column')) : ?>
 		<svg width="26px" height="26px" xmlns="http://www.w3.org/2000/svg" class="nav--clicker" viewBox="0 0 512 512">
 			<path class="st0" d="M430.135,14.339h0.017c0-0.008,0-0.008,0-0.008L430.135,14.339z" />
 			<path class="st0" d="M508.672,96.445c-2.126-2.118-5.059-3.327-8.06-3.327c-17.409,0-34.202,2.092-50.238,4.983

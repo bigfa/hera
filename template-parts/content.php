@@ -39,9 +39,10 @@ global $heraSetting;
             <div class="hBlock--meta">
                 <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>"><?php echo human_time_diff(get_the_time('U'), current_time('U')) .  __(' ago', 'Hera'); ?></time>
                 <span class="sep"></span>
-                <?php the_category(' '); ?>
-                <?php echo hera_get_post_image_count_text(get_the_ID(), '<span class="sep"></span>'); ?>
+                <?php the_category(','); ?>
+                <?php if ($heraSetting->get_setting('home_image_count')) echo hera_get_post_image_count_text(get_the_ID(), '<span class="sep"></span>'); ?>
                 <?php echo hera_get_post_read_time_text(get_the_ID(), '<span class="sep"></span>'); ?>
+                <?php if ($heraSetting->get_setting('home_views')) echo hera_get_post_views_text(false, false, false, get_the_ID(), '<span class="sep"></span>'); ?>
             </div>
         </div>
         <?php if (hera_is_has_image(get_the_ID()) && !$heraSetting->get_setting('hide_home_cover')) : ?>

@@ -5,58 +5,6 @@
     @media screen and (max-width: 920px) {
         padding: 50px 20px;
     }
-
-    .page--header {
-        padding: 0px 0 40px;
-        text-align: center;
-    }
-}
-
-.tagCard {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 15px;
-    padding-top: 20px;
-
-    @media (max-width: 920px) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (max-width: 480px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    &--item {
-        transition: 0.5s;
-        padding: 8px 15px;
-        border: 1px solid var(--hera-border-color);
-        border-radius: 5px;
-        overflow: hidden;
-        position: relative;
-        color: var(--hera-text-gray);
-
-        &:hover {
-            .collectionCard--title {
-                color: var(--hera-hover-color);
-                text-decoration: underline;
-            }
-
-            color: var(--hera-hover-color);
-        }
-
-        &::after {
-            position: absolute;
-            content: attr(data-count);
-            opacity: 0.15;
-            bottom: -8px;
-            right: -2px;
-            color: var(--hera-text-gray-lightest);
-            font-size: 40px;
-            font-style: italic;
-            font-weight: bold;
-            line-height: 1;
-        }
-    }
 }
 
 .collectionCard {
@@ -154,10 +102,29 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: 768px) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            & + .hBlock--list {
+                padding-top: 0px;
+            }
+
+            & + .hCard--list {
+                padding-top: 5px;
+            }
+        }
+
         .author--avatar {
             width: 72px;
             height: 72px;
             margin-right: 15px;
+
+            @media (max-width: 768px) {
+                width: 48px;
+                height: 48px;
+                margin-right: 8px;
+            }
 
             img {
                 width: 100%;
@@ -173,12 +140,21 @@
                 font-weight: bold;
                 line-height: 1;
                 margin-bottom: 8px;
+
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                    margin-bottom: 3px;
+                }
             }
 
             p {
                 font-size: 16px;
                 color: var(--hera-text-gray);
                 line-height: 1.3;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -192,12 +168,20 @@
         font-weight: bold;
         line-height: 1;
         margin-bottom: 8px;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
     }
 
     &--description {
         font-size: 16px;
         color: var(--hera-text-gray);
         line-height: 1.3;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
     }
 
     &--image {
@@ -206,48 +190,11 @@
         object-fit: cover;
         border-radius: 4px;
         margin-right: 15px;
-    }
-}
 
-@media (max-width: 768px) {
-    .term {
-        &--title {
-            font-size: 18px;
-        }
-
-        &--description {
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        &--image {
-            height: 48px;
+        @media (max-width: 768px) {
             width: 48px;
-        }
-
-        &--header {
-            padding-bottom: 15px;
-
-            & + .block--list {
-                padding-top: 5px;
-            }
-
-            .author--avatar {
-                width: 48px;
-                height: 48px;
-                margin-right: 8px;
-            }
-
-            .author--bio {
-                h3 {
-                    font-size: 18px;
-                    margin-bottom: 3px;
-                }
-
-                p {
-                    font-size: 12px;
-                }
-            }
+            height: 48px;
+            margin-right: 8px;
         }
     }
 }

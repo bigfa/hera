@@ -341,30 +341,30 @@ $heraSetting = new heraSetting(
                         'label' => __('Back to top', 'Hera'),
                         'description' => __('Enable back to top', 'Hera')
                     ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'loadmore',
-                    //     'label' => __('Load more', 'Hera'),
-                    //     'description' => __('Enable load more', 'Hera')
-                    // ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'home_author',
-                    //     'label' => __('Author info', 'Hera'),
-                    //     'description' => __('Enable author info in homepage', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'single_column',
+                        'label' => __('Single column', 'Hera'),
+                        'description' => __('Enable single column layout', 'Hera')
+                    ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'home_image_count',
+                        'label' => __('Image count', 'Hera'),
+                        'description' => __('Enable image count in homepage', 'Hera')
+                    ],
                     // [
                     //     'type' => 'switch',
                     //     'name' => 'home_cat',
                     //     'label' => __('Category info', 'Hera'),
                     //     'description' => __('Enable category info in homepage', 'Hera')
                     // ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'home_like',
-                    //     'label' => __('Like info', 'Hera'),
-                    //     'description' => __('Enable like info in homepage', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'home_views',
+                        'label' => __('View info', 'Hera'),
+                        'description' => __('Enable view info in homepage', 'Hera')
+                    ],
                     [
                         'type' => 'switch',
                         'name' => 'hide_home_cover',

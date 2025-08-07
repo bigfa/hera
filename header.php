@@ -36,6 +36,7 @@
             }
         </script>
     <?php endif; ?>
+    <div class="mask"></div>
     <main class="layout">
         <div class="navbar">
             <div class="moblie--icon">
@@ -79,11 +80,10 @@
                 </nav>
 
                 <?php if ($heraSetting->get_setting('footer_sns')) : ?>
-                    <div class="site--nav__sns">
+                    <div class="site--icons">
                         <?php get_template_part('template-parts/sns'); ?>
                     </div>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="mask"></div>
         <div class="content">
