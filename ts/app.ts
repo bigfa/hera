@@ -1,4 +1,11 @@
 interface ObvInit {
+    like_success_text(like_success_text: any, arg1: string): unknown;
+    copy_success_text(copy_success_text: any, arg1: string): unknown;
+    now_text: any;
+    comment_success_text(comment_success_text: any, arg1: string): unknown;
+    archive_id: any;
+    nonce: string;
+    restfulBase: string;
     is_single: boolean;
     post_id: number;
     is_archive: boolean;
@@ -12,6 +19,7 @@ class heraBase {
     is_archive: boolean = false;
     darkmode: any = false;
     VERSION: string;
+    obvInit: ObvInit;
 
     constructor() {
         const obvInit = (window as any).obvInit as ObvInit;
@@ -20,6 +28,7 @@ class heraBase {
         this.is_archive = obvInit.is_archive;
         this.darkmode = obvInit.darkmode;
         this.VERSION = obvInit.version;
+        this.obvInit = obvInit;
     }
 
     getCookie(t: any) {

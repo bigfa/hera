@@ -109,7 +109,7 @@ class heraBass
             $toc .= str_repeat('</li></ul>', $previous_level - 2);
             $toc .= '</ul>';
 
-            $content = '<details class="hera--toc" open><summary>' . __('Table of content', 'Hera') . '</summary>' . $toc . '</details>' . $content;
+            $content = '<details class="hArticle--toc" open><summary>' . __('Table of content', 'Hera') . '</summary>' . $toc . '</details>' . $content;
         }
 
         return $content;
@@ -244,6 +244,10 @@ class heraBass
                 'is_archive' => is_archive(),
                 'archive_id' => get_queried_object_id(),
                 'hide_home_cover' => !!$heraSetting->get_setting('hide_home_cover'),
+                'comment_success_text' => __('Comment submitted successfully!', 'Hera'),
+                'now_text' => __('Just now', 'Hera'),
+                'copy_success_text' => __('Link copied to clipboard!', 'Hera'),
+                'like_success_text' => __('Thanks for your like!', 'Hera'),
             ]
         );
         if ($heraSetting->get_setting('css')) {
@@ -259,7 +263,6 @@ class heraBass
 
     function category_card_template($template_path)
     {
-        global $wp_query;
         if (is_category()) {
             $category_id = get_queried_object_id();
             $card = get_term_meta($category_id, '_card', true);

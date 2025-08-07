@@ -10,7 +10,7 @@
 get_header(); ?>
 <?php get_template_part('template-parts/search-bar'); ?>
 <div class="articleContainer">
-    <article class="post">
+    <article class="hArticle">
         <header>
             <h2 class="post--headline">404</h2>
         </header>

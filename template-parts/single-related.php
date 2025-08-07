@@ -27,7 +27,7 @@ $the_query = new WP_Query(array(
     ) : array()
 ));
 if ($the_query->have_posts()) : ?>
-    <h3 class="related--posts__title"><?php _e('Related Posts', 'Hera'); ?></h3>
+    <h3 class="hRelated--heroTitle"><?php _e('Related Posts', 'Hera'); ?></h3>
     <div class="hRelated--list">
         <?php
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -48,8 +48,7 @@ if ($the_query->have_posts()) : ?>
                         </time>
                         <span class="sep"></span>
                         <?php the_category(' '); ?>
-                        <span class="sep"></span>
-                        <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
+                        <?php echo hera_get_post_read_time_text(get_the_ID(), '<span class="sep"></span>'); ?>
                     </div>
                 </div>
             <?php else : ?>
@@ -69,12 +68,8 @@ if ($the_query->have_posts()) : ?>
                             </time>
                             <span class="sep"></span>
                             <?php the_category(' '); ?>
-                            <?php if (hera_get_post_image_count(get_the_ID())) : ?>
-                                <span class="sep"></span>
-                                <?php echo hera_get_post_image_count_text(get_the_ID()); ?>
-                            <?php endif; ?>
-                            <span class="sep"></span>
-                            <?php echo hera_get_post_read_time_text(get_the_ID()); ?>
+                            <?php echo hera_get_post_image_count_text(get_the_ID(), '<span class="sep"></span>'); ?>
+                            <?php echo hera_get_post_read_time_text(get_the_ID(), '<span class="sep"></span>'); ?>
                         </div>
                     </a>
                 </div>

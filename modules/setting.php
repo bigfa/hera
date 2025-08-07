@@ -389,12 +389,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Author bio', 'Hera'),
                         'description' => __('Enable author bio', 'Hera')
                     ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'author_sns',
-                    //     'label' => __('Author sns icons', 'Hera'),
-                    //     'description' => __('Show author sns icons, will not show when author bio is off.', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'reading_mode',
+                        'label' => __('Reading mode', 'Hera'),
+                        'description' => __('Enable reading mode', 'Hera')
+                    ],
                     [
                         'type' => 'switch',
                         'name' => 'related',
@@ -419,12 +419,12 @@ $heraSetting = new heraSetting(
                         'label' => __('Copy link', 'Hera'),
                         'description' => __('Enable copy link', 'Hera')
                     ],
-                    // [
-                    //     'type' => 'switch',
-                    //     'name' => 'category_card',
-                    //     'label' => __('Category card', 'Hera'),
-                    //     'description' => __('Show post category info after post.', 'Hera')
-                    // ],
+                    [
+                        'type' => 'switch',
+                        'name' => 'back2home',
+                        'label' => __('Back to home', 'Hera'),
+                        'description' => __('Show back to home link after post.', 'Hera')
+                    ],
                     [
                         'type' => 'switch',
                         'name' => 'show_parent',

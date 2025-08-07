@@ -14,6 +14,7 @@ latest version : `0.3.1`
 
 - add japanese support
 - remove default logo
+- style enhancement
 
 ### 0.3.0
 

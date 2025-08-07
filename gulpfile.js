@@ -11,19 +11,12 @@ const cssnano = require('cssnano');
 const sass = require('gulp-sass')(require('sass'));
 const rename = require('gulp-rename');
 const ts = require('gulp-typescript');
-var pxtorem = require('postcss-pxtorem');
 
 function css() {
     return gulp
         .src('./scss/app.scss')
         .pipe(plumber())
-        .pipe(
-            sass({
-                outputStyle: 'compressed',
-                allowEmpty: true,
-                silenceDeprecations: ['legacy-js-api'],
-            })
-        )
+        .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(rename('misc.css'))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(gulp.dest('./build/css/'));
@@ -74,7 +67,7 @@ function typescripts() {
 
 function setting() {
     return gulp
-        .src(['./ts/extensions/*', './ts/setting.ts'])
+        .src(['./ts/setting.ts'])
         .pipe(plumber())
         .pipe(
             ts({

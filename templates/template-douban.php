@@ -12,7 +12,7 @@ get_header(); ?>
                 <header class="hArticle--header">
                     <h2 class="hArticle--headline" itemprop="headline"><?php the_title(); ?></h2>
                 </header>
-                <div class="grap">
+                <div class="hGraph hArticle--body" itemprop="articleBody">
                     <?php the_content(); ?>
                 </div>
             </article>

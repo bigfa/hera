@@ -32,5 +32,10 @@ get_header(); ?>
             endif; ?>
     <?php endwhile;
     endif; ?>
+    <?php if ($heraSetting->get_setting('back2home')) : ?>
+        <div class="back">
+            <a href="<?php echo home_url(); ?>"><?php _e('Back to homepage', 'Hera'); ?></a>
+        </div>
+    <?php endif; ?>
 </div>
 <?php get_footer(); ?>

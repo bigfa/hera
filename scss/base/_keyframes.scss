@@ -11,11 +11,11 @@
 
 @keyframes comment--fresh {
     0% {
-        background-color: #fff;
+        background-color: var(--hera-comment-fresh-start-color);
     }
 
     100% {
-        background-color: rgba(255, 254, 224, 1);
+        background-color: var(--hera-comment-fresh-end-color);
     }
 }
 

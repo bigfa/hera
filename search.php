@@ -13,7 +13,7 @@ get_header(); ?>
 <?php get_template_part('template-parts/search-bar'); ?>
 
 <div class="post--list">
-    <div class="search--title"><?php _e('Search results for: ', 'Hera') . get_query_var('s'); ?></div>
+    <div class="search--title"><?php echo __('Search results for: ', 'Hera') . get_query_var('s'); ?></div>
     <?php if (have_posts()) : ?>
         <div class="hBlock--list">
             <?php while (have_posts()) : the_post();

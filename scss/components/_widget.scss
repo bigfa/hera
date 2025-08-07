@@ -1,0 +1,25 @@
+.widget--links {
+    margin-top: 10px;
+    padding-bottom: 5px;
+
+    @media (max-width: 720px) {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 0;
+        padding-bottom: 0px;
+    }
+
+    .menu-item {
+        padding: 3px 0;
+        color: var(--hera-text-light);
+
+        @media (max-width: 720px) {
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: var(--hera-text-color);
+        }
+    }
+}

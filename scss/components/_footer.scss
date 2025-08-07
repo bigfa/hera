@@ -1,4 +1,4 @@
-.backToTop {
+.hBackTop {
     .svgIcon {
         width: 17px;
         height: 17px;
@@ -41,7 +41,7 @@
     }
 }
 
-.site--footer {
+.hFooter {
     text-align: center;
     font-size: 14px;
     color: var(--hera-text-gray);
@@ -52,13 +52,12 @@
     flex-direction: column;
     position: relative;
 
-    &__content {
-        display: flex;
-        align-items: center;
+    &--content {
+        text-align: center;
     }
 }
 
-.fixed--theme {
+.hThemeSwitcher {
     position: absolute;
     left: 0px;
     bottom: -5px;

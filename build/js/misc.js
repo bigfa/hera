@@ -34,6 +34,7 @@ var heraBase = /** @class */ (function () {
         this.is_archive = obvInit.is_archive;
         this.darkmode = obvInit.darkmode;
         this.VERSION = obvInit.version;
+        this.obvInit = obvInit;
     }
     heraBase.prototype.getCookie = function (t) {
         if (0 < document.cookie.length) {
@@ -237,12 +238,9 @@ var heraAction = /** @class */ (function (_super) {
         _this.is_single = false;
         _this.post_id = 0;
         _this.is_archive = false;
-        //@ts-ignore
-        _this.is_single = obvInit.is_single;
-        //@ts-ignore
-        _this.post_id = obvInit.post_id;
-        //@ts-ignore
-        _this.is_archive = obvInit.is_archive;
+        _this.is_single = _this.obvInit.is_single;
+        _this.post_id = _this.obvInit.post_id;
+        _this.is_archive = _this.obvInit.is_archive;
         _this.like_btn = document.querySelector(_this.selctor);
         if (_this.like_btn) {
             _this.like_btn.addEventListener('click', function () {
@@ -253,47 +251,42 @@ var heraAction = /** @class */ (function (_super) {
             }
         }
         var theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'auto';
-        var html = "<div class=\"fixed--theme\">\n        <span class=\"".concat(theme == 'dark' ? 'is-active' : '', "\" data-action-value=\"dark\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <path d=\"M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'light' ? 'is-active' : '', "\" data-action-value=\"light\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <circle cx=\"12\" cy=\"12\" r=\"5\"></circle>\n                <path d=\"M12 1v2\"></path>\n                <path d=\"M12 21v2\"></path>\n                <path d=\"M4.22 4.22l1.42 1.42\"></path>\n                <path d=\"M18.36 18.36l1.42 1.42\"></path>\n                <path d=\"M1 12h2\"></path>\n                <path d=\"M21 12h2\"></path>\n                <path d=\"M4.22 19.78l1.42-1.42\"></path>\n                <path d=\"M18.36 5.64l1.42-1.42\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'auto' ? 'is-active' : '', "\"  data-action-value=\"auto\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"></rect>\n                <path d=\"M8 21h8\"></path>\n                <path d=\"M12 17v4\"></path>\n            </svg>\n        </span>\n    </div>");
+        var html = "<div class=\"hThemeSwitcher\">\n        <span class=\"".concat(theme == 'dark' ? 'is-active' : '', "\" data-action-value=\"dark\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <path d=\"M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'light' ? 'is-active' : '', "\" data-action-value=\"light\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <circle cx=\"12\" cy=\"12\" r=\"5\"></circle>\n                <path d=\"M12 1v2\"></path>\n                <path d=\"M12 21v2\"></path>\n                <path d=\"M4.22 4.22l1.42 1.42\"></path>\n                <path d=\"M18.36 18.36l1.42 1.42\"></path>\n                <path d=\"M1 12h2\"></path>\n                <path d=\"M21 12h2\"></path>\n                <path d=\"M4.22 19.78l1.42-1.42\"></path>\n                <path d=\"M18.36 5.64l1.42-1.42\"></path>\n            </svg>\n        </span>\n        <span class=\"").concat(theme == 'auto' ? 'is-active' : '', "\"  data-action-value=\"auto\">\n            <svg fill=\"none\" height=\"24\" shape-rendering=\"geometricPrecision\" stroke=\"currentColor\" stroke-linecap=\"round\"\n                stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" width=\"24\"\n                style=\"color: currentcolor; width: 13px; height: 13px;\">\n                <rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"></rect>\n                <path d=\"M8 21h8\"></path>\n                <path d=\"M12 17v4\"></path>\n            </svg>\n        </span>\n    </div>");
         if (_this.darkmode) {
-            document.querySelector('.site--footer').insertAdjacentHTML('beforeend', html);
+            document.querySelector('.hFooter').insertAdjacentHTML('beforeend', html);
         }
-        document.querySelectorAll('.fixed--theme span').forEach(function (item) {
+        document.querySelectorAll('.hThemeSwitcher span').forEach(function (item) {
             item.addEventListener('click', function () {
                 if (item.classList.contains('is-active'))
                     return;
-                document.querySelectorAll('.fixed--theme span').forEach(function (item) {
+                document.querySelectorAll('.hThemeSwitcher span').forEach(function (item) {
                     item.classList.remove('is-active');
                 });
-                // @ts-ignore
-                if (item.dataset.actionValue == 'dark') {
+                var actionValue = item.dataset.actionValue;
+                if (actionValue == 'dark') {
                     localStorage.setItem('theme', 'dark');
                     document.querySelector('body').classList.remove('auto');
                     document.querySelector('body').classList.add('dark');
                     item.classList.add('is-active');
-                    //this.showNotice('夜间模式已开启');
-                    // @ts-ignore
                 }
-                else if (item.dataset.actionValue == 'light') {
+                else if (actionValue == 'light') {
                     localStorage.setItem('theme', 'light');
                     document.querySelector('body').classList.remove('auto');
                     document.querySelector('body').classList.remove('dark');
                     item.classList.add('is-active');
-                    //this.showNotice('夜间模式已关闭');
-                    // @ts-ignore
                 }
-                else if (item.dataset.actionValue == 'auto') {
+                else if (actionValue == 'auto') {
                     localStorage.setItem('theme', 'auto');
                     document.querySelector('body').classList.remove('dark');
                     document.querySelector('body').classList.add('auto');
                     item.classList.add('is-active');
-                    //this.showNotice('夜间模式已关闭');
                 }
             });
         });
-        if (document.querySelector('.post--share')) {
-            document.querySelector('.post--share').addEventListener('click', function () {
+        if (document.querySelector('.hArticle--share')) {
+            document.querySelector('.hArticle--share').addEventListener('click', function () {
                 navigator.clipboard.writeText(document.location.href).then(function () {
-                    _this.showNotice('复制成功');
+                    _this.showNotice(_this.obvInit.copy_success_text, 'success');
                 });
             });
         }
@@ -305,77 +298,42 @@ var heraAction = /** @class */ (function (_super) {
         }
         console.log("theme version: ".concat(_this.VERSION, " init success!"));
         return _this;
-        //     const copyright = `<div class="site--footer__info">
-        //     Theme <a href="https://fatesinger.com/101971" target="_blank">hera</a> by bigfa / version ${this.VERSION}
-        // </div>`;
-        //     document.querySelector('.site--footer__content')!.insertAdjacentHTML('afterend', copyright);
-        //     document.querySelector('.icon--copryrights')!.addEventListener('click', () => {
-        //         document.querySelector('.site--footer__info')!.classList.toggle('active');
-        //     });
     }
     heraAction.prototype.trackPostView = function () {
-        //@ts-ignore
-        var id = obvInit.post_id;
-        //@ts-ignore
-        var url = obvInit.restfulBase + 'hera/v1/view?id=' + id;
+        var id = this.obvInit.post_id;
+        var url = this.obvInit.restfulBase + 'hera/v1/view?id=' + id;
         fetch(url, {
             headers: {
-                // @ts-ignore
-                'X-WP-Nonce': obvInit.nonce,
+                'X-WP-Nonce': this.obvInit.nonce,
                 'Content-Type': 'application/json'
             }
-        })
-            .then(function (response) {
-            return response.json();
-        })
-            .then(function (data) {
-            console.log(data);
         });
     };
     heraAction.prototype.trackArchiveView = function () {
         if (document.querySelector('.archive-header')) {
-            // @ts-ignore
-            var id = obvInit.archive_id;
-            // @ts-ignore
-            fetch("".concat(obvInit.restfulBase, "hera/v1/archive/").concat(id), {
+            var id = this.obvInit.archive_id;
+            fetch("".concat(this.obvInit.restfulBase, "hera/v1/archive/").concat(id), {
                 method: 'POST',
-                // body: JSON.stringify({
-                //     // @ts-ignore
-                //     id: this.post_id,
-                // }),
                 headers: {
-                    // @ts-ignore
-                    'X-WP-Nonce': obvInit.nonce,
+                    'X-WP-Nonce': this.obvInit.nonce,
                     'Content-Type': 'application/json'
                 }
-            })
-                .then(function (response) {
-                return response.json();
-            })
-                .then(function (data) {
-                //this.showNotice('Thanks for your like');
-                // @ts-ignore
-                //this.setCookie('like_' + this.post_id, '1', 1);
             });
         }
     };
     heraAction.prototype.handleLike = function () {
         var _this = this;
-        // @ts-ignore
         if (this.getCookie('like_' + this.post_id)) {
-            return this.showNotice('You have already liked this post');
+            return this.showNotice(this.obvInit.like_success_text, 'success');
         }
-        // @ts-ignore
-        var url = obvInit.restfulBase + 'hera/v1/like';
+        var url = this.obvInit.restfulBase + 'hera/v1/like';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
-                // @ts-ignore
                 id: this.post_id
             }),
             headers: {
-                // @ts-ignore
-                'X-WP-Nonce': obvInit.nonce,
+                'X-WP-Nonce': this.obvInit.nonce,
                 'Content-Type': 'application/json'
             }
         })
@@ -383,8 +341,7 @@ var heraAction = /** @class */ (function (_super) {
             return response.json();
         })
             .then(function (data) {
-            _this.showNotice('Thanks for your like');
-            // @ts-ignore
+            _this.showNotice(_this.obvInit.like_success_text, 'success');
             _this.setCookie('like_' + _this.post_id, '1', 1);
         });
         this.like_btn.classList.add('is-active');
@@ -414,13 +371,11 @@ var heraComment = /** @class */ (function (_super) {
                 var formDataObj = {};
                 formData.forEach(function (value, key) { return (formDataObj[key] = value); });
                 _this.loading = true;
-                // @ts-ignore
-                fetch(obvInit.restfulBase + 'hera/v1/comment', {
+                fetch(_this.obvInit.restfulBase + 'hera/v1/comment', {
                     method: 'POST',
                     body: JSON.stringify(formDataObj),
                     headers: {
-                        // @ts-ignore
-                        'X-WP-Nonce': obvInit.nonce,
+                        'X-WP-Nonce': _this.obvInit.nonce,
                         'Content-Type': 'application/json'
                     }
                 })
@@ -435,7 +390,7 @@ var heraComment = /** @class */ (function (_super) {
                     }
                     var a = document.getElementById('cancel-comment-reply-link'), i = document.getElementById('respond'), n = document.getElementById('wp-temp-form-div');
                     var comment = data.data;
-                    var html = "<li class=\"comment\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"comment-body comment-body__fresh\">\n                            <footer class=\"comment-meta\">\n                                <div class=\"comment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"comment--meta\">\n                                    <div class=\"comment--author\">").concat(comment.comment_author, "\n                                    <time class=\"comment--time\">\u521A\u521A</time>\n                                    </div>\n                                </div>\n                            </footer>\n                            <div class=\"comment-content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>");
+                    var html = "<li class=\"comment hComment--item\" id=\"comment-".concat(comment.comment_ID, "\">\n                        <div class=\"hComment--body hComment--body__fresh\">\n                            <header class=\"hComment--header\">\n                                <div class=\"hComment--avatar\">\n                                    <img alt=\"\" src=\"").concat(comment.author_avatar_urls, "\" class=\"avatar\" height=\"42\" width=\"42\" />\n                                </div>\n                                <div class=\"hComment--meta\">\n                                    ").concat(comment.comment_author, "\n                                    <time class=\"hComment--time\">").concat(_this.obvInit.now_text, "</time>\n                                </div>\n                            </header>\n                            <div class=\"hComment--content\">\n                                ").concat(comment.comment_content, "\n                            </div>\n                        </div>\n                    </li>");
                     var parent_id = (_a = document.querySelector('#comment_parent')) === null || _a === void 0 ? void 0 : _a.value;
                     (a.style.display = 'none'),
                         (a.onclick = null),
@@ -445,9 +400,9 @@ var heraComment = /** @class */ (function (_super) {
                             i &&
                             n.parentNode &&
                             (n.parentNode.insertBefore(i, n), n.parentNode.removeChild(n));
-                    if (document.querySelector('.comment-body__fresh'))
+                    if (document.querySelector('.hComment--body__fresh'))
                         (_b = document
-                            .querySelector('.comment-body__fresh')) === null || _b === void 0 ? void 0 : _b.classList.remove('comment-body__fresh');
+                            .querySelector('.hComment--body__fresh')) === null || _b === void 0 ? void 0 : _b.classList.remove('hComment--body__fresh');
                     var commentInput = document.getElementById('comment');
                     if (commentInput) {
                         commentInput.value = '';
@@ -458,8 +413,8 @@ var heraComment = /** @class */ (function (_super) {
                         console.log(parent_id);
                     }
                     else {
-                        if (document.querySelector('.no--comment')) {
-                            (_d = document.querySelector('.no--comment')) === null || _d === void 0 ? void 0 : _d.remove();
+                        if (document.querySelector('.hComment--placeholder')) {
+                            (_d = document.querySelector('.hComment--placeholder')) === null || _d === void 0 ? void 0 : _d.remove();
                         }
                         (_e = document
                             .querySelector('.hComment--list')) === null || _e === void 0 ? void 0 : _e.insertAdjacentHTML('beforeend', html);
@@ -468,7 +423,7 @@ var heraComment = /** @class */ (function (_super) {
                     if (newComment) {
                         newComment.scrollIntoView({ behavior: 'smooth' });
                     }
-                    _this.showNotice('评论成功');
+                    _this.showNotice(_this.obvInit.comment_success_text, 'success');
                 });
             });
         }
@@ -481,15 +436,10 @@ var heraScroll = /** @class */ (function () {
         this.is_single = false;
         //@ts-ignore
         this.is_single = obvInit.is_single;
-        // this.init();
-        if (document.querySelector('.backToTop')) {
-            var backToTop_1 = document.querySelector('.backToTop');
+        if (document.querySelector('.hBackTop')) {
+            var backToTop_1 = document.querySelector('.hBackTop');
             window.addEventListener('scroll', function () {
                 var t = window.scrollY || window.pageYOffset;
-                // console.log(t);
-                // const documentHeight = document.body.clientHeight;
-                //const windowHeight = window.innerHeight;
-                // const percent = Math.ceil((t / (documentHeight - windowHeight)) * 100);
                 t > 200
                     ? backToTop_1.classList.add('is-active')
                     : backToTop_1.classList.remove('is-active');
@@ -499,32 +449,6 @@ var heraScroll = /** @class */ (function () {
             });
         }
     }
-    heraScroll.prototype.init = function () {
-        this.scroll();
-    };
-    heraScroll.prototype.scroll = function () {
-        var _this = this;
-        var endScroll = document.querySelector('.post-navigation');
-        var endScrollTop = endScroll ? endScroll.offsetTop : 0;
-        var windowHeight = window.innerHeight;
-        window.addEventListener('scroll', function () {
-            var _a, _b, _c, _d;
-            if (window.scrollY > 10) {
-                (_a = document.querySelector('.site--header')) === null || _a === void 0 ? void 0 : _a.classList.add('is-active');
-            }
-            else {
-                (_b = document.querySelector('.site--header')) === null || _b === void 0 ? void 0 : _b.classList.remove('is-active');
-            }
-            if (_this.is_single) {
-                if (window.scrollY > endScrollTop - windowHeight) {
-                    (_c = document.querySelector('.post-navigation')) === null || _c === void 0 ? void 0 : _c.classList.add('is-active');
-                }
-                else {
-                    (_d = document.querySelector('.post-navigation')) === null || _d === void 0 ? void 0 : _d.classList.remove('is-active');
-                }
-            }
-        });
-    };
     return heraScroll;
 }());
 new heraScroll();

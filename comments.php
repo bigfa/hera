@@ -37,7 +37,7 @@ global $heraSetting;
         <?php if (have_comments()) {
             wp_list_comments(array('style' => 'ol', 'avatar_size' => 48, 'callback' => 'hera_comment'));
         } else { ?>
-            <li class="no--comment">
+            <li class="hComment--placeholder">
                 <?php if ($heraSetting->get_setting('no_reply_text')) {
                     echo $heraSetting->get_setting('no_reply_text');
                 } else {
@@ -46,11 +46,13 @@ global $heraSetting;
             </li>
         <?php } ?>
     </ol>
-    <nav class="nav-links nav-links__comment">
-        <?php paginate_comments_links([
-            'prev_next' => false
-        ]); ?>
-    </nav>
+    <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
+        <nav class="nav-links nav-links__comment">
+            <?php paginate_comments_links([
+                'prev_next' => false
+            ]); ?>
+        </nav>
+    <?php endif; ?>
     <?php if (comments_open()) :
         comment_form();
     endif; ?>

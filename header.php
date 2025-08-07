@@ -56,16 +56,22 @@
                         </a>
                     <?php endif; ?>
                     <div class="site--info__content">
-                        <h1 class="site--title"><?php if ($heraSetting->get_setting('sitename')) {
-                                                    echo $heraSetting->get_setting('sitename');
-                                                } else {
-                                                    bloginfo('name');
-                                                } ?></h1>
-                        <div class="site--description"><?php if ($heraSetting->get_setting('sitedescription')) {
-                                                            echo $heraSetting->get_setting('sitedescription');
-                                                        } else {
-                                                            bloginfo('description');
-                                                        } ?></div>
+                        <h1 class="site--title">
+                            <a href="<?php echo home_url(); ?>">
+                                <?php if ($heraSetting->get_setting('sitename')) {
+                                    echo $heraSetting->get_setting('sitename');
+                                } else {
+                                    bloginfo('name');
+                                } ?>
+                            </a>
+                        </h1>
+                        <div class="site--description">
+                            <?php if ($heraSetting->get_setting('sitedescription')) {
+                                echo $heraSetting->get_setting('sitedescription');
+                            } else {
+                                bloginfo('description');
+                            } ?>
+                        </div>
                     </div>
                 </div>
                 <nav class="site--nav">

@@ -1,0 +1,30 @@
+@mixin sns-icons {
+    a {
+        margin: 0 0 0 12px;
+        display: flex;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    svg {
+        fill: var(--hera-text-color);
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+            fill: var(--hera-hover-color);
+        }
+
+        &.sns {
+            fill: none;
+            stroke: var(--hera-text-color);
+
+            &:hover {
+                stroke: var(--hera-hover-color);
+                fill: none;
+            }
+        }
+    }
+}

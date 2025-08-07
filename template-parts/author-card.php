@@ -10,7 +10,7 @@
 ?>
 <div class="hAuthor--card">
     <?php echo get_avatar(get_the_author_meta('ID'), 64, '', get_the_author()); ?>
-    <div>
+    <div class="hAuthor--content">
         <div class="hAuthor--name">
             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
                 <?php the_author(); ?>

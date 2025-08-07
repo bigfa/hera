@@ -1,4 +1,10 @@
 .hRelated {
+    &--heroTitle {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
     &--list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

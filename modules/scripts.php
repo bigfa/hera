@@ -76,17 +76,19 @@ function hera_get_post_views($post_id = 0)
  * @return post views
  */
 
-function hera_get_post_views_text($zero = false, $one = false, $more = false, $post = 0)
+function hera_get_post_views_text($zero = false, $one = false, $more = false, $post = 0, $before = '', $after = '')
 {
     $views = hera_get_post_views($post);
     if ($views == 0) {
-        return $zero ? $zero : __('No views yet', 'Hera');
+        return $before . ($zero ? $zero : __('No views yet', 'Hera')) . $after;
     } elseif ($views == 1) {
-        return $one ? $one : __('1 View', 'Hera');
-    } else {
-        return $more ? str_replace('%d', $views, $more) : sprintf(__('%d Views', 'Hera'), $views);
+        return $before . ($one ? $one : __('1 View', 'Hera')) . $after;
+    } else { // more than 1 view
+        $views = number_format_i18n($views);
+        return $before . ($more ? $more : sprintf(__('%d Views', 'Hera'), $views)) . $after;
     }
 }
+
 
 
 function hera_get_post_read_time($post_id)
@@ -103,12 +105,12 @@ function hera_get_post_read_time($post_id)
     return $reading_time;
 }
 
-function hera_get_post_read_time_text($post_id)
+function hera_get_post_read_time_text($post_id, $before = '', $after = '')
 {
     $reading_time = hera_get_post_read_time($post_id);
     if ($reading_time <= 1) {
-        return __('1 min read', 'Hera');
+        return $before . __('1 min read', 'Hera') . $after;
     } else {
-        return sprintf(__('%d min read', 'Hera'), $reading_time);
+        return $before . sprintf(__('%d min read', 'Hera'), $reading_time) . $after;
     }
 }
